@@ -1,9 +1,6 @@
-# Calculus resources, fall 2022
+# Calculus resources
 
-Resources for MATH 115  2022
-
-These are some resources that I might use for my fall 2022 calculus class at the University of Nebraska at Kearney.
-
+Here you will find some resources for my Calculus I class (MATH 115) at the University of Nebraska at Kearney.
 
 ### License
 
