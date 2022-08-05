@@ -1,4 +1,4 @@
-# Calculus resources
+# Calculus I class resources
 
 Here you will find some resources for my Calculus I class (MATH 115) at the University of Nebraska at Kearney.
 
