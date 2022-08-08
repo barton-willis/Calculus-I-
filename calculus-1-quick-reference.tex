@@ -188,6 +188,7 @@ For numbers \(a\) and \(b\), we define the intervals:
 \mathrm{or} &  \lor  \\
 \mathrm{implies} &  \implies  \\
 \mathrm{equivalent} &  \equiv \\ 
+\mathrm{iff}  & \iff \\
 \mbox{for all} & \forall \\
 \mbox{there exists} & \exists \\ \hline
 \end{tabular}
@@ -445,7 +446,7 @@ opacity=.4](O,B,A)
 
 \textbf{Law of sines:} \,
 \(
-    \frac{\sin{\alpha}}{A} =  \frac{\sin{\beta}}{B} =  \frac{\sin{\gamma}}{C}
+    \frac{\sin(\alpha)}{A} =  \frac{\sin(\beta)}{B} =  \frac{\sin(\gamma)}{C}
 \)
 
 \textbf{Area:} \,
@@ -552,7 +553,7 @@ opacity=.4](O,B,A)
 
 \section*{Unit Circle}
 
-\begin{tikzpicture}[scale=3.2,cap=round,>=latex]
+\begin{tikzpicture}[scale=3.5,cap=round,>=latex]
     % draw the coordinates
     \draw[->] (-1.5cm,0cm) -- (1.5cm,0cm) node[right,fill=white] {$x$};
     \draw[->] (0cm,-1.5cm) -- (0cm,1.5cm) node[above,fill=white] {$y$};
@@ -561,6 +562,15 @@ opacity=.4](O,B,A)
     \draw[thick] (0cm,0cm) circle(1cm);
 
     \foreach \x in {0,30,...,360} {
+            % lines from center to point
+            \draw[gray] (0cm,0cm) -- (\x:1cm);
+            % dots at each point
+            \filldraw[black] (\x:1cm) circle(0.4pt);
+            % draw each angle in degrees
+            \draw (\x:0.6cm) node[fill=white] {$\x^\circ$};
+    }
+
+    \foreach \x in {0,45,...,360} {
             % lines from center to point
             \draw[gray] (0cm,0cm) -- (\x:1cm);
             % dots at each point
@@ -673,10 +683,8 @@ Centroid
 %\tiny
 \noindent Revised \today. Barton Willis is the author of this work. This work is
 licensed under Attribution 4.0 International (CC BY 4.0) \,  \qrcode[height=0.15in]{https://creativecommons.org/licenses/by/4.0/}. For the current version of
-this document, visit \, \qrcode[height=0.15in]{https://github.com/barton-willis/Math-100-200-level} 
+this document, visit \, \qrcode[height=0.15in]{https://github.com/barton-willis/Calculus-I-} 
 
 \end{multicols*}
 
 \end{document}
-
-\
