@@ -1,0 +1,889 @@
+
+\documentclass[12pt]{article}
+%\documentclass[border=0.1cm]{standalone}
+\usepackage{wasysym}
+\usepackage{phonenumbers}
+\usepackage{marvosym }
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{pdfpages}
+\usepackage[paperwidth=8.5in,paperheight=11in,margin=0.5in]{geometry} 
+\usepackage[UKenglish]{babel}
+\usepackage[UKenglish]{isodate}% http://ctan.org/pkg/isodate
+\usepackage{hyperref}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\frenchspacing
+\usepackage[nodayofweek,level]{datetime}
+\usepackage{calc,url}
+\newcounter{qz}\setcounter{qz}{0}
+\newcommand{\qz}{%\
+\setcounter{qz}{\value{qz}+1}
+\textbf{In-class  \theqz} \,}
+
+\newcounter{hw}\setcounter{hw}{0}
+\newcommand{\hw}{%\
+\setcounter{hw}{\value{hw}+1}
+\textbf{HW \thehw}}
+
+\newcounter{ex}\setcounter{ex}{0}
+\newcommand{\ex}{%\
+\setcounter{ex}{\value{ex}+1}
+Exam \theex}
+
+\usepackage[T1]{fontenc} 
+\usepackage{fourier}
+%\usepackage{tgschola} %to look retro
+\newenvironment{mypar}[2]
+  {\begin{list}{}%
+    {\setlength\leftmargin{#1}
+    \setlength\rightmargin{#2}}
+    \item[]}
+  {\end{list}}
+
+
+\newcounter{wk}\setcounter{wk}{0}
+\newcommand{\wk}{%\
+\setcounter{wk}{\value{wk}+1}
+\thewk \,\,}
+
+\usepackage[nomessages]{fp}% http://ctan.org/pkg/fp
+
+
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\usepackage{paralist}
+\renewenvironment{description}[0]{\begin{compactdesc}}{\end{compactdesc}}
+
+\newenvironment{alphalist}{
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{-0.5\itemsep}}
+  {\end{enumerate}}
+  \cleanlookdateon% Remove ordinal day reference
+  \newcommand{\RomanNumeralCaps}[1]
+      {\MakeUppercase{\romannumeral #1}}
+
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand{\maybefakesc}[1]{%
+  \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
+    {\fontsize{\dimexpr0.8\dimexpr\f@size pt\relax}{0}\selectfont\uppercase{#1}}%
+  \else
+    \textsc{#1}%
+  \fi
+}
+\newcommand\AM{\,\maybefakesc{am}\xspace}
+\newcommand\PM{\,\maybefakesc{pm}\xspace}
+\makeatother
+
+ \newcommand{\coursename}{Calculus I with Analytic Geometry}
+\newcommand{\coursenumber}{MATH 115}
+\newcommand{\sectionnumber}{02}
+\newcommand{\term}{Fall }
+\newcommand{\room}{Discovery Hall, room  386}
+\newcommand{\meetingtime}{This class meets Monday, Wednesday, and Friday  from 
+	9:05\AM -- 9:55\AM and Tuesday and Thursday }
+\newcommand{\officehours}{ Monday, Wednesday, and Friday 10:00\AM -- 11:00\AM,
+    Tuesday and Thursday 9:30\AM -- 11:00\AM, and by appointment.}
+
+    \newcommand{\finaldateandtime}{\printdate{14/12/\the\year} 8:00\AM{} -- 10:00 \AM}
+\begin{document}
+\cleanlookdateon% Remove ordinal day reference
+\shortdate
+\printyearoff
+\large
+\begin{center}
+    \textbf{\coursename}  \\
+    {\coursenumber--\sectionnumber} \\
+     {\term \the\year} \\
+\end{center}
+
+\vskip0.25in
+\normalsize
+
+
+\begin{center}
+\begin{description}
+    \item[Instructor:] Barton Willis, PhD, Professor of Mathematics
+    \item[Office:]  Discovery Hall, Room 368
+    \item[\phone:]   \phonenumber[country=US]{3088658868}
+    \item[\Email:]    \href{mailto:willisb@unk.edu}{willisb@unk.edu}
+    \item[Zoom:] 616 568 5706
+    \item[Office Hours:] \officehours
+  \end{description}
+\end{center}
+
+
+
+\subsubsection*{Important Dates}
+
+\begin{mypar}{0.25in}{0.25in} 
+
+      \textbf{First Homework due} \dotfill  \printdate{27/8/\the\year}  \\
+       \textbf{Exam 1} \dotfill \printdate{23/9/\the\year}  \\
+    \textbf{Exam 2} \dotfill  \printdate{4/11/\the\year} \\
+    \textbf{Exam 3} \dotfill \printdate{2/12/\the\year} \\
+      \textbf{Final exam} \dotfill  \finaldateandtime
+\end{mypar}
+
+
+
+\subsubsection*{Grading}
+
+Your course grade will be based on weekly inclass work, online homework, three midterm exams, and a comprehensive 
+final exam; specifically:
+\begin{mypar}{0.25in}{0.25in}
+    \textbf{In class work:}  \emph{12 ten point assignments}  \dotfill 120 (total) \\
+     \textbf{Online homework} \emph{25 five point assignments }\dotfill 125 (total)\\
+    \textbf{Mid-term exams 1,2, and 3:} \emph{100 points each} \dotfill 300 (total)\\
+      \textbf{Comprehensive Final exam} \dotfill 150 (total)
+\end{mypar}
+
+\FPeval{\points}{round(120+125+300+150,0)}
+
+\FPeval{\F}{round(\points*0.6-1,0)}
+\FPeval{\Dm}{round(\points*0.6,0)}
+\FPeval{\D}{round(\points*0.633,0)}
+\FPeval{\Dp}{round(\points*0.666,0)}
+
+\FPeval{\Cm}{round(\points*0.7,0)}
+\FPeval{\C}{round(\points*0.733,0)}
+\FPeval{\Cp}{round(\points*0.766,0)}
+
+\FPeval{\Bm}{round(\points*0.8,0)}
+\FPeval{\B}{round(\points*0.833,0)}
+\FPeval{\Bp}{round(\points*0.866,0)}
+
+\FPeval{\Am}{round(\points*0.9,0)}
+\FPeval{\A}{round(\points*0.933,0)}
+\FPeval{\Ap}{round(\points*0.966,0)}
+
+The following table shows the \emph{minimum} number of points (out of \points) that
+are required for each of the twelve letter grades D- through A+. For
+example, a point total of \Bp\/  points will earn you a grade of B+,  and 
+a point total of \Am\/ points will earn you a grade of A-. If you earn a point
+total of \F\/  or less, you a failing course grade.
+ 
+ \vspace{0.1in}
+     \begin{minipage}{5.5in}
+  \centering 
+\begin{mypar}{0.25in}{0.25in}
+    \begin{minipage}{2.5in}
+        D-  \dotfill \Dm \\
+        D \dotfill \D \\
+        D+ \dotfill \Dp \\
+        C- \dotfill \Cm  \\
+        C \dotfill \C \\
+        C+ \dotfill \Cp 
+        \end{minipage}
+    \phantom{xxx}
+    \begin{minipage}{2.5in}
+        B- \dotfill \Bm \\
+        B \dotfill  \B \\
+        B+ \dotfill  \Bp\\
+        A- \dotfill  \Am \\
+        A \dotfill  \A \\
+        A+ \dotfill  \Ap
+    \end{minipage}
+\end{mypar} 
+\end{minipage}
+
+\subsubsection*{Course Resources}
+\begin{enumerate}
+
+    \item Our textbook is \emph{University Calculus: Early Transcendentals, Single Variable},  4th Edition, by Joel R. Hass, Christopher E Heil, Przemyslaw Bogacki,
+    Maurice D. Weir,  and George B. Thomas, Jr.
+    
+    \item We will be using the online homework system Pearson MyLab Math. Your online homework grade is a substantial part of your course grade. You \emph{must} sign up for the homework system in the first week of the term. If you purchase a used book without an access code, you will  may need to purchase access to the online homework system
+    separately,
+    
+    \item A computer or tablet (not a phone) with an Internet connection to use the online homework.
+    
+    \item  If we need to convert this class to remote learning, your computer will need to have a microphone and a camera.
+    
+    \item To complete in class work while working remotely, you will need to print files.
+    
+    \item For exams, you will need a scientific calculator (includes trigonometric, logarithmic, and exponential functions).  You do not need anything more fancy than that. You \emph{may} use a graphing
+    calculator, but it will not be of any great advantage.
+    
+    \item You will need a (functioning) camera on your phone or some other device for scanning a document and turning it electronically. 
+    
+    \item The UNK Learning Commons\footnote{\url{https://www.unk.edu/offices/learning_commons/ }} provides peer tutoring for this class. 
+        
+    \item Pencils, erasers, notebook for note taking. Colored pens or pencils are nice for note taking.
+    
+     \item Other resources include Desmos\footnote{\url{https://www.desmos.com/}}.    
+     \end{enumerate}
+
+
+
+\subsubsection*{Course Calendar}
+
+Generally, we'll adhere to the scheduled exam dates even if we are ahead or behind with coursework.  
+When we are ahead or behind, the topics on the exams will be appropriately adjusted.  
+
+
+\vspace{0.1in}
+\noindent \textbf{Notices:}
+
+
+\begin{alphalist}
+   \item \emph{Exams will be given on  \textbf{Friday} of the week they are assigned.}
+   
+
+    \item Homework (labelled \textbf{HW}) will be due one minute before midnight on  Saturday of the week they are assigned.  
+
+    \item The final exam will be given on \finaldateandtime.
+    
+\end{alphalist}
+
+\vspace{0.1in}
+
+\begin{center}
+    \small
+\begin{tabular}  {|l|l|l|l|l|}
+\hline
+{\bf Week}  & \textbf{Week Starting} &  {\bf Section(s)} & {\bf Topic(s)} & \textbf{Assessments} \\
+\hline \hline 
+\wk    &  \printdate{22/8/\the\year} &     & Logic, Proof methods, and Overleaf & \hw  \\
+\wk    & \printdate{29/8/\the\year}   &  \S1.1 -- 1.3  & Sets, Functions, Real numbers, Completeness   & \hw  \\
+\wk    & \printdate{5/9/\the\year}&     \S2.1 -- \S2.2  & Sequences \& Subsequences    &  \hw \\
+\wk    & \printdate{12/9/\the\year}&     \S2.1 -- \S2.2  & Sequences \& Subsequences    &  \hw \\
+\wk    & \printdate{19/9/\the\year}   &  \S2.3  & Bolzano-Weierstrass    &   \textbf{\ex}          \\ \hline
+\wk    & \printdate{26/9/\the\year} &  \S3.1    &  Topology    &  \hw \\ 
+\wk    & \printdate{3/10/\the\year}    & \S3.1  &   Topology  &    \hw  \\
+\wk    & \printdate{10/10/\the\year}     & \S4.1  & Limits and Continuity & \hw \\
+\wk    & \printdate{17/10/\the\year}   & \S4.1  & Limits and Continuity     & \hw   \\
+\wk   &  \printdate{24/10/\the\year}   & \S4.2 & Monotone and Inverse Functions     & \hw \\ 
+\wk   &  \printdate{31/10/\the\year}      &   \S5.1 & Derivatives   &  \textbf{\ex} \\ \hline
+\wk   &  \printdate{7/11/\the\year}   &   \S5.1 &  Derivatives   & \hw  \\
+\wk   & \printdate{14/11/\the\year}  & \S5.2    & Some Mean Value Theorems   &  \hw   \\
+\wk   & \printdate{21/11/\the\year} & \S6.1  & The Riemann Integral    & \hw \\
+\wk   & \printdate{28/11/\the\year}    &  \S6.2  & The Riemann Integral     &   \textbf{\ex}    \\
+\wk   & \printdate{5/12/\the\year}   &       &  Catch up or Review     &    \\ \hline
+ \wk   & \printdate{12/12/\the\year}     &     &    \hfill  & \textbf{ Final Exam}  \\  \hline
+   
+\end{tabular}
+\end{center}
+
+
+\subsubsection*{University Policies}
+
+Please see \url{https://www.unk.edu/academic_affairs/asa_forms/course-policies-and-resources.php}.
+
+\subsubsection* {Policies}
+
+Unless an assessment is \emph{explicitly} stated to be a group project,  \emph{all work you turn in for a grade must be your own.}  If you need assistance in completing a homework assignment, you may ask me for help. Googling for answers, seeking help from the Learning Commons or other faculty members,  or using solution keys from previous terms (either from UNK or other universities) is also prohibited.  Violation of these rules will result in earning a grade of zero on the assessment. Each homework assignment you turn in for a grade must include the statement:
+
+\begin{quote}
+\fbox{I have neither given nor received unauthorized assistance on this assignment.}
+\end{quote}
+ If two assignments are so similar that only collaboration could explain their similarities, both assignments will receive a grade of zero.  Using unauthorized materials or communication devices (cell phone, for
+example) while taking a test will earn you a grade of zero on that assessment.  
+
+ 
+
+\begin{enumerate}
+
+\item Regular in person class attendance is required. If you are ill or need to miss class due to athletics, please let me know ahead of time, and I will make an effort to put the class on Zoom.
+
+\item For examinations and in class assignments, show your work.  \emph{No credit will be given for multi-step problems without the necessary work. Your solution must contain enough detail
+so that I am convinced that you could correctly work any similar problem.} Also erase or clearly mark any work you want me to ignore; otherwise,
+I'll grade it.  
+
+\item The work you turn in is expected to be \emph{accurate, 
+complete, concise, neat}, and \emph{well-organized}.  
+\emph{You will not earn full credit on work that falls short of 
+these expectations.}
+
+\item Class cancellations due to weather or illness or other 
+unplanned circumstances may require that we make  adjustments
+to the course calendar, exam dates, and due dates or specifics for 
+course assessments. 
+
+
+\item Extra credit is not allowed. 
+
+
+
+\item For examinations, you may use a teacher provided quick reference sheet, 
+but no other reference materials. You may also use a pencil, eraser, 
+and a scientific calculator. For examinations, your phone and all such
+devices must be turned off and \emph{out of sight}. 
+
+\item Generally, if you are ill or absent for any reason (including 
+athletics), you must turn in your in class work on time. Permission to
+turn in work late must be made in advance, otherwise late in class work 
+will count zero points.
+
+
+ 
+
+\item During class time, please refrain from using electronic devices. If your 
+device usage distracts your classmates, I will ask you to put it away. If it's my 
+impression that you are often not paying attention in class, I reserve the right to 
+decline to help you during office hours.
+
+\item The final examination will be \emph{comprehensive} and it will be given 
+during the  time scheduled by the University. Except for \emph{extraordinary circumstances}
+you must take the exam at this time.
+ 
+\item If you have questions about how your work has been graded, make an appointment with me immediately.
+
+
+
+\item Please regularly check Canvas  to verify that your scores have 
+been recorded correctly.  If I made a mistake in recording one of
+your grades, I'll correct it provided you saved your paper.
+
+
+
+\end{enumerate}
+\end{document}
+\subsubsection*{Introduction}
+
+Welcome to \course.
+
+
+
+
+\subsubsection*{Course Resources}
+
+\begin{enumerate}
+
+\item Our textbook is \emph{University Calculus: Early Transcendentals, Single Variable},  4th Edition, by Joel R. Hass, Christopher E Heil, Przemyslaw Bogacki,
+Maurice D. Weir,  and George B. Thomas, Jr.
+
+\item We will be using the online homework system Pearson MyLab Math. Your online homework grade is a substantial part of your course grade. You \emph{must} sign up for the homework system in the first week of the term. If you purchase a used book without an access code, you will  may need to purchase access to the online homework system
+separately,
+
+\item A computer or tablet (not a phone) with an Internet connection to use the online homework.
+
+\item  If we need to convert this class to remote learning, your computer will need to have a microphone and a camera.
+
+\item To complete in class work while working remotely, you will need to print files.
+
+\item For exams, you will need a scientific calculator (includes trigonometric, logarithmic, and exponential functions).  You do not need anything more fancy than that. You \emph{may} use a graphing
+calculator, but it will not be of any great advantage.
+
+\item You will need a (functioning) camera on your phone or some other device for scanning a document and turning it electronically. Regardless of course delivery (face-to-face or remote), our class will mostly function without paper.
+
+\item The UNK Learning Commons\footnote{\url{https://www.unk.edu/offices/learning_commons/ }} provides peer tutoring for this class. At least initially, the Learning Commons will be doing its work remotely. Please take advantage of this learning opportunity.
+
+\item Pencils, erasers, notebook for note taking. Colored pens or pencils are nice for note taking.
+
+ \item Other resources include Desmos\footnote{\url{https://www.desmos.com/}} and Wolfram Alpha\footnote{\url{https://www.wolframalpha.com/}}.  You can use both of these services for no cost.
+
+ \end{enumerate}
+
+
+
+
+
+
+\subsubsection*{Prerequisite}
+
+The prerequisite for this class is either a passing grade (D- or higher) in MATH 103 or a Math ACT score of 23 or above.  It is \emph{suggested} (but not required)  that if you qualify by your Math ACT score that you have successfully completed  four years of high school math, including two  years of  algebra, one year of geometry,  and a senior  level pre-calculus class.
+
+
+
+\subsubsection*{Course Objectives}
+
+Students will learn the concepts of continuity,  the limit, the derivative, and the indefinite and definite integrals. Students will apply these concepts to problems involving the sciences and to applied problems of mathematics including geometry and the extreme values of functions.
+
+
+
+
+
+
+
+\subsubsection*{Class time}  For face-to-face classes, we will meet for 50 minutes 
+Monday through Friday.  Classes on Tuesday and Thursday will be 50, not 75 minutes 
+in length. 
+
+
+
+\subsubsection*{Exams} All exams, including the final exam, will be done remotely using My Math Lab. \emph{You will need to take each exam, including the final exam,  during the regularly scheduled exam period.} This is a five credit class, so we will have two exams during final exam week.\footnote{UNK's final exam policy requires that five credit classes meet twice during final exam week; see
+\url{https://www.unk.edu/offices/registrar/academic_policies_handbook/Final_Exam_Schedules.php}}  The first exam, given on Monday of final exam week, will cover material that follows Exam 3.  The second exam, given on Tuesday of final exam week, will cover material from \S1.1 -- \S6.3.
+
+I will provide you with a review for each exam.  Of course, if we are ahead or behind the course calendar,  the exam topics will be adjusted the only cover what we have done in class. The review will clarify the sections covered. The review for the final exam will be the union of all previous reviews.
+
+\subsubsection*{Online homework} Starting in week two, online homework will be due \emph{every} Saturday at 11:59 p.m. local time.  You may either complete working on a problem set immediately after it is covered in class, or you may work on an entire week of work on Saturday night. If you choose to work mostly on Saturday, I might not respond for requests for assistance in time to meet the deadline. If you are a student athlete or attending a university sponsored event and you are traveling, your assignment will still be due on  Saturday at 11:59 p.m. local time.  If you are too ill to complete your work on time, please communicate with me as soon as possible.
+
+
+\subsubsection*{In class work} Every Friday, and possibly more often, we'll have in class work. This work will be done on paper. If you are not attending class, you will need to download the worksheet from Canvas, print it, complete it, photograph it, and turn it in to Canvas. If you attend the face-to-face class, you will still need to photograph your work and turn it in to Canvas. All students will have until 11:59 p.m. local time on the day of in class work to turn the work into Canvas. Traditionally, in class work is done as pair work, but due to the need for distancing, the in class work will be mostly individual, but I will help you with questions.
+
+\subsubsection*{Grading}
+
+Your course grade will be based on \emph{online homework assignments} (worth at least 200 points), \emph{in-class work} (worth at least 150 points),  four exams, and a final
+exam (scaled to 150 points).   Exams 1,2, and 3 will be worth 100 points each, but Exam 4, given during final exam week, is worth 50 points.
+
+Your course grade will be based on the percent of the available points. Course letter grades will be based on a ten point scale. Except for the grade of A+, grades in the lower third of each decade will be a
+minus grade and grades in the upper third of each decade will be a plus grade. For example, the B- range is $[80, 83 + 1/3)$, and the B+ range is $[86 + 2/3, 90)$. To earn a grade of A+ requires a course average that exceeds 98\%.
+
+
+\subsubsection* {Policies}
+
+\begin{enumerate}
+
+
+ \item Since all  exams, including the final exam are online, generally only severe  illness will be a valid reason to take the exam at a different time. To qualify to make up an exam, you must contact me as soon as you know that you will be too sick to take an exam.
+
+ \item The final examination will be \emph{comprehensive} and it will be given during the time scheduled by the University. Except for \emph{extraordinary circumstances}
+you must take the exam at this time.   UNK's attendance policy  does \emph{not} include ``family emergency'' as a valid reason for making up missed graded work.
+
+
+ \item Generally, online homework will be due at 11:5 p.m. local time each Saturday. If you have an extended illness that keeps you from completing the homework, contact me immediately.
+
+
+\item The course calendar may change. Changes to the schedule can be made in class, but not noted anywhere else. It is your responsibility to
+learn of changes to the schedule.
+
+\item Phones and other such devices must be turned off and \emph{out of sight} during lecture portions of classes.
+
+
+\item If you have questions about how your work has been graded,  \emph{immediately}  ask me for an explanation.
+
+\item This class has \emph{no option for extra credit.}
+
+\end{enumerate}
+
+
+
+
+\subsubsection*{Learning Commons}
+UNK provides assistance to help you improve your academic performance. The Learning Commons, located on the Second floor of the Calvin T. Ryan Library, centralizes several academic
+services in one convenient place: Language Learning Support, Library Services, Subject Tutoring, Success Coaching, Supplemental Instruction, and the Writing Center are all
+offered in a casual, collaborative environment.  Most services are facilitated by fellow UNK students, which means you will be able to learn and practice more effective
+study skills, problem-solving techniques, and writing strategies with people who have been there and done that!  Statistics indicate that students who come to the LC
+regularly are more likely to succeed in their classes--so come early and come often. For more information about schedules and services, contact the Learning Commons at
+865-8905 or visit them online at \url{www.unk.edu/lc.}
+
+\subsubsection*{Academic Honesty Policy}
+
+Using unauthorized materials while taking a exam will earn you a failing grade on that assessment. For online homework and in-class work, you may seek help from the Learning Commons, the textbook or other documents, from me, or from classmates.  Other forms of academic dishonesty  include:\footnote{For a definitions and explanation, see \url{https://catalog.unk.edu/undergraduate/academics/academic-regulations/academic-integrity-policy/}}
+
+\begin{enumerate}
+
+ \item  Cheating.
+
+ \item Fabrication and falsification.
+
+ \item Plagiarism.
+
+ \item Abuse of academic materials and/or equipment.
+
+ \item Complicity in academic dishonesty: Helping or attempting to help another student to commit an act of academic dishonesty.
+
+   \item  Falsifying grade reports: Changing or destroying grades, scores or markings on an examination or in an instructor's records.
+
+   \item Misrepresentation to avoid academic work.
+
+ \end{enumerate}
+For UNK's procedure for handling possible infractions, see \url{https://www.unk.edu/offices/reslife/_documents/academic-integrity-policy.pdf}.
+
+
+\subsubsection*{General Studies and Learning Outcomes\footnote{These are UNK's general studies outcomes for mathematics.}}
+
+For students under a catalog years of 2019--2020 or before, earning a passing grade in MATH 115 effectively excuses you from the general studies mathematics requirement, and the five credits for this class count toward general studies credits.  For students under the catalog year 2020--2021, it is not known (as of \today) if MATH 115 will fulfill your general studies LOPER 4 (Mathematics, statistics, \& quantitative reasoning) requirement. .\footnote{Suggestion: If your catalog
+year is 2020-2021, don't loose sleep over this issue. Almost surely, this issue will be resolved in a way that is fair and reasonable.  I'm including these learning outcomes because (a) they are valid (b) including them will help strengthen the case that  this course satisfies the required learning outcomes for a General Studies mathematics class. } The purpose of  General Studies for  pre-2020-2012  is:
+\begin{quote}
+\emph{ The UNK General Studies program helps students acquire knowledge and abilities to: understand the world, make connections across disciplines, and contribute to the solution of contemporary
+problems. }
+\end{quote}
+And the purpose of the current GS program in LOPER 4 is to
+\begin{quote}
+    \emph{ “develop core academic skills in collecting and using information, communications in speech and writing, and quantitative reasoning.” }
+\end{quote}
+Our mathematics specifc learning outcomes are:
+\begin{enumerate}
+  \item Apply mathematical logic to solve equations.
+    \item Describe problems using mathematical language.
+    \item Solve problems given in mathematical language using mathematical or statistical tools.
+    \item Interpret numerical data or graphical information using mathematical concepts and methods.
+    \item Construct logical arguments using mathematical language and concepts.
+    \item Use mathematical software effectively.
+\end{enumerate}
+
+
+
+
+
+\subsubsection*{Covid-19 Policies\footnote{Verbatim from UNK covid Task Force}}
+
+The following are the responsibilities of the course instructor (so ``I'' means ``me,''  not ``you.''):
+
+\begin{enumerate}
+\item \emph{What do I do if a student emails me and says they have COVID-19 symptoms?}
+\begin{enumerate}
+\item	Instruct the student to contact the Public Health Center (PHC): 308-865-8279 or unkhealth@unk.edu
+\item	Advise the student to not return to class until given instructions by the PHC
+\item	Encourage the student to communicate with you on their absences
+\end{enumerate}
+
+\item \emph{What do I do if a student informs me that they have tested positive for COVID-19?}
+\begin{enumerate}
+\item	Instruct the student to contact the Public Health Center immediately at 308-865-8279 or unkhealth@unk.edu
+\item	Inform the student that they will not be able to return to class without a clearance form from the Public Health Center. The clearance form must be received by faculty/staff prior to returning
+\item	Faculty/Staff should contact the Public Health Center for guidance on possible quarantining and whether it will be necessary. A seating chart will be vital to identify people who may have been in close contact with the positive case.
+\item	Ensure the privacy of the student who tested positive. Classmates are not privy to this person’s medical information.
+\end{enumerate}
+
+\item \emph{What can I expect from a student returning from isolation after testing positive for COVID-19?}
+\begin{enumerate}
+\item 	A medical clearance form from the Public Health Center via email. This form will tell you the date the student is permitted to return.
+\end{enumerate}
+
+\item \emph{What if a student informs me that they must be in quarantine for 14 days due to exposure?}
+\begin{enumerate}
+\item	Instruct the student to contact the Public Health Center, which will track quarantine days and give a return date.
+\item	The student must have a medical clearance from the Public Health Center to return to class.
+\item 	Give the student options for alternative attendance such as attending class synchronously or doing work through Canvas.
+\end{enumerate}
+
+\item \emph{Should I send an announcement that a student in class tested positive?}
+\begin{enumerate}
+\item	An informational announcement should inform the class that there has been a possible exposure, and that the Public Health Center will contact anyone identified as a close contact with guidance on symptom monitoring.
+\item	UNK Communications, in collaboration with the Public Health Center, will handle campus-wide and community notifications when necessary.
+\end{enumerate}
+
+\item \emph{What if a student wants to know the name of the student who tested positive? }
+\begin{enumerate}
+\item	Disclosing a student’s name is a HIPAA violation, therefore you are not permitted to announce the student’s name. If a student is concerned that they were exposed, direct them to the Public Health Center.
+\end{enumerate}
+
+\item \emph{What should I do if I develop symptoms?}
+\begin{enumerate}
+\item	Contact the Public Health Center immediately for guidance on next steps: 308-865-8279 or unkhealth@unk.edu
+\end{enumerate}
+
+\item \emph{Can I get tested at the Public Health Center on Campus and is there a charge?}
+\begin{enumerate}
+\item	Yes. The Public Health Center provides COVID-19 testing.
+\item	There is no charge except under certain circumstances. Staff can review with you your options for testing.
+\end{enumerate}
+
+\item \emph{What if a student tells me they tested positive for Coronavirus and need accommodations?}
+\begin{enumerate}
+\item	Refer the student to Disability Services to register for temporary accommodations: 308-865-8214, unkdso@unk.edu
+\item 	Disability Services will send faculty a letter to notify instructors of approved accommodations.
+\end{enumerate}
+
+\item \emph{What do I do if I test positive for COVID-19? How should I tell my class?}
+\begin{enumerate}
+\item	There is no expectation that you disclose personal health information to your class.  If you test positive, contact the Public Health Center. They will contact your students without giving your name.
+\item	Students will only need to know how to proceed in your absence.
+\item	You must be cleared by the Public Health Center before returning to campus.
+\end{enumerate}
+
+\item \emph{What if a student refuses to wear a mask?}
+\begin{enumerate}
+\item	Remind the student of the COVID-19 campus policy about wearing a mask. If a student continues to refuse, you can ask them to leave the building. If this matter persists, refer the student to the CARE Team.
+\end{enumerate}
+\end{enumerate}
+ The university community is deeply concerned for the well-being of its students, faculty, and staff. Keeping each other as safe as possible will require commitment from each of us; failure to do so will literally place lives in danger. The full policy relating to mitigation of the spread of infectious diseases can be found at \url{https://www.unk.edu/coronavirus/} Policies that apply to all courses (online, remote, blended, or face-to-face) include:
+
+\begin{enumerate}
+
+\item Students shall monitor their health daily.
+
+\item  No student shall attend classes in person while sick.
+
+\item  Those who have had contact with positive-tested individuals or show COVID-19 related symptoms must have clearance from the Public Health Center prior to returning to face-to-face classes.
+
+\item There will be no penalties for missing classes for COVID-19 related absences. Students will still be responsible for course content through alternative attendance or other options arranged with the instructor.
+
+\end{enumerate}
+
+Additional policies specific to face-to-face instruction include the following:
+
+\begin{enumerate}
+
+\item       During Phases I and II, all students are required to wear masks that cover the nose and mouth at all times during class and at any time, inside or outside, where physical distancing of at least 6’ is not possible. Instructors shall maintain 16’ of distance from students while lecturing but may be closer, if masked.
+
+\item Instructors have the authority to direct students who refuse to wear masks to leave the classroom. Students who have medical issues that make masks inadvisable should contact Disability Services for Students at 308-865-8214 to request an exemption.
+
+\item       Students shall not arrive for class more than 5 minutes before the scheduled start time for the course. Instructors shall dismiss students promptly at the end time and all shall leave the classroom promptly. Students who have questions should use office hours rather than before/after class times.
+
+\item       Instructors and students should clean their desks prior to class. Cleaning materials will be provided.
+
+\item       Additional requirements for Phase III, for specialty courses such as labs or performing arts, or for experiential learning are detailed below.
+
+\end{enumerate}
+
+Questions regarding COVID-19 should be directed to the Public Health Center unkhealth@unk.edu or 308-865-8254. Questions regarding the COVID-19 academic policy should be directed to Sr. Vice Chancellor Bicak at bicakc@unk.edu. Questions regarding department specific requirements should be directed to Dr.\ Katherine Kime,  Office: DSCH 337, Phone: (308) 865-8532,  Email: kimek@unk.edu.
+
+The above directions must be followed by everyone for the health and safety of our University. Students who do not comply may face disciplinary action from the university. Violations of any University or Campus Policy is a violation of the Student Code of Conduct.
+
+
+
+
+\paragraph{Students with Disabilities} It is the policy of the University of Nebraska at Kearney to provide flexible and individualized reasonable accommodation to students with documented disabilities. To receive accommodation services for a disability, students must be registered with the UNK Disabilities Services for Students (DSS) office, 175 Memorial Student Affairs Building, 308-865-8214 or by email unkdso@unk.edu .
+
+
+
+\paragraph{UNK Statement of Diversity \& Inclusion} UNK stands in solidarity and unity with our students of color, our Latinx and international students, our LGBTQIA+ students and students from other marginalized groups in opposition to racism and prejudice in any form, wherever it may exist. It is the job of institutions of higher education, indeed their duty, to provide a haven for the safe and meaningful exchange of ideas and to support peaceful disagreement and discussion. In our classes, we strive to maintain a positive learning environment based upon open communication and mutual respect. UNK does not discriminate on the basis of race, color, national origin, age, religion, sex, gender, sexual orientation, disability or political affiliation. Respect for the diversity of our backgrounds and varied life experiences is essential to learning from our similarities as well as our differences. The following link provides resources and other information regarding D\&I: \url{https://www.unk.edu/about/equity-access-diversity.php}
+
+
+
+\paragraph{Students Who are Pregnant} It is the policy of the University of Nebraska at Kearney to provide flexible and individualized reasonable accommodation to students who are pregnant. To receive accommodation services due to pregnancy, students must contact Cindy Ference in Student Health, 308-865-8219. The following link provides information for students and faculty regarding pregnancy rights. \url{http://www.nwlc.org/resource/pregnant-and-parenting-students-rights-faqs-college-and-graduate-students}
+
+
+
+\paragraph{Reporting Student Sexual Harassment, Sexual Violence or Sexual Assault} Reporting allegations of rape, domestic violence, dating violence, sexual assault, sexual harassment, and stalking enables the University to promptly provide support to the impacted student(s), and to take appropriate action to prevent a recurrence of such sexual misconduct and protect the campus community. Confidentiality will be respected to the greatest degree possible. Any student who believes she or he may be the victim of sexual misconduct is encouraged to report to one or more of the following resources:
+
+\begin{enumerate}
+
+\item Local Domestic Violence, Sexual Assault Advocacy Agency 308-237-2599
+
+\item Campus Police (or Security) 308-865-8911
+
+\item Title \RNum{9}  Coordinator 308-865-8655
+
+\end{enumerate}
+Retaliation against the student making the report, whether by students or University employees, will not be tolerated.
+
+
+If you have questions regarding the information in this email please contact Mary Chinnock Petroski, Chief Compliance Officer (petroskimj@unk.edu or phone 8400).
+
+
+
+
+\newpage
+
+
+\subsubsection*{Course Calendar}
+
+Exams will be given on the last class day (generally Friday) of the week they are scheduled.
+
+\setcounter{cy}{\the\year}
+\begin{tabular} {|r| l | l | l |}
+\hline
+Week & Week of &  Section & Topic \& Assessment\\ \hline \hline
+
+\wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}&  \S1.1 & Functions and Their Graphs \\
+        &                                                                                                  & \S1.2 & Combining Functions; Shifting and Scaling Graphs\\
+        &                                                                                                  & \S1.3 & Trigonometric Functions\\
+         &                                                                                                 & \S1.4 & Graphing with Software \hfill \textbf{HW \qz} \\ \hline
+
+\setcounter{cd}{\value{cd}+7}
+\wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S1.5   & Exponential Functions \\
+        &                                                                                                  & \S1.6  &  Inverse Functions and Logarithms\\
+        &                                                                                                  & \S2.1 & Rates of Change and Tangent Lines to Curves  \hfill \textbf{HW \qz} \\ \hline
+
+\setcounter{cd}{7}
+\setcounter{cmon}{\value{cmon}+1}
+\wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S2.2  &   Limit of a Function and Limit Laws \\
+        &                                                                                                  &  \S2.3 &   The Precise Definition of a Limit \\
+        &                                                                                                  & \S2.4  &  One-Sided Limits \hfill \textbf{HW \qz} \\ \hline
+
+\setcounter{cd}{\value{cd}+7}
+
+
+\wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S2.5  &   Continuity  \\
+        &                                                                                                  &  \S2.6 &   Limits Involving Infinity; Asymptotes of Graphs \hfill \textbf{Exam \, \ex \& HW \qz} \\ \hline
+
+\setcounter{cd}{\value{cd}+7}
+\wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S3.1  & Tangent Lines and the Derivative at a Point \\
+        &                                                                                                  &  \S3.2 & The Derivative as a Function \\
+        &                                                                                                  & \S3.3  &  Differentiation Rules \hfill \textbf{HW \qz} \\ \hline
+
+\setcounter{cd}{\value{cd}+7}
+\wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S3.4  & The Derivative as a Rate of Change \\
+        &                                                                                                  &  \S3.5 &  Derivatives of the Trigonometric Functions \\
+        &                                                                                                  & \S3.6  &  The Chain Rule \hfill \textbf{HW \qz} \\ \hline
+
+\setcounter{cd}{5}
+\setcounter{cmon}{\value{cmon}+1}
+
+\wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S3.7  &  Implicit Differentiation\\
+        &                                                                                                  &  \S3.8 &  Derivatives of Inverse Functions and Logarithms \\
+        &                                                                                                  & \S3.9   &  Inverse Trigonometric Functions \hfill  \textbf{HW \qz} \\ \hline
+
+\setcounter{cd}{\value{cd}+7}
+\wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S3.10  &  Related Rates \\
+         &                                                                                                 & \S3.11  &  Linearization and Differentials \hfill  \textbf{Exam \,  \ex  \, \& HW \qz} \\ \hline
+
+
+\setcounter{cd}{\value{cd}+7}
+\wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S4.1  &  Extreme Values of Functions on Closed Intervals   \hfill  \textbf{HW \qz} \\ \hline
+
+  \setcounter{cd}{\value{cd}+7}
+
+
+ \wk       &        \formatdate{\value{cd}}{\value{cmon}} {\the\year}         & \S4.2  & The Mean Value Theorem  \\
+         &                                                                                                 & \S4.3  & Monotonic Functions and the First Derivative Test  \hfill  \textbf{HW \qz} \\ \hline
+
+ \setcounter{cd}{2}
+\setcounter{cmon}{\value{cmon}+1}
+
+
+ \wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S4.4  & Concavity and Curve Sketching \\
+         &                                                                                                 & \S4.5  & Indeterminate Forms and L’H\^opital’s Rule \\
+         &                                                                                                 & \S4.6  & Applied Optimization \hfill  \textbf{HW \qz} \\ \hline
+
+  \setcounter{cd}{\value{cd}+7}
+   \wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S4.6 &  Applied Optimization  (continued) \\
+         &                                                                                                 & \S4.7  & Newton’s Method \\
+         &                                                                                                 & \S4.6  & Antiderivatives \hfill  \textbf{HW \qz} \\ \hline
+
+  \setcounter{cd}{\value{cd}+7}
+  \wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S5.1 &   Area and Estimating with Finite Sums  \\
+         &                                                                                                 & \S5.2  & Sigma Notation and Limits of Finite Sums \hfill  \textbf{Exam \,  \ex  \, \& HW \qz} \\  \hline
+
+\setcounter{cd}{\value{cd}+7}
+
+   \wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S5.3 & The Definite Integral \\
+         &                                                                                                 & \S5.4  &  The Fundamental Theorem of Calculus \\
+         &                                                                                                 & \S5.5  &  Indefinite Integrals and the Substitution Method  \hfill  \textbf{HW \qz} \\ \hline
+
+\setcounter{cd}{\value{cd}+7}
+  \wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S6.1  &  Volumes Using Cross-Sections  \\
+         &                                                                                                 & \S6.2 &  Volumes Using Cylindrical Shells\\
+         &                                                                                                 & \S6.3   &  Arc Length \hfill  \textbf{HW \qz} \\ \hline
+
+     \setcounter{cd}{7}
+       \setcounter{cmon}{\value{cmon}+1}
+
+
+  \wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}&  &  \emph{Catch up and Review }    \\ \hline
+
+      \setcounter{cd}{\value{cd}+7}
+  \wk &   \formatdate{\value{cd}}{\value{cmon}} {\the\year}&  &  \textbf{Exam \ex} (50 points) Monday  14 December 2020, 13:00 -- 15:00 \\
+          &                                                                                                 &  & \textbf{Comprehensive  Final Exam}     Tuesday 15 December 2020, 10:30 -- 12:30 \\  \hline
+
+
+\end{tabular}
+
+\newpage
+
+\subsubsection*{Additional learning resources}
+
+
+MyLab | Math has many learning resources. In the left column, look for a link to ``eText Contents.''  From there, you will find a link to the textbook.  You can navigate to a specific page in the book by
+entering the page number in the box in the top middle.  Also in the left column, look for a link to ``Video Resource Library.''   From there, selecting a chapter and section and clicking on ``video'' gives a list of
+videos to watch.  Instead, selecting ``Multimedia Textbook,'' gives us the texbook.
+
+The lectures of Professor Leonard follows our course fairly well.  For a link to all of his calculus videos, start here: \url{https://www.youtube.com/channel/UCoHhuummRZaIVX7bD4t2czg   }
+
+Here is a listing of our sections with a link to a corresponding Professor Leonard  video. For some sections, there doesn't seem to be a matching video from Professor Leonard; for these, please use the resources from our textbook.
+'
+\vspace{0.5in}
+
+\tiny
+\begin{tabular} {|r| l |}
+\hline
+Section  & Alternative lecture \\ \hline
+
+\S1.1   & \url{https://www.youtube.com/watch?v=1EGFSefe5II&list=PLF797E961509B4EB5&index=3&t=0s} \\
+\S1.2  &  \url{https://www.youtube.com/watch?v=f-_UsIP5jyA&list=PLF797E961509B4EB5&index=4} \\
+\S1.3  & \url{https://www.youtube.com/watch?v=SzLF-wLZF_I&list=PLF797E961509B4EB5&index=4&t=0s}\\
+\S1.5  &  (our textbook)   \\
+\S1.6   &   (our textbook)   \\
+
+
+\S2.1 \& \S2.2  & \url{https://www.youtube.com/watch?v=54_XRjHhZzI&list=PLF797E961509B4EB5&index=5} \\ \hline
+\S2.2  & \url{https://www.youtube.com/watch?v=VSqOZNULRjQ} \\ \hline
+\S2.3  & (our textbook)   \\ \hline
+\S2.4 &  (our textbook)   \\ \hline
+\S2.5 &  \url{https://www.youtube.com/watch?v=OEE5-M4aY4k&list=PLF797E961509B4EB5&index=8&t=0s} \\ \hline
+\S2.6 &   \url{https://www.youtube.com/watch?v=-PYebK8DKPc&list=PLF797E961509B4EB5&index=21}  \\ \hline
+
+\S3.1 \& \S3.2  &   \url{https://www.youtube.com/watch?v=962lLfW-8Jo&list=PLF797E961509B4EB5&index=9} \\ \hline
+
+\S3.3 & \url{https://www.youtube.com/watch?v=EY6FHX6asU0&list=PLF797E961509B4EB5&index=10} \\ \hline
+\S3.3 & \url{https://www.youtube.com/watch?v=AvCQQ3X4Nuc&list=PLF797E961509B4EB5&index=11}  \\ \hline
+\S3.4 & \url{https://www.youtube.com/watch?v=qr1WXiq3S3k&list=PLF797E961509B4EB5&index=12} \\ \hline
+\S3.5 & \url{https://www.youtube.com/watch?v=RJJSiNz5oto&list=PLF797E961509B4EB5&index=13} \\ \hline
+\S3.6 & \url{https://www.youtube.com/watch?v=8dr1dZjfhmc&list=PLF797E961509B4EB5&index=14} \\ \hline
+\S3.7 & \url{https://www.youtube.com/watch?v=RUS4mKo9tBk&list=PLF797E961509B4EB5&index=15} \\ \hline
+\S3.8 & (our textbook)   \\ \hline
+\S3.9 &  (our textbook)  \\ \hline
+\S3.10 & \url{https://www.youtube.com/watch?v=43Qt6wc44To&list=PLF797E961509B4EB5&index=16} \\ \hline
+\S3.11 & (our textbook)   \\ \hline
+
+\S4.1 & \url{https://www.youtube.com/watch?v=Mx39JbbzEAo&list=PLF797E961509B4EB5&index=17} \\ \hline
+\S4.2 & \url{https://www.youtube.com/watch?v=qW89xdGfSzw&list=PLF797E961509B4EB5&index=18} \\ \hline
+\S4.3 & \url{https://www.youtube.com/watch?v=nQ6tOORDQ3I&list=PLF797E961509B4EB5&index=19} \\ \hline
+\S4.4 & \url{https://www.youtube.com/watch?v=8u6woY05aL0&list=PLF797E961509B4EB5&index=22}  \\ \hline
+\S4.5 &  (our textbook)    \\ \hline
+\S4.6 & \url{https://www.youtube.com/watch?v=SWZcq_biZLw&list=PLF797E961509B4EB5&index=23} \\ \hline
+\S4.7 & (our textbook)   \\ \hline
+\S4.8 & \url{https://www.youtube.com/watch?v=b2ZFpE_yrLg&list=PLF797E961509B4EB5&index=24} \\ \hline
+\S5.1 \& \S5.2  & \url{https://www.youtube.com/watch?v=F0uuW-I6icY&list=PLF797E961509B4EB5&index=26}  \\ \hline
+\S5.3 & \url{https://www.youtube.com/watch?v=K0ORDCt5Ig0&list=PLF797E961509B4EB5&index=27} \\ \hline
+\S5.4 & \url{https://www.youtube.com/watch?v=xjtEfS0vY2o&list=PLF797E961509B4EB5&index=28} \\ \hline
+\S5.5 & \url{https://www.youtube.com/watch?v=aiBD9aI69C8&list=PLF797E961509B4EB5&index=25} \\ \hline
+\S5.6 & \url{https://www.youtube.com/watch?v=c7wur9Lixb0&list=PLF797E961509B4EB5&index=29}  \\ \hline
+\S6.1 &  \url{https://www.youtube.com/watch?v=GJOJl47l2_4&list=PLF797E961509B4EB5&index=30}  \\ \hline
+\S6.2 & \url{https://www.youtube.com/watch?v=BDmlottZVd4&list=PLF797E961509B4EB5&index=31}  \\ \hline
+\S6.3 & \url{https://www.youtube.com/watch?v=5Yuw1jCBq-0&list=PLF797E961509B4EB5&index=32}   \\ \hline
+\end{tabular}
+
+
+
+
+
+
+
+\end{document}
+
+\wk    &  \formatdate{\value{cd}}{\value{cmon}} {\the\year}& \S2.1     &13-16, 29--30, 35, 36, 43-48   \\
+       &                                                    & \S2.2     & 17-20, 29--30, 55--58       \\
+       &                                                    & \S2.3     & 17-42, 47-52, 73-8       \hfill \textbf{Quiz \qz} \\ \hline
+\setcounter{cd}{\value{cd}+7}
+\wk    &  \formatdate{\value{cd}}{\value{cmon}}{\value{cy}}& \S2.4    & 9-25, 37-42 \\
+       &                                                    &\S2.5    &  17-22, 28-30, 42 \hfill  \textbf{Quiz \qz} \\ \hline
+\setcounter{cd}{\value{cd}+7}
+\wk    &  \formatdate{\value{cd}}{\value{cmon}}{\value{cy}}& \S3.1   & 31-42, 43-50, 51-58 \hfill      \\
+       &                                                    &\S3.2   & 25-30 \hfill \textbf{Quiz \qz} \\ \hline
+\setcounter{cd}{\value{cd}+7}
+\wk    &  \formatdate{\value{cd}}{\value{cmon}}{\value{cy}} & \S3.3   & 25-28, 37-42,  49-52 \\
+       &                                                    & \S3.4   & 19-27, 34-42     \\
+       &                                                    &   \S3.5 & 7-18, 19-26 \hfill    \textbf{Quiz \qz} \\ \hline
+\setcounter{cd}{4} \setcounter{cmon}{2}
+\wk    & \formatdate{\value{cd}}{\value{cmon}} {\value{cy}}  & \S3.6      & 1-8, 13-15 \\
+       &                                                    & \S4.1     & 29--38   \hfill \textbf{Exam  \ex} \\ \hline
+\setcounter{cd}{\value{cd}+7}
+\wk    &  \formatdate{\value{cd}}{\value{cmon}}{\value{cy}}& \S4.3     & 13-20, 21-32 \\
+       &                                                    & \S4.3     &  33-40 \\
+       &                                                     & \S4.4    & 3-8  \hfill \textbf{Quiz \qz} \\ \hline
+\setcounter{cd}{\value{cd}+7}
+\wk    &  \formatdate{\value{cd}}{\value{cmon}}{\value{cy}}&  \S4.4    & 9-10, 16  \\
+       &                                                   &  \S4.5   &  3-6, 7-22, 36   \\
+       &                                                   & \S5.1     &   29-32, 42-45, 51-53, 69-72   \hfill    \textbf{Quiz \qz}   \\ \hline
+\setcounter{cd}{\value{cd}+7}
+\wk  & \formatdate{\value{cd}}{\value{cmon}}{\value{cy}} &  \S5.2   &  15-23, 27-32, 33-42      \\
+       &                                                    & \S5.3   & 7-10     \hfill \textbf{Quiz \qz}  \\ \hline
+\setcounter{cd}{4} \setcounter{cmon}{3}
+\wk   & \formatdate{\value{cd}}{\value{cmon}}{\value{cy}} &  \S5.4  & 9-14, 19-36  \\
+       &                                                  & \S5.5 & 11-14 \hfill   \textbf{Quiz \qz} \\ \hline
+\setcounter{cd}{\value{cd}+7}
+\wk  & \formatdate{\value{cd}}{\value{cmon}}{\value{cy}}&  \S6.1 & 13-20, 23-42 \\
+       &                                                    & \S6.2        & 51-58, 63-68 \hfill \textbf{Exam  \ex}\\ \hline
+\setcounter{cd}{\value{cd}+14}
+\wk  & \formatdate{\value{cd}}{\value{cmon}}{\value{cy}} & \S6.3        & 15-22, 35-42,  43-50, 55-58\\
+       &                                                 & \S6.4    & 11-18, 19-26, 27-38, 39-42, 51-53, 65-72 \\
+       &                                                    &  \S6.5            &  13-28, 37-42, 57-59  \hfill \textbf{Quiz \qz} \\ \hline
+
+\setcounter{cd}{1} \setcounter{cmon}{4}
+\wk   & \formatdate{\value{cd}}{\value{cmon}}{\value{cy}}  &   \S6.6           &   5-15, 42-52, 56-60  \\
+      &                                                    & \S6.7    &  7-14 \\
+       &                                                    & \S6.8    &  1--5   \hfill \textbf{Quiz \qz}   \\ \hline
+\setcounter{cd}{\value{cd}+7}
+\wk   & \formatdate{\value{cd}}{\value{cmon}}{\value{cy}} &   \S6.8   &  14, 19 \\
+       &                                                    & \S8.1   &  9-12, 19-30 \hfill  \textbf{Quiz \qz}     \\ \hline
+
+\setcounter{cd}{\value{cd}+7}
+\wk   & \formatdate{\value{cd}}{\value{cmon}}{\value{cy}} &   \S8.2    & 39-42, 58   \hfill \textbf{Exam  \ex}  \\ \hline
+
+
+\setcounter{cd}{\value{cd}+7}
+\wk   & \formatdate{\value{cd}}{\value{cmon}}{\value{cy}} &   \S9.1    & 35-40, 49-58, 59-62 \\
+       &                                                    & \S9.2    &  7-16, 17-24, 39-42     \\ \hline
+\setcounter{cd}{\value{cd}+7}
+\wk   & \formatdate{\value{cd}}{\value{cmon}}{\value{cy}}  & \S2.1--\S9.2   & \hfill \textbf{Final Exam, Thursday 2 May 10:30--12:30}\\ \hline
+\end{tabular}
+
+
+\end{document}
