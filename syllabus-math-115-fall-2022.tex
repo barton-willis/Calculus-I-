@@ -85,7 +85,7 @@ Exam \theex}
 \newcommand{\officehours}{ Monday, Wednesday, and Friday 10:00\AM{} -- 11:00\AM,
     Tuesday and Thursday 9:30\AM -- 11:00\AM, and by appointment.}
 
-    \newcommand{\finaldateandtime}{\printdate{15/12/\the\year},10:30\AM{} -- 12:30 \PM}
+    \newcommand{\finaldateandtime}{\printdate{15/12/\the\year},{} from 10:30\AM{} -- 12:30 \PM}
 \begin{document}
 \cleanlookdateon% Remove ordinal day reference
 \shortdate
@@ -122,7 +122,7 @@ Exam \theex}
        \textbf{Exam 1} \dotfill \printdate{23/9/\the\year}  \\
     \textbf{Exam 2} \dotfill  \printdate{4/11/\the\year} \\
     \textbf{Exam 3} \dotfill \printdate{2/12/\the\year} \\
-     \textbf{Exam 4} \dotfill \printdate{12/12/\the\year}, 1:00 \PM{} -- 3:00 \PM \\
+     \textbf{Exam 4} \dotfill \printdate{12/12/\the\year},{} from 1:00 \PM{} -- 3:00 \PM \\
       \textbf{Final exam} \dotfill  \finaldateandtime
 \end{mypar}
 
@@ -150,15 +150,15 @@ Exam 4, worth 25 points covers the final two weeks of the course and it is given
 \FPeval{\F}{round(\points*0.6-1,0)}
 \FPeval{\Dm}{round(\points*0.6,0)}
 \FPeval{\D}{round(\points*0.633,0)}
-\FPeval{\Dp}{round(\points*0.666,0)}
+\FPeval{\Dp}{round(\points*0.6667,0)}
 
 \FPeval{\Cm}{round(\points*0.7,0)}
 \FPeval{\C}{round(\points*0.733,0)}
-\FPeval{\Cp}{round(\points*0.766,0)}
+\FPeval{\Cp}{round(\points*0.7667,0)}
 
 \FPeval{\Bm}{round(\points*0.8,0)}
 \FPeval{\B}{round(\points*0.833,0)}
-\FPeval{\Bp}{round(\points*0.866,0)}
+\FPeval{\Bp}{round(\points*0.8667,0)}
 
 \FPeval{\Am}{round(\points*0.9,0)}
 \FPeval{\A}{round(\points*0.933,0)}
