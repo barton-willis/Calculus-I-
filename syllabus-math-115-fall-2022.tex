@@ -29,8 +29,9 @@
 \setcounter{ex}{\value{ex}+1}
 Exam \theex}
 
-\usepackage[T1]{fontenc} 
 \usepackage{fourier}
+\usepackage[T1]{fontenc}
+
 %\usepackage{tgschola} %to look retro
 \newenvironment{mypar}[2]
   {\begin{list}{}%
@@ -143,7 +144,11 @@ final exam; specifically:
    \textbf{Exam 4} \emph{25 points} \dotfill 25 (total)\\ 
       \textbf{Comprehensive Final exam} \dotfill 150 (total)
 \end{mypar}
-Exam 4, worth 25 points covers the final two weeks of the course and it is given during final exam week. The comprehensive final exam, worth 150 points, is also given during final exam week.
+Exam 4, worth 25 points covers the final two weeks of the course and it is given 
+during final exam week. The comprehensive final exam, worth 150 points, is also 
+given during final exam week. If we end the term with slightly fewer or more in class
+assignments, your in class work score will be proportionally scaled to 150 points. The same 
+scaling for online homework.
 
 \FPeval{\points}{round(150+152+300+25+150,0)}
 
@@ -317,11 +322,10 @@ Week & Week of &  Section & Topic \& Assessment\\ \hline \hline
          &                                                                                                 & \S5.5  &  Indefinite Integrals and the Substitution Method  \hfill  \textbf{HW, \qz} \\ \hline
 
   \wk &  \printdate{28/11/\the\year} & \S6.1  &  Volumes Using Cross-Sections  \\
-         &                                                                                                 & \S6.2 &  Volumes Using Cylindrical Shells\\
-         &                                                                                                 & \S6.3   &  Arc Length \hfill  \textbf{HW, \qz} \\ \hline
+         &                          & \S6.2 &  Volumes Using Cylindrical Shells \hfill \hfill  \textbf{HW, \qz}  \\ \hline
 
 
-  \wk & \printdate{5/12/\the\year} &  &  \emph{Catch up and Review }    \\ \hline
+  \wk & \printdate{5/12/\the\year} &  &  \emph{Catch up or Review }    \\ \hline
 
   \wk &  &  &  \textbf{Exam \ex} (50 points) Monday  14 December 2020, 13:00 -- 15:00 \\
           &                                                                                                 &  & \textbf{Comprehensive  Final Exam}     Tuesday 15 December 2020, 10:30 -- 12:30 \\  \hline
