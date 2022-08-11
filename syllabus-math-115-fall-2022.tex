@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 %\documentclass[border=0.1cm]{standalone}
+\usepackage[super]{nth}
 \usepackage{wasysym}
 \usepackage{phonenumbers}
 \usepackage{marvosym }
@@ -139,7 +140,7 @@ Your course grade will be based on weekly in class work, online homework, four m
 final exam; specifically:
 \begin{mypar}{0.25in}{0.25in}
     \textbf{In class work}  \emph{15 ten point assignments}  \dotfill 150 (total) \\
-     \textbf{Online homework} \emph{38 four point assignments }\dotfill 152 (total)\\
+     \textbf{Online homework} \emph{39 four point assignments }\dotfill 156 (total)\\
     \textbf{Mid-term Exams 1,2, and 3} \emph{100 points each} \dotfill 300 (total)\\
    \textbf{Exam 4} \emph{25 points} \dotfill 25 (total)\\ 
       \textbf{Comprehensive Final exam} \dotfill 150 (total)
@@ -150,7 +151,7 @@ given during final exam week. If we end the term with slightly fewer or more in 
 assignments, your in class work score will be proportionally scaled to 150 points. The same 
 scaling for online homework.
 
-\FPeval{\points}{round(150+152+300+25+150,0)}
+\FPeval{\points}{round(150+156+300+25+150,0)}
 
 \FPeval{\F}{round(\points*0.6-1,0)}
 \FPeval{\Dm}{round(\points*0.6,0)}
@@ -207,7 +208,7 @@ total of \F\/  or less, you a failing course grade.
 \subsubsection*{Course Resources}
 \begin{enumerate}
 
-    \item Our textbook is \emph{University Calculus: Early Transcendentals, Single Variable},  4th Edition, by Joel R. Hass, Christopher E Heil, Przemyslaw Bogacki,
+    \item Our textbook is \emph{University Calculus: Early Transcendentals, Single Variable},  \nth{4} Edition, by Joel R. Hass, Christopher E Heil, Przemyslaw Bogacki,
     Maurice D. Weir,  and George B. Thomas, Jr.
     
     \item We will be using the online homework system Pearson MyLab Math. Your online homework grade is a 
@@ -311,7 +312,7 @@ Week & Week of &  Section & Topic \& Assessment\\ \hline \hline
 
    \wk & \printdate{7/11/\the\year} & \S4.6 &  Applied Optimization  (continued) \\
          &                                                                                                 & \S4.7  & Newton’s Method \\
-         &                                                                                                 & \S4.6  & Antiderivatives \hfill  \textbf{HW, \qz} \\ \hline
+         &                                                                                                 & \S4.8  & Antiderivatives \hfill  \textbf{HW, \qz} \\ \hline
 
   \wk & \printdate{14/11/\the\year} & \S5.1 &   Area and Estimating with Finite Sums  \\
          &                                                                                                 & \S5.2  & Sigma Notation and Limits of Finite Sums \hfill  \textbf{\ex, HW,\qz} \\  \hline
@@ -321,11 +322,10 @@ Week & Week of &  Section & Topic \& Assessment\\ \hline \hline
          &                                                                                                 & \S5.4  &  The Fundamental Theorem of Calculus \\
          &                                                                                                 & \S5.5  &  Indefinite Integrals and the Substitution Method  \hfill  \textbf{HW, \qz} \\ \hline
 
-  \wk &  \printdate{28/11/\the\year} & \S6.1  &  Volumes Using Cross-Sections  \\
-         &                          & \S6.2 &  Volumes Using Cylindrical Shells \hfill \hfill  \textbf{HW, \qz}  \\ \hline
-
-
-  \wk & \printdate{5/12/\the\year} &  &  \emph{Catch up or Review }    \\ \hline
+  \wk &  \printdate{28/11/\the\year} & \S5.6 & Area Between curves   \\
+         &                                            & \S6.1  &  Volumes Using Cross-Sections   \hfill  \textbf{HW, \qz}  \\ \hline
+   
+  \wk & \printdate{5/12/\the\year} &    \S6.2 &  Volumes Using Cylindrical Shells     \\ \hline
 
   \wk &  &  &  \textbf{Exam \ex} (50 points) Monday  14 December 2020, 13:00 -- 15:00 \\
           &                                                                                                 &  & \textbf{Comprehensive  Final Exam}     Tuesday 15 December 2020, 10:30 -- 12:30 \\  \hline
@@ -350,7 +350,7 @@ Please see \url{https://www.unk.edu/academic_affairs/asa_forms/course-policies-a
 
 \item Regular in person class attendance is required. If you are ill or need to miss class due to athletics, please let me know ahead of time, and I will make an effort to put the class on Zoom.
 
-\item If you are ill and unable to attend class class work or for an exam, you \emph{must} notify me before 10:00 \AM the day of the assessment. Generally if you are ill and must stay home for in class work, you will need to complete the assignment and turn it in at the due date. If you do not inform me after 10:00 \AM the day of the assessment generally you will earn a grade of zero on that assessment.
+\item If you are ill and unable to attend  for an exam, you \emph{must} notify me before 10:00 \AM the day of the assessment. Generally if you are ill and must stay home for in class work, you will need to complete the assignment and turn it in at the due date. If you do not inform me \emph{before} 10:00 \AM the day of the assessment generally you will earn a grade of zero on that assessment.
 
 \item If you must miss an exam due to  athletics, you must inform me five days before the exam to arrange to make up the exam. 
 
@@ -364,7 +364,7 @@ homework will earn a grade of zero.
 \item The work you turn in is expected to be \emph{accurate,  complete, concise, neat}, and \emph{well-organized}.  
 \emph{You will not earn full credit on work that falls short of these expectations.}
 
-\item Class cancellations due to weather or illness or other unplanned circumstances may require that we make  adjustments
+\item Class cancellations due to weather, illness, or other unplanned circumstances may require that we make  adjustments
 to the course calendar, exam dates, and due dates or specifics for course assessments. 
 
 \item Extra credit is not allowed. Retaking an exam in an effort to 
@@ -481,36 +481,16 @@ Specifically LOPER 4 courses are ``designed for students to develop core academi
     \item Can interpret and express numerical data or graphical information using mathematical, statistical, or programming concepts and methods.
    \end{enumerate}
    
-Learning outcome 1 is met most directly by the mathematical set up and preparation of solutions to problems involving related rates and optimization in the calculus specific learning outcomes (CSLO) 5 and 6. (The CSLO are found below.) It is also met directly in discussion of aysmptotic behavior CSLO 2. It is met indirectly through word problems related to many of the other CSLO. It is assessed by the grading of problems related to these CSLO on homework, quizzes, exams, and/or projects where a portion of the grade for a solution is based on the set up and defense of the submitted work.
+Learning outcome 1 is met most directly by the mathematical set up and preparation of solutions to problems involving related rates and optimization in the calculus specific learning outcomes (CSLO) 5 and 6. (The CSLO are found below.) It is also met directly in discussion of asymptotic behavior CSLO 2. It is met indirectly through word problems related to many of the other CSLO. It is assessed by the grading of problems related to these CSLO on homework, quizzes, exams, and/or projects where a portion of the grade for a solution is based on the set up and defend of the submitted work.
 Learning outcomes 2 and 3 are closely related in this course and are met in solving problems related to every single CSLO. These are assessed via homework, quizzes, exams, and/or projects where a portion of the grade for a solution is based on the validity of the submitted solution’s logical reasoning and the accuracy of answers.
 Learning outcome 4 is met most directly by CSLO 3, 6, and 11 as well as through reading and creating graphs and/or tabular data related all of the CSLO. It is assessed by homework, quizzes, exams, and/or projects where a portion of the grade is based on the accuracy of the graphs and tables in the submitted solutions and/or the accuracy of the interpretation of such data from the assigned problem.
 
 
-
+\includepdf[pages={1-},angle=90]{door_schedule.pdf}  
+\includepdf[pages={1-},angle=90]{calculus-1-quick-reference.pdf} 
 
 \end{document}
 
 
     
 
-\subsubsection*{General Studies and Learning Outcomes\footnote{These are UNK's general studies outcomes for mathematics.}}
-
-This class counts as your required  GS  LOPER 4 requirement. The purpose of this GS course is to 
-\begin{quote}
-    \emph{ “develop core academic skills in collecting and using information, communications in speech and writing, and quantitative reasoning.” }
-\end{quote}
-Our mathematics specific learning outcomes are:
-\begin{enumerate}
-  \item Apply mathematical logic to solve equations.
-    \item Describe problems using mathematical language.
-    \item Solve problems given in mathematical language using mathematical or statistical tools.
-    \item Interpret numerical data or graphical information using mathematical concepts and methods.
-    \item Construct logical arguments using mathematical language and concepts.
-    \item Use mathematical software effectively.
-\end{enumerate}
-
-
-
-
-
-\end{document}
