@@ -98,13 +98,14 @@
 \makeatother
 
 \raggedbottom 
+\allowdisplaybreaks
 \usepackage{tikz-3dplot}
 \begin{document}
 
 %\maketitle
 
 \begin{multicols*}{3}
-
+  \raggedbottom 
 
 
 
@@ -197,20 +198,21 @@ For numbers \(a\) and \(b\), we define the intervals:
 \vspace{-0.3in}
 \begin{minipage}[c]{0.333333\textwidth}
   \vspace{-0.12in}
-  For \(a,b > 0\) and \(m,n\) real:
+  For \(a,b > 0, x \in \reals\), and \(m,n\) real:
   \begin{alignat*}{1}
   &a^0 = 1,  \quad \quad 0^a = 0\\
   &1^a = 1, \quad \quad  a^n a^m = a^{n+m}  \\
   &\nicefrac{a^n}{a^m} = a^{n-m}, \quad \quad (a^n)^m = a^{n \cdot m} \\
-  &a^{-m} = \nicefrac{1}{a^m}, \quad \quad \left(\nicefrac{a}{b}\right)^m = \nicefrac{a^m}{b^m} 
-  \end{alignat*}
+  &a^{-m} = \nicefrac{1}{a^m}, \quad \quad \left(\nicefrac{a}{b}\right)^m = \nicefrac{a^m}{b^m} \\
+  &\sqrt{x^2} = |x| \\
+\end{alignat*}
   \end{minipage}
-
+  \vspace{-0.4in}
 \section*{Trigonometric Identities}
 \vspace{-0.5in}
 \begin{minipage}[c]{0.333\textwidth}
 \begin{align*}
-&\sin(x)^2 + \cos(x)^2 =1 \\
+&\cos(x)^2 + \sin(x)^2 = 1 \\
 &2 \cos(x)^2 =  1 + \cos(2 x) \\
 &2 \sin(x)^2 = 1 - \cos(2 x) \\
  &\sin\left(x +  y\right) =\sin (x) \cos (y) + \cos (x) \sin (y) \\
@@ -250,12 +252,12 @@ F(x)  & F^\prime(x) \\ \hline
 %\arcsec(x) & \nicefrac{1}{ \big (\sqrt{{{x}^{2}}-1}\, \left| x\right| \big )} \\
 %\arccsc(x)   & -\nicefrac{1}{ \big (\sqrt{{{x}^{2}}-1}\, \left| x\right| \big ) } \\
 %\arccot(x)   & -\nicefrac{1}{ \big (x^2+1 \big )} \\ 
-%\cosh(x)  &  \sinh(x)    \\
-%\sinh(x)  &  \cosh(x)   \\
-%\tanh(x)  & 1/\cosh(x)^2  \\ 
-%\mathrm{arccosh}(x)  & \nicefrac{1}{\sqrt{x^2-1}}   \\
-%\mathrm{arcsinh}(x)  & \nicefrac{1}{\sqrt{1+{{x}^{2}}}}\\
-%\mathrm{arctanh}(x) &  \nicefrac{1}{{(1-{x}^{2}})}  \\
+\cosh(x)  &  \sinh(x)    \\
+\sinh(x)  &  \cosh(x)   \\
+\tanh(x)  & 1/\cosh(x)^2  \\ 
+\mathrm{arccosh}(x)  & \nicefrac{1}{\sqrt{x^2-1}}   \\
+\mathrm{arcsinh}(x)  & \nicefrac{1}{\sqrt{1+{{x}^{2}}}}\\
+\mathrm{arctanh}(x) &  \nicefrac{1}{{(1-{x}^{2}})}  \\
 \exp(x) & \exp(x)    \\
 \ln(x)  & 1/x    \\ \hline
 %\log_a(x) & \nicefrac{1}{x \ln(a)}, \,\,\,a \in \reals_{>0} \\
@@ -296,10 +298,10 @@ f^{-1 \prime}(x) & \nicefrac{1}{f^\prime (f^{-1}(x))} \\ \hline
 &\int {\left. \csc{(x)} \, \mathrm{d} x\right.}  =-\ln  \big | \csc(x)+\cot(x) \big | \\
 &\int \cot(x) \, \mathrm{d} x = \ln \big | \sin (x) \big | \\
 &\int 2 \big |x \big | \, \mathrm{d} x  = x \big |x \big |\\
-&\int 2 \lfloor x \rfloor  \, \mathrm{d} x = (2 x - 1) \lfloor x \rfloor - \lfloor x \rfloor^2\\
-&\int 2 \lceil x \rceil  \, \mathrm{d} x = (2 x + 1) \lceil x \rceil - \lceil x \rceil^2
+%&\int 2 \lfloor x \rfloor  \, \mathrm{d} x = (2 x - 1) \lfloor x \rfloor - \lfloor x \rfloor^2\\
+%&\int 2 \lceil x \rceil  \, \mathrm{d} x = (2 x + 1) \lceil x \rceil - \lceil x \rceil^2
 \end{align*}
-
+\vspace{-0.5in}
 \section*{Sums}
 \vspace{-0.35in}
 For \(k, m,n\in \mathbf{Z}_{>0}\) 
@@ -342,18 +344,15 @@ For \(k, m,n\in \mathbf{Z}_{>0}\)
 
 
 \end{minipage}
-%\vfill
-%\newpage
   \section*{Logarithms}
-  \vspace{-0.25in}
+  \vspace{-0.34in}
      \begin{equation*}
-    \log_a(x) = \frac{1}{\ln(a)} \ln(x)
+    \log_a(x) = \frac{\ln(x)}{\ln(a)}
        \end{equation*}
-       \vspace{-0.35in}
-
-%\vspace{-0.60in}
+ \vspace{-0.36in}
+ 
 \section*{Famous Triangles}
-
+\vspace{-0.240in}
 \subsection*{The 30-60-90 triangle}
 
 \begin{tikzpicture}[thick]
@@ -454,7 +453,14 @@ opacity=.4](O,B,A)
     \mbox{Area} = \frac{1}{2} hB =   \frac{1}{2} A B \sin(\gamma)
 \)
 
-
+\section*{Hyperbolic Functions}
+\vspace{-0.3in}
+\begin{align*}
+  &2 \cosh(x) = \exp(x) + \exp(-x) \\
+  &2 \sinh(x) = \exp(x) - \exp(-x) \\
+  & \tanh(x) = \nicefrac{\cosh(x)}{\sinh(x)}\\
+  &\cosh(x)^2 - \sinh(x)^2 = 1
+\end{align*}
 \section*{Volumes}
 
 \begin{comment}
