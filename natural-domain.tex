@@ -1,0 +1,273 @@
+\documentclass[usenames,dvipsnames,fleqn,leqno,10pt, pdflatex]{beamer}
+%\usetheme[professionalfonts]{Boadilla}
+\usetheme{metropolis}
+\setsansfont[BoldFont={Source Sans Pro Semibold}, Numbers={OldStyle}]{Source Sans Pro}
+%\usepackage{fontspec}
+
+
+\metroset{block=fill,background=light}
+\setbeamertemplate{blocks}[rounded]
+
+\usepackage{cite}
+\usepackage{pgfplots}
+%\usepackage[symbol]{footmisc}
+%\setmainfont{Liberation Serif}
+%\setbeamertemplate{bibliography item}[text]
+%\usepackage{graphicx}
+\usepackage{bbding}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{footline}[text line]{%
+\parbox{\linewidth}{\vspace*{-8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
+\setbeamertemplate{navigation symbols}{}
+\author[bw]{}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{upgreek}
+\usepackage{isomath}
+\usepackage[normalem]{ulem}
+%\usepackage{comment}
+\usepackage[USenglish]{babel}
+\usepackage[activate={true,nocompatibility},final,tracking=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[]{xcolor}
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\imag}{\mathrm{i}}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\domain}{domain}
+\DeclareMathOperator{\codomain}{codomain}
+\DeclareMathOperator{\sspan}{span}
+\usepackage{graphicx}
+
+\definecolor{UNK-blue}{HTML}{004d86} 
+\definecolor{UNK-gold}{HTML}{E4A115} 
+
+\newenvironment{PenList}{
+  \begin{enumerate}[\textcolor{UNK-blue}{\PencilRightDown}]
+    \addtolength{\itemsep}{-0.0\itemsep}}
+  {\end{enumerate}}
+  
+\setbeamertemplate{theorems}[unnumbered]
+\newtheorem{myprop}{Proposition}
+\newtheorem{idea}{Idea}
+\newtheorem{describ}{Description}
+\newtheorem{Homework}{Homework}
+\newtheorem{myproof}{Proof}
+\newtheorem{fakeproof}{Fake Proof}
+\newtheorem{require}{Requirement}
+\newtheorem{myexample}{Example}
+%------------------
+\title[] % (optional, only for long titles)
+{\textcolor{black}{\textbf{Natural Domain}} \\ 
+\vspace{0.2in}
+%\textcolor{black}{Mini-symposium} \\
+%\textcolor{UNK-blue}{\textbf{University of Nebraska at Kearney}}
+}
+
+%\usepackage{amsmath}
+
+\date{\today}
+
+
+\makeatletter
+\newcommand{\leqnomode}{\tagsleft@true\let\veqno\@@leqno}
+\newcommand{\reqnomode}{\tagsleft@false\let\veqno\@@eqno}
+\makeatother
+\author[] % (optional, for multiple authors)
+{Barton~Willis}
+%\institute[UNK] % (optional)
+%{
+ % \inst{1}%
+ %   Barton Willis \\
+ %   Department of Mathematics and Statistics\\
+ %   University Nebraska at Kearney  \\
+ %   Kearney, Nebraska 68849  USA \\
+ %   \phantom{xxxx}\\
+  %  \href{mailto:willisb@unk.edu}{willisb@unk.edu}}
+ 
+
+
+
+%\usepackage{hyperref}
+\pgfplotsset{compat=1.18}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Natural domain}
+
+Often the formula for a function is given, but not its domain. For
+such functions, the standard is that the domain is the largest
+set of real numbers such that the output of the function is a real number.
+
+\begin{describ}[Natural Domain] The \emph{natural domain} of a function is the
+        largest set on which the output of the function is a
+        real number.  Examples of things that are \emph{not} real
+        numbers include:
+        \begin{itemize}
+            \item division by zero
+            \item square roots of negative numbers
+            \item logarithms of non-positive numbers
+        \end{itemize}
+\end{describ}
+    
+\end{frame}
+\begin{frame}
+
+Find the natural domain of 
+\begin{equation*}
+    F(x) = \frac{1}{\frac{1}{x} + \frac{1}{x-2}}.
+\end{equation*}
+
+\begin{itemize}
+    \item We need to require that \emph{every} denominator is nonzero.
+    \item But that's tricky-there are three denominators
+    
+\end{itemize}
+
+\textbf{Solution} In set builder notation, the natural domain is the set
+
+\begin{equation*}
+    \left\{ x \in \reals \bigg | \left(x \neq 0 \right)  
+    \land \left(x-2 \neq 0 \right) \land  
+    \left(\frac{1}{x} + \frac{1}{x-2} \neq 0 \right) \right\}
+\end{equation*}
+
+\begin{PenList}
+
+    \item Arguably, this is a lovely answer. But if you were asked to express the
+    set in interval notion, it's not such a lovely answer.
+
+    \item To make it a truly lovely answer, we need to solve each inequations for 
+    \item the variable (in this case  $x$).
+    \item When we solve each inequation for the variable, we make the
+    set builder notation \emph{explicit}.
+    
+\end{PenList}
+\end{frame}
+
+\begin{frame}{Explict Form}
+
+Solving $ x \neq 0$ and $x-2 \neq 0$ is easy:
+\[ 
+    x \neq 0, \quad x \neq 2
+\]
+Solving \(\left(\frac{1}{x} + \frac{1}{x-2} \neq 0 \right) \) takes
+a bit more work. Assuming that $x \neq 0$ and $x \neq 2$, we have
+\begin{align*}
+    \left[\frac{1}{x} + \frac{1}{x-2} \neq 0 \right] 
+       &= \left[\frac{2 x-2}{{{x}^{2}}-2 x} \neq 0 \right],  &(\mbox{(combine)})\\
+       &= \left[2 x-2 \neq 0 \right], &(\mbox{algebra}) \\
+       &=  \left[x  \neq 1 \right], &(\mbox{algebra})
+\end{align*}
+In \emph{explicit} set builder notation, the natural domain Is\
+\begin{equation*}
+    \left\{ x \in \reals \bigg | \left(x \neq 0\right)  
+    \land \left(x  \neq 2 \right) \land  
+    \left(x \neq 1 \right) \right\}
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Remove all Doubt}
+
+If you are a bit uncertain of why the natural domain excludes $1$,
+try evaluating at one:
+
+\begin{equation*}
+    \frac{1}{\frac{1}{1} + \frac{1}{1-2}} = \frac{1}{1 - 1} =
+    \mbox{\textbf{Rubbish!}}
+\end{equation*}
+
+\vfill.
+\end{frame}
+
+
+\begin{frame}{Implicit requirement to be explicit}
+
+    \begin{require} Unless stated otherwise, set builder notation
+        must be explicit. The reason for this is that when expressed
+        in explicit form, it's easy-peasy to express the set in either
+        interval notion or pictorially.
+    \end{require}
+    
+    \begin{myexample} Implicit (not allowed)
+        \begin{equation*}
+            \left\{ x \in \reals \bigg | \left(x \neq 0 \right)  
+            \land \left(x-2 \neq 0 \right) \land  
+            \left(\frac{1}{x} + \frac{1}{x-2} \neq 0 \right) \right\}
+        \end{equation*}
+    Explicit (correct)
+    \begin{equation*}
+        \left\{ x \in \reals \bigg | \left(x \neq 0\right)  
+        \land \left(x  \neq 2 \right) \land  
+        \left(x \neq 1 \right) \right\}
+    \end{equation*}
+    \end{myexample}
+    
+        
+    \end{frame}
+ 
+\begin{frame}{This is a Test}
+
+\textbf{Question} The natural domain of 
+\(\frac{1}{\frac{1}{x} + \frac{1}{x-2}} \) is 
+\begin{equation*}
+    \left\{ x \in \reals \bigg | \left(x \neq 0\right)  
+    \land \left(x  \neq 2 \right) \land  
+    \left(x \neq 1 \right) \right\}
+\end{equation*}
+What's the natural domain of   
+\begin{equation*}
+    107 + x^2 + \frac{46 + x}{\frac{1}{x} + \frac{1}{x-2}} 
+\end{equation*}  
+
+\textbf{Answer} Gathering the denominators, in implicit form the
+natural domain is
+\begin{equation*}
+    \left\{ x \in \reals \bigg | \left(x \neq 0 \right)  
+    \land \left(x-2 \neq 0 \right) \land  
+    \left(\frac{1}{x} + \frac{1}{x-2} \neq 0 \right) \right\}
+\end{equation*}
+This is no different from the condition for the domain of 
+\(\frac{1}{\frac{1}{x} + \frac{1}{x-2}}\).
+
+\end{frame}
+
+\begin{frame}{Does it matter?}
+
+\textbf{Question} So the \(107 + x^2\) and \(46 + x\) don't matter?
+
+\textbf{Answer} The natural domain of \(\frac{1}{\frac{1}{x} + \frac{1}{x-2}} \)
+and \( 107 + x^2 + \frac{46 + x}{\frac{1}{x} + \frac{1}{x-2}}  \) are
+the same. 
+
+This is the case because both expressions have identical denominators.
+
+\vfill
+
+\end{frame}
+
+\begin{frame}{Resist Simplification}
+
+\textbf{Question} Which calculation of the natural domain
+of  \(\frac{1}{\frac{x-3}{x-4}} \) is correct?
+
+\textbf{Answer 1}
+\[
+  \left  \{ x \big | \left(x-4 \neq 0\right) \land  
+      \left(\frac{x-3}{x-4} \neq 0 \right) \right \} =
+      \left \{ x \big | \left(x \neq 4 \right) \land  
+      \left(x \neq 3 \right) \right \}.
+\]
+
+\textbf{Answer 2} First simplify \(\frac{1}{\frac{x-3}{x-4}} \) To
+\(\frac{x-4}{x-3} \). Second the domain Is
+\[
+    \left \{ x \big | x-3 \neq 0  \right \} =
+       \left \{ x \big | x \neq 3  \right \}.
+ \]
+
+\end{frame}
+
+
+\end{document}
