@@ -3,9 +3,8 @@
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
 \usepackage{epsfig}
-\usepackage[]{hyperref}
-\usepackage{geometry}
-\geometry{letterpaper, margin=0.75in}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
 \addpoints
 \boxedpoints
 \pointsinmargin
@@ -46,18 +45,19 @@
      
 \newcommand{\quiz}{1}
 \newcommand{\term}{Fall}
-\newcommand{\due}{Wednesday 24 13:10 \PM}
+\newcommand{\due}{Wednesday 24 at 13:15 \PM}
+\newcommand{\class}{MATH 115}
 \begin{document}
 \large
 \vspace{0.1in}
-\noindent\makebox[3.0truein][l]{{\bf MATH 115}}
-{\bf Name:}  \\
-\noindent \makebox[3.0truein][l]{\bf In class work  \quiz, \term \/ \the\year}
-%{\bf Row:}\hrulefill\
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work \quiz, \term \/ \the\year}}
+\textbf{Row and Seat}:\hrulefill\\
 \vspace{0.1in}
 
 
-\noindent  Homework    \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
+\noindent  In class work  \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
 Digitize your work and submit it to Canvas. This assignment is due \emph{\due}.
 
 \vspace{0.1in}
@@ -72,6 +72,7 @@ formula is $F(x) = \frac{1}{5+ \frac{1}{x}}$
 
 \question[5] Use desmos to graph $y = \frac{1}{5+ \frac{1}{x}}$. As 
 best you can, reproduce the graph here.  Also, use the graph to determine $\range(F)$.
+Be careful! Is one in the range? 
 \begin{solution}[2.5in]
 \end{solution}
 
@@ -80,10 +81,7 @@ best you can, reproduce the graph here.  Also, use the graph to determine $\rang
 numerical values of 
 \begin{parts}
 \part $(F+G)(4) = $
-\begin{solution}[0.85in]
-\end{solution}
-\part $(F G)(4) = $
-\begin{solution}[0.85in]
+\begin{solution}[0.25in]
 \end{solution}
 
 \part $(F \circ G)(4) = $
@@ -101,9 +99,10 @@ numerical values of
  graph of $Q$ is a translation of the graph of $y=|x|$, what is the formula
  for $Q$?
 
- \begin{centering}
+ \vspace{0.1in}
+ \begin{center}
  \includegraphics[scale=0.25]{desmos-graph(24).png}
- \end{centering}
+ \end{center}
  
 \end{questions}
 
