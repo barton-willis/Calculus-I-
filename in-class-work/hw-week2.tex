@@ -1,8 +1,9 @@
-\documentclass[12pt,fleqn,answers]{exam}
+\documentclass[12pt,fleqn]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
 \usepackage{epsfig}
+\usepackage[super]{nth}
 \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 \usepackage[letterpaper, margin=0.75in]{geometry}
 \addpoints
@@ -43,9 +44,9 @@
 \newcommand\AM{{\sc am}}
 \newcommand\PM{{\sc pm}}
      
-\newcommand{\quiz}{1}
+\newcommand{\quiz}{2}
 \newcommand{\term}{Fall}
-\newcommand{\due}{Wednesday 24 at 13:15 \PM}
+\newcommand{\due}{Wednesday 31 August at 13:15 \PM}
 \newcommand{\class}{MATH 115}
 \begin{document}
 \large
@@ -58,54 +59,33 @@
 
 
 \noindent  In class work  \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
-Digitize your work and submit it to Canvas. This assignment is due \emph{\due}.
+Turn in your work at the end of class  \emph{on paper}. This assignment is due \emph{\due}.
 
 \vspace{0.1in}
 
 
 \begin{questions} 
 
-\question[5] Find the \emph{natural domain} of the function $F$ whose
-formula is $F(x) = \frac{1}{5+ \frac{1}{x}}$
+\question[5] After graduation, suppose your starting salary is \$46,000. Further, suppose
+that you expect to earn a 4.1\% pay rise each year you work. What is your salary in 
+your \nth{40} year of work?  
 \begin{solution}[2.5in]
-    There are two denomiators; we need to require that both are nonzero; thus
-    in implicit form, the domain is
-    \[
-        \dom(F) = \left \{ x | (x \neq 0) \land (5+ \frac{1}{x} \neq 0) \right \}
-    \]
-    Solving each inequation for $x$ gives and explict form; it Is
-    \[
-        \dom(F) = \left \{ x | (x \neq 0) \land (x  \neq -\frac{1}{5}) \right \}
-    \]
-    In interval notation, this Is
-    \[   \dom(F) = (-\infty, -\frac{1}{5}) \cup (-\frac{1}{5},0) \cup
-          (0, \infty).
-        \]
+
 \end{solution}
 
-\question[5] Use desmos to graph $y = \frac{1}{5+ \frac{1}{x}}$. As 
-best you can, reproduce the graph here.  Also, use the graph to determine $\range(F)$.
-Be careful! Is one in the range? 
-\begin{solution}[2.5in]
+\question[5] The inequations $y = 3 x + 2$ and $0 \leq x \leq 2$ defines $x$ implicitly as a 
+function of $y$. Find an \emph{explicit} representation of $x$ as a function of $y$. 
+Remember to find the allowed values of $y$.
 
-    \includegraphics[scale=0.25]{desmos-graph(25).png}
+
+\begin{solution}[3.5in]
+
 \end{solution}
 
 \newpage
-\question [5] Define functions $F(x)= \frac{1}{x-1}$ and 
-$G(x) = \sqrt{x-1}$. Fill in the chart:
 
-\def\arraystretch{1.5}% 
-\[
-    \begin{array}{|c|c|c|} \hline
-        \mbox{Function} & \mbox{Formula \phantom{xxxxxxx}} & \mbox{domain \phantom{xxxxxxx}} \\ \hline
-          F+G &                          &               \\  \hline 
-          \frac{F}{G} &                  &               \\ \hline 
-          F \circ G   &                  &               \\ \hline 
-          G \circ F   &                  &               \\   \hline 
-    \end{array}
-\]
-
-Show all of your work below: (You might like to use Desmos to help.)
+\question[5] Define $Q(x) = x^2 - 2x + 2$ and $\dom(Q) = [1,\inf)$. Find the formula
+and the domain of $Q^{-1}$. Use desmos to graph both $Q$ and $Q^{-1}$. As best you can,
+reproduce your graphs here.
 \end{questions}
 \end{document}
