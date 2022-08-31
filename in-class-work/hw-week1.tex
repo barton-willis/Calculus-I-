@@ -20,7 +20,9 @@
 
 \newcommand{\dotprod}{\, {\scriptzcriptztyle
     \stackrel{\bullet}{{}}}\,}
-
+\usepackage{xcolor}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
 \newcommand{\reals}{\mathbf{R}}
 \newcommand{\lub}{\mathrm{lub}} 
 \newcommand{\glb}{\mathrm{glb}} 
@@ -68,12 +70,12 @@ Digitize your work and submit it to Canvas. This assignment is due \emph{\due}.
 \question[5] Find the \emph{natural domain} of the function $F$ whose
 formula is $F(x) = \frac{1}{5+ \frac{1}{x}}$
 \begin{solution}[2.5in]
-    There are two denomiators; we need to require that both are nonzero; thus
+    There are two denominators; we need to require that both are nonzero; thus
     in implicit form, the domain is
     \[
         \dom(F) = \left \{ x | (x \neq 0) \land (5+ \frac{1}{x} \neq 0) \right \}
     \]
-    Solving each inequation for $x$ gives and explict form; it Is
+    Solving each inequation for $x$ gives and explicit form; it Is
     \[
         \dom(F) = \left \{ x | (x \neq 0) \land (x  \neq -\frac{1}{5}) \right \}
     \]

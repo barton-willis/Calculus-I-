@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -18,6 +18,7 @@
 \usepackage{isomath}
 \usepackage{upgreek,amsmath}
 \usepackage{amssymb}
+\usepackage{graphicx}
 
 \newcommand{\dotprod}{\, {\scriptzcriptztyle
     \stackrel{\bullet}{{}}}\,}
@@ -41,6 +42,9 @@
 \newcommand{\imag}{\, \mathrm{i}}
 
 \usepackage{graphicx}
+\usepackage{color}
+\definecolor{SolutionColor}{rgb}{0.08,0.09,1}
+%\shadedsolutions
 \newcommand\AM{{\sc am}}
 \newcommand\PM{{\sc pm}}
      
@@ -71,7 +75,11 @@ that you expect to earn a 4.1\% pay rise each year you work. What is your salary
 your \nth{40} year of work?  \textbf{Hint:} Your salary for your \nth{3} year of work
 is $\$46,000 \times 1.041^2$.
 \begin{solution}[2.5in]
-
+In your \nth{40} year of work, you will have earned 39 pay rises each of 4.1\%. Rounded to 
+the nearest penny, your salary for your \nth{40} year of work is
+\begin{equation*}
+   46,000 \times 1.041^{39} = 220,463.29.
+ \end{equation*}   
 \end{solution}
 
 \question[5] Let $Q(x) = \frac{6}{1+\exp(-x)}$. As best you can,
@@ -79,9 +87,29 @@ reproduce the  graph here.  Using the graph, find $\range(Q)$.
 Be careful: Is zero in the range? What is the solution set to 
 \mbox{$0 = \frac{6}{1+\exp(-x)}$?} Is six in the range? What is the solution set to 
 \mbox{$6 = \frac{6}{1+\exp(-x)}$?}
-
-
 \begin{solution}[3.5in]
+Here is the graph:
+
+\begin{center}
+\includegraphics[scale=0.15]{desmos-graph(26).png}
+\end{center}
+From the picture, it's not entirely clear if $6$ is in the range. Maybe the graph of $y=Q(x)$ stays below the horizontal line
+$y=6$ or maybe it touches it, but the picture isn't decisive. To decide if $6$ is in the range, let's solve the equation:
+\begin{align*}
+    \left[ 6 = \frac{6}{1+\exp(-x)} \right] &= \left[1+\exp(-x) = 1 \right], 
+                                            &\mbox{(cross multiply)}\\
+                                            &= \left[\exp(-x) = 0 \right], 
+                                            &\mbox{(subtract 1)}\\
+                                            &= \varnothing  &\mbox{(zero not in range of $\exp$)}
+\end{align*}
+Since the solution set is empty, the number $6 \notin \range(Q)$.  Let's determine
+if $0$ is in the range:
+\begin{align*}
+    \left[ 0 = \frac{6}{1+\exp(-x)} \right] &= \left[ 0 = 6 \right], 
+                                            &\mbox{(cross multiply)}\\
+                                            &= \varnothing  
+\end{align*}
+From the graph and the above calculations, almost surely we have $\range(Q) = (0,6)$. 
 
 \end{solution}
 
@@ -90,5 +118,25 @@ Be careful: Is zero in the range? What is the solution set to
 \question[5] Define $Q(x) = (x-1)^2 + 1$ and $\dom(Q) = [1,\infty)$. Find the formula
 and the domain of $Q^{-1}$. Use desmos to graph both $Q$ and $Q^{-1}$. As best you can,
 reproduce your graphs here.
+\begin{solution} First, let's find the formula for the  inverse function. We need to solve
+\begin{align*}
+ \left[ \left(y = (x-1)^2 + 1 \right) \right] &=  \left[ y -  1 = (x-1)^2\right],   & \mbox{(subtract 1)} \\
+         &= \left[ \left(x-1 = -\sqrt{y -  1} \right) \lor  \left(x-1 = -\sqrt{y -  1} \right) \right],  \\
+         &= \left[ \left(x = 1 -\sqrt{y -  1} \right) \lor  \left(x = 1 +\sqrt{y -  1} \right)\right]. & \mbox{(add 1)}
+\end{align*}
+Yikes! There are two solutions--that means the function isn't one-to-one. But wait! Remember the condition
+\(1 \leq x\)?  The solution \(x = 1 -\sqrt{y -  1}\) gives a value for $x$ that is \emph{less} than one. So the
+solution \(x = 1 -\sqrt{y -  1}\) is rubbish, leaving exactly one solution. 
+
+\quad To find the domain of $Q^{-1}$ we need $1 + \sqrt{y -  1}$ to be real--that tells us that $y \geq 1$.  Putting it 
+together $Q^{-1}(y) =  1 +  \sqrt{y -  1}$ and $\dom(Q^{-1}) = [1,\infty)$.
+Here are my graphs:
+
+\begin{center}
+\includegraphics[scale=0.15]{desmos-graph(27).png}
+\end{center}
+
+
+\end{solution}
 \end{questions}
 \end{document}
