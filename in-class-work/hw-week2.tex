@@ -43,10 +43,10 @@
 
 \usepackage{graphicx}
 \usepackage{color}
-\definecolor{SolutionColor}{rgb}{0.08,0.09,1}
-%\shadedsolutions
-\newcommand\AM{{\sc am}}
-\newcommand\PM{{\sc pm}}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
      
 \newcommand{\quiz}{2}
 \newcommand{\term}{Fall}
@@ -94,7 +94,20 @@ Here is the graph:
 \includegraphics[scale=0.15]{desmos-graph(26).png}
 \end{center}
 From the picture, it's not entirely clear if $6$ is in the range. Maybe the graph of $y=Q(x)$ stays below the horizontal line
-$y=6$ or maybe it touches it, but the picture isn't decisive. To decide if $6$ is in the range, let's solve the equation:
+$y=6$ or maybe it touches it, but the picture isn't decisive. To decide, you might try
+numerical evaluation--say rounding to about 15 decimal places, the number used
+by most calculators, we have
+\begin{equation*}
+    Q(45) = \frac{6}{1+\exp(-45)} = 6.00000000000000.
+\end{equation*}
+So you might conclude that indeed $6$ is in the range. But rounding to 42 decimal
+places, the story is different:
+\begin{equation*}
+    Q(45) = \frac{6}{1+\exp(-45)} = 5.99999999999999999982824888516703638133671.
+\end{equation*}
+Now what do you think?
+
+\quad To decide if $6$ is in the range, let's solve the equation:
 \begin{align*}
     \left[ 6 = \frac{6}{1+\exp(-x)} \right] &= \left[1+\exp(-x) = 1 \right], 
                                             &\mbox{(cross multiply)}\\
@@ -128,12 +141,12 @@ Yikes! There are two solutions--that means the function isn't one-to-one. But wa
 \(1 \leq x\)?  The solution \(x = 1 -\sqrt{y -  1}\) gives a value for $x$ that is \emph{less} than one. So the
 solution \(x = 1 -\sqrt{y -  1}\) is rubbish, leaving exactly one solution. 
 
-\quad To find the domain of $Q^{-1}$ we need $1 + \sqrt{y -  1}$ to be real--that tells us that $y \geq 1$.  Putting it 
-together $Q^{-1}(y) =  1 +  \sqrt{y -  1}$ and $\dom(Q^{-1}) = [1,\infty)$.
+\quad To find the domain of $Q^{-1}$ we need $1 + \sqrt{y -  1}$ to be real--that tells us that \mbox{$y \geq 1$}.  
+Putting all together, we have $Q^{-1}(y) =  1 +  \sqrt{y -  1}$ and $\dom(Q^{-1}) = [1,\infty)$.
 Here are my graphs:
 
 \begin{center}
-\includegraphics[scale=0.15]{desmos-graph(27).png}
+\includegraphics[scale=0.25]{desmos-graph(27).png}
 \end{center}
 
 
