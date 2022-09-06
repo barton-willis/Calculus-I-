@@ -91,7 +91,7 @@ steps by referencing one of our rules numbered zero through seven.
         
     \end{solution}
 
-    \part[2] \(\displaystyle  \lim_{x \to \sqrt{35}} \sqrt{12 -2 \sqrt{x}} \)
+    \part[2] \(\displaystyle  \lim_{x \to 35} \sqrt{12 -2 \sqrt{x}} \)
     \begin{solution}[1.5in]
         
     \end{solution}
@@ -121,4 +121,26 @@ as best you can find the numerical value of each limit.
 \end{center}
 
 \end{questions}
+
+\newpage
+\noindent Suppose functions $F$ and $G$ have limits toward $c$ and suppose $a,b \in \reals$ and $n$ is a positive integer. Then
+
+\begin{description}
+
+\item[Rule \#0 (constant)] $  \displaystyle \lim_{x \to c} (a) = a$.
+ 
+\item[Rule \#1 (linearity)] $ \displaystyle \lim_{x \to c} (a F(x) + b G(x)) = a  \, \lim_{x \to c} (F(x)) + b \, \lim_{x \to c} (G(x)) $.
+
+\item [Rule \#2 (product)]$ \displaystyle \lim_{x \to c} (F(x)  G(x)) = \, \lim_{x \to c} (F(x))  \times \lim_{x \to c} (G(x)) $.
+
+\item [Rule \#3 (quotient)] Provided $\displaystyle  \lim_{x \to c} (G(x)) \neq 0$, we have $\displaystyle \lim_{x \to c} \frac{F(x)}{G(x)} = \, \frac{\lim_{x \to c} (F(x))}{ \lim_{x \to c} (G(x)) } $.
+
+\item [Rule \#4 (power)]  $ \displaystyle \lim_{x \to c} F(x)^n  = \left(\lim_{x \to c} F(x) \right)^n  $.
+
+\item [Rule \#5 (root)]  Provided $ \displaystyle  \left(\lim_{x \to c} F(x) \right)^{1/n} $ is real,  $ \displaystyle \lim_{x \to c} F(x)^{1/n}  = \left(\lim_{x \to c} F(x) \right)^{1/n}  $.
+
+\item [Rule \#6 (polynomial)]  Provided $F$ is a polynomial, we have  $ \displaystyle \lim_{x \to c} F(x) = F(c)$
+
+ \item [Rule \#7 (rational)]  Provided $F$ is a rational function and $c \in \dom(F)$, we have  \mbox{$ \displaystyle \lim_{x \to c} F(x) = F(c)$.}
+\end{description}
 \end{document}
