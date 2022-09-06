@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -63,16 +63,37 @@
 
 \question Find the solution set for the equation \( \frac{107}{1 + \exp(x)} = 0\).
 \begin{solution}[1.0in]
+Remember that $\left[\frac{a}{b}= 0\right] = [(a=0) \land (b \neq 0)]$. Using this fact,
+we have
+\begin{align*}
+    \left[ \frac{107}{1 + \exp(x)} = 0 \right] &= \left[(107=0) \land (1 + \exp(x) \neq 0) \right] \\
+             &= \varnothing
+\end{align*}
 \end{solution}
 
 \question Inflation is causing the cost of chicken eggs to increase. The cost (in dollars) of a dozen chicken eggs is $C = 1.83 \times 1.052^T$, where $T$ is
 the number of years after 1 January, 2022. When will chicken eggs cost \$2.00 per dozen?
 
 \begin{solution}[1.0in]
+\begin{align*}
+    \left[2 = 1.83 \times 1.052^T\right] &= \left[\frac{2}{1.83}=1.052^T\right],\\
+                                 &=\left[\ln\left(\frac{2}{1.83}\right)=T \ln(1.052)T\right],\\
+                                 &=\left[T = \frac{\ln(\frac{2}{1.83})}{\ln(1.052)} \right],\\
+                                 &= \left[T \approx 1.75 \mbox{ years}\right].
+\end{align*}    
 \end{solution}
 
-\question Find the inverse of the function $W(x) = 5 x +1$ and $\dom(W) = \reals\).
+\question Find the inverse of the function $W(x) = 5 x +1$ and $\dom(W) = \reals$.
 \begin{solution}[3.0in]
+\begin{align*}
+    \left[ y = 5 x + 1, -\infty < x < \infty \right] &= \left[x = \frac{y-1}{5},  -\infty < \frac{y-1}{5} < \infty \right], \\
+               &= \left[x = \frac{y-1}{5},  -\infty < y < \infty \right]
+\end{align*}
+So $W^{-1}(y) = \frac{y-1}{5}$ and $\dom(W^{-1}) = \reals$.
+
+If $y$ is a real number, so is $\frac{y-1}{5}$. Thus the solution set of
+\(-\infty < \frac{y-1}{5} < \infty \) is \\ \mbox{\(-\infty < y < \infty\).}
+
 \end{solution}
 
 \newpage
@@ -81,20 +102,35 @@ the number of years after 1 January, 2022. When will chicken eggs cost \$2.00 pe
 
 \part \(\underset{[1, 1.1]}{\mbox{ARC}}(Z) = \)
 \begin{solution}[1.0in]
+\[
+    \underset{[1, 1.1]}{\mbox{ARC}}(Z) = \frac{Z(1.1)-Z(1)}{1.1-1}=-3.2
+\]
 \end{solution}
 \part \(\underset{[1, 1.01]}{\mbox{ARC}}(Z) = \)
 \begin{solution}[1.0in]
+    \[
+        \underset{[1, 1.01]}{\mbox{ARC}}(Z) = \frac{Z(1.01)-Z(1)}{1.01-1}=-3.02
+    \] 
 \end{solution}
 
 \part \(\underset{[1, 1.001]}{\mbox{ARC}}(Z) = \)
 \begin{solution}[1.0in]
+    \[
+        \underset{[1, 1.001]}{\mbox{ARC}}(Z) = \frac{Z(1.001)-Z(1)}{1.001-1}=-3.002
+    \] 
 \end{solution}
 
 \part a simplified formula for \(\underset{[1, b]}{\mbox{ARC}}(Z) = \)
 \begin{solution}[1.0in]
+
+We have $(-2 {{b}^{2}}+b+1) \div (b-1) = -2b-1$.  Using this
+easy formula, parts `a' through `c' are easy.
+
+\quad If you need a refresher on polynomial division, see 
+
+\url{https://www.youtube.com/watch?v=RPXMBIFG_W4}
+
 \end{solution}
 \end{parts}
-\begin{solution}[3.0in]
-\end{solution}
 \end{questions}
 \end{document}
