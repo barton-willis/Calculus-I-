@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -78,22 +78,76 @@ steps by referencing one of our rules numbered zero through seven.
   
     \part[2] \(\displaystyle \lim_{x \to \uppi} \left(x^3 + x \right) \)
     \begin{solution}[1.5in]
-        
+        Since $x^3 + x$ is a polynomial, we can use Rule 6; thus
+        \begin{align*}
+            \lim_{x \to \uppi} \left(x^3 + x \right) &= \uppi^3+\uppi. \hfill &\mbox{(Rule 6)}
+        \end{align*}
+        Alternatively, we could first use Rule 1 (linearity) followed by
+        Rule 4; thus
+        \begin{align*}
+            \lim_{x \to \uppi} \left(x^3 + x \right) &=   \lim_{x \to \uppi} (x^3) +  \lim_{x \to \uppi} (x), \hfill &\mbox{(Rule 1)}\\
+                      &= \uppi^3+\uppi. \hfill  &\mbox{(Rule 4, twice)}
+        \end{align*}
+        To apply Rule 4 to \(\displaystyle \lim_{x \to \uppi} (x)\), match to the 
+        algebraically equivalent \(\displaystyle \lim_{x \to \uppi} (x^1)\).
     \end{solution}
       
     \part[2] \(\displaystyle  \lim_{x \to \sqrt{2}} \sqrt{x+1} \)
     \begin{solution}[1.5in]
-        
+        We have
+        \begin{align*}
+            \lim_{x \to \sqrt{2}} \sqrt{x+1} &= \sqrt{\lim_{x \to \sqrt{2}} (x+1)}, &\mbox{(Rule 5)} \\
+                                             &= \sqrt{1 + \sqrt{2}}. &\mbox{(Rule 6)}
+        \end{align*}
+        Since $x+1$ is a polynomial, using Rule 6 in the second step is OK.
     \end{solution}
 
     \part[2] \(\displaystyle  \lim_{x \to \sqrt{2}} \frac{x+1}{x-1} \)
     \begin{solution}[1.5in]
-        
+        We have
+        \begin{align*}
+            \lim_{x \to \sqrt{2}} \frac{x+1}{x-1} &= \frac{\sqrt{2}+1}{\sqrt{2}-1},  &\mbox{(Rule 7)} \\
+                                                  &= 3 + 2 \sqrt{2}. &\mbox{(simplification)}
+        \end{align*}
+        The simplification step is done using a multiply by one trick:
+        \begin{align*}
+            \frac{\sqrt{2}+1}{\sqrt{2}-1} &= \frac{\sqrt{2}+1}{\sqrt{2}-1} \times \frac{\sqrt{2}+1}{\sqrt{2}+1}, 
+            \hfill &\mbox{(multiply by one)}\\
+                &= \frac{(\sqrt{2}+1)^2}{2 + \sqrt{2} - \sqrt{2} - 1}, \hfill &\mbox{(distribute denominator)}\\
+                &= \frac{(\sqrt{2}+1)^2}{1}, \hfill &\mbox{(collect like terms)}\\
+                &= 2 + 2\sqrt{2}+1, \hfill &\mbox{(divisor of one)}\\
+                &= 3 + 2 \sqrt{2}. \hfill &\mbox{(collect like terms)}
+        \end{align*}
+        To earn full credit with our online homework system, generally
+        removing radicals from denominator is required.
+
     \end{solution}
 
     \part[2] \(\displaystyle  \lim_{x \to 35} \sqrt{12 -2 \sqrt{x}} \)
     \begin{solution}[1.5in]
+        We have
+        \begin{align*}
+            \lim_{x \to 35} \sqrt{12 -2 \sqrt{x}} &= \sqrt{\lim_{x \to 35} (12 -2 \sqrt{x}) } , &\mbox{(Rule 5)} \\
+               &= \sqrt{\lim_{x \to 35} (12)  -2 \lim_{x \to 35} \sqrt{x} } , &\mbox{(Rule 1)} \\
+               &= \sqrt{12  -2 \sqrt{35}} , &\mbox{(Rule 0, Rule 5)} \\
+               &= \sqrt{7}-\sqrt{5}. &\mbox{(simplification)}
+        \end{align*}
+        The simplification in the last step is an application of the square
+        root denesting identity
+        \[
+            \left(\forall a,b \in \reals_{\geq 0} \right) 
+              \left(\sqrt{a+b-2\sqrt{ab}} = \sqrt{\max(a,b)} - \sqrt{\min(a,b)} \right).
+        \]
+        And no, such simplifications are \emph{not} required (but it is cute).
         
+        
+        \quad You'll be happy to know that denesting radicals is one of my hobbies. Some time ago, as a challenge
+        from a friend, I denested
+        \[
+            2028 \times (2 \times 3^{5/2} \, \mathrm{i} +35)^{1/3}-(2 \times 3^{5/2} \, \mathrm{i}+35)^{2/3} \times (8 \times 3^{7/2} \mathrm{i}-420)+10140.
+        \]
+        to the integer 24336. To do this, in part, I used an algorithm 
+        that was invented by the mathematician turned artist Helaman Ferguson \url{https://en.wikipedia.org/wiki/Helaman_Ferguson}
     \end{solution}
 
 
@@ -107,10 +161,30 @@ as best you can find the numerical value of each limit.
 \begin{parts}
     \part [1] \(\displaystyle \lim_{x \to 2} Q(x) \)
     \begin{solution}[1.5in]
+        Looking at the graph, it appears that when the input
+        is close to 2, the output is close to 2. Moving closer
+        to two from either the left or the right, the output grows
+        ever closer to two. Thus, visual evidence suggests that
+        \[
+            \lim_{x \to 2} Q(x) = 2.
+        \]
+        The visual evidence \textbf{isn't} a proof. Maybe if we zoomed in on
+        the graph magnifying by a factor of trillions, that maybe 
+        the graph will wiggle around in some crazy way near the 
+        limit point. 
         
     \end{solution}
     \part [1] \(\displaystyle \lim_{x \to -1^{(+)}} Q(x) \)
     \begin{solution}[1.5in]
+        Remember that the special notation $-1^{(+)}$ means that
+        the limit point is $-1$, but we only consider inputs that
+        are \emph{larger} (or to the right) of $-1$. Immediately
+        to the right of the limit point, the output of the
+        $Q$ appears to be a constant $2$. Thus, the visual evidence
+        is that \(\displaystyle \lim_{x \to -1^{(+)}} Q(x) = 2\).
+
+        Once again, visual evidence \textbf{isn't} a proof.
+
         
     \end{solution}
 
