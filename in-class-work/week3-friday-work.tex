@@ -67,8 +67,8 @@
 
 \part \(\displaystyle \lim_{x \to 1^{(-)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}\)
 \begin{solution}[1.5in]
-    We're looking at the limit from the left toward $1$. That allows us
-    to simplify \(\begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases} \) to $3$.
+    We're looking at the limit from the \emph{left} toward $1$. That makes
+    $x < 1$, so we can simplify \(\begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases} \) to $3$.
     Thus
     \begin{align*}
         \lim_{x \to 1^{(-)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases} &=
@@ -78,7 +78,7 @@
 \end{solution}
 \part \(\displaystyle \lim_{x \to 1^{(+)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}\)
 \begin{solution}[1.5in]
-    We're looking at the limit from the right toward $1$. That allows us
+    We're looking at the limit from the \emph{right} toward $1$. That allows us
     to simplify \(\begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases} \) to $x$.
     Thus
     \begin{align*}
@@ -86,6 +86,13 @@
         \lim_{x \to 1^{(-)}} x   & \hfill \mbox{(simplification)} \\
         &= 1  &\hfill \mbox{(limit of constant)}) \\
     \end{align*}
+    A few of you correctly simplified, but then failed to find the
+    limit--something like
+    \[
+        \lim_{x \to 1^{(-)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases} = x.    
+    \]
+    OK--there is a pending limit to evaluate. Simplifying is just the
+    first step, but we still need to evaluate the limit. 
     
 \end{solution}
 \part \(\displaystyle \lim_{x \to 1} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}\)
@@ -94,13 +101,14 @@
     \(\displaystyle \lim_{x \to 1^{(-)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}
      \neq \lim_{x \to 1^{(+)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}\), so
      \(\displaystyle \lim_{x \to 1} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}\)
-     does not exist (aka dne)
+     does not exist (aka dne).
 \end{solution}
 
 \part \(\displaystyle \lim_{x \to 1} \begin{cases} 3 & x < 10 \\ \ln(x^x + 1)  \sin(1/x) & 10 \leq x \end{cases}\)
 \begin{solution}[1.5in]
     The limit point is $1$. For $x$ near the limit point, we can
     simplify \(\displaystyle \lim_{x \to 1} \begin{cases} 3 & x < 10 \\ \ln(x^x + 1)  \sin(1/x) & 10 \leq x \end{cases}\) to $3$.
+    The ugly case  of $10 \leq x$ just ``simplifies away'' and causes us no trouble!
     Thus
     \[
         \lim_{x \to 1} \begin{cases} 3 & x < 10 \\ \ln(x^x + 1)  \sin(1/x) & 10 \leq x \end{cases}
@@ -118,24 +126,51 @@
            &= \frac{x+2 - 7}{(x-5)(\sqrt{x + 2} + \sqrt{7})}, \\
            &= \frac{1}{\sqrt{x + 2} + \sqrt{7}}.
     \end{align*}
-
+Now the evaluating the limit, is DS:
+\[
+    \lim_{x \to 5} \frac{\sqrt{x + 2} - \sqrt{7}}{x - 5} 
+    =  \lim_{x \to 5}  \frac{1}{\sqrt{x + 2} + \sqrt{7}}
+    = \frac{1}{2 \sqrt{7}}
+    = \frac{\sqrt{7}}{14}
+\]
 \end{solution}
 
 
 \part \(\displaystyle \lim_{x \to \uppi} \frac{\sqrt{x + \uppi} - \sqrt{2 \uppi}}{x - \uppi} \)
 \begin{solution}[1.5in]
+This one is not that much different from the previous problem:
+\[
+    \lim_{x \to \uppi} \frac{\sqrt{x + \uppi} - \sqrt{2 \uppi}}{x - \uppi}
+     = \lim_{x \to \uppi} \frac{1}{\sqrt{x + \uppi} + \sqrt{2 \uppi}}
+     = \frac{1}{2 \sqrt{2 \uppi}}
+\]
 \end{solution}
 
 \part \(\displaystyle \lim_{x \to 3} \frac{\sqrt{x + \uppi} - \sqrt{2 \uppi}}{x - \uppi} \)
 \begin{solution}[1.5in]
+Ha! This one isn't similar the previous--DS is just fine!
+\[
+    \lim_{x \to 3} \frac{\sqrt{x + \uppi} - \sqrt{2 \uppi}}{x - \uppi}
+    = \frac{\sqrt{3 + \uppi} - \sqrt{2 \uppi}}{3 - \uppi}.
+\]
 \end{solution}
 
 \part \(\displaystyle \lim_{x \to \sqrt{107}} \frac{x}{|x|}  \)
 \begin{solution}[1.5in]
+Near \( \sqrt{107}\), we can simplify \(\frac{x}{|x|}  \) to 1. So
+\[
+    \lim_{x \to \sqrt{107}} \frac{x}{|x|} = 
+    \lim_{x \to \sqrt{107}} 1 = 1.
+\]
 \end{solution}
 
 \part \(\displaystyle \lim_{x \to -\sqrt{107}} \frac{x}{|x|}  \)
 \begin{solution}[0.0in]
+    Near \( -\sqrt{107}\), we can simplify \(\frac{x}{|x|}  \) to -1. So
+\[
+    \lim_{x \to \sqrt{107}} \frac{x}{|x|} = 
+    \lim_{x \to \sqrt{107}} (-1) = -1.
+\]
 \end{solution}
 \end{parts}
 \end{questions}
