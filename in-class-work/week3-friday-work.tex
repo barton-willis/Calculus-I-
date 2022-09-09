@@ -1,0 +1,142 @@
+\documentclass[12pt,answers, fleqn]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{2}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Wednesday 31 August at 13:15 \PM}
+\newcommand{\class}{MATH 115}
+\begin{document}
+\large
+
+
+\vspace{0.1in}
+\noindent{\textbf{Week 3 Friday Work}}
+
+\begin{questions} 
+
+\question Find the value of each limit:
+
+\begin{parts}
+
+\part \(\displaystyle \lim_{x \to 1^{(-)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}\)
+\begin{solution}[1.5in]
+    We're looking at the limit from the left toward $1$. That allows us
+    to simplify \(\begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases} \) to $3$.
+    Thus
+    \begin{align*}
+        \lim_{x \to 1^{(-)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases} &=
+        \lim_{x \to 1^{(-)}} 3   & \hfill \mbox{(simplification)} \\
+        &= 3  &\hfill \mbox{(limit of constant)} \\
+    \end{align*}
+\end{solution}
+\part \(\displaystyle \lim_{x \to 1^{(+)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}\)
+\begin{solution}[1.5in]
+    We're looking at the limit from the right toward $1$. That allows us
+    to simplify \(\begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases} \) to $x$.
+    Thus
+    \begin{align*}
+        \lim_{x \to 1^{(-)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases} &=
+        \lim_{x \to 1^{(-)}} x   & \hfill \mbox{(simplification)} \\
+        &= 1  &\hfill \mbox{(limit of constant)}) \\
+    \end{align*}
+    
+\end{solution}
+\part \(\displaystyle \lim_{x \to 1} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}\)
+\begin{solution}[1.5in]
+    From parts `a' and `b', we have  
+    \(\displaystyle \lim_{x \to 1^{(-)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}
+     \neq \lim_{x \to 1^{(+)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}\), so
+     \(\displaystyle \lim_{x \to 1} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}\)
+     does not exist (aka dne)
+\end{solution}
+
+\part \(\displaystyle \lim_{x \to 1} \begin{cases} 3 & x < 10 \\ \ln(x^x + 1)  \sin(1/x) & 10 \leq x \end{cases}\)
+\begin{solution}[1.5in]
+    The limit point is $1$. For $x$ near the limit point, we can
+    simplify \(\displaystyle \lim_{x \to 1} \begin{cases} 3 & x < 10 \\ \ln(x^x + 1)  \sin(1/x) & 10 \leq x \end{cases}\) to $3$.
+    Thus
+    \[
+        \lim_{x \to 1} \begin{cases} 3 & x < 10 \\ \ln(x^x + 1)  \sin(1/x) & 10 \leq x \end{cases}
+         = \lim_{x \to 1} 3 = 3.
+    \]
+    
+\end{solution}
+
+\part \(\displaystyle \lim_{x \to 5} \frac{\sqrt{x + 2} - \sqrt{7}}{x - 5} \)
+\begin{solution}[1.5in]
+    Direct substitution is not an option. To start, let's do some tricky
+    algebra:
+    \begin{align*}
+        \frac{\sqrt{x + 2} - \sqrt{7}}{x - 5} &= \frac{\sqrt{x + 2} - \sqrt{7}}{x - 5} \times \frac{\sqrt{x + 2} + \sqrt{7}}{\sqrt{x + 2} + \sqrt{7}}, \\
+           &= \frac{x+2 - 7}{(x-5)(\sqrt{x + 2} + \sqrt{7})}, \\
+           &= \frac{1}{\sqrt{x + 2} + \sqrt{7}}.
+    \end{align*}
+
+\end{solution}
+
+
+\part \(\displaystyle \lim_{x \to \uppi} \frac{\sqrt{x + \uppi} - \sqrt{2 \uppi}}{x - \uppi} \)
+\begin{solution}[1.5in]
+\end{solution}
+
+\part \(\displaystyle \lim_{x \to 3} \frac{\sqrt{x + \uppi} - \sqrt{2 \uppi}}{x - \uppi} \)
+\begin{solution}[1.5in]
+\end{solution}
+
+\part \(\displaystyle \lim_{x \to \sqrt{107}} \frac{x}{|x|}  \)
+\begin{solution}[1.5in]
+\end{solution}
+
+\part \(\displaystyle \lim_{x \to -\sqrt{107}} \frac{x}{|x|}  \)
+\begin{solution}[0.0in]
+\end{solution}
+\end{parts}
+\end{questions}
+\end{document}
