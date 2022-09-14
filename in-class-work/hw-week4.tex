@@ -1,0 +1,272 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{4}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Wednesday 14 September 13:15 \PM}
+\newcommand{\class}{MATH 115}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work \quiz, \term \/ \the\year}}
+\textbf{Row and Seat}:\hrulefill\\
+\vspace{0.1in}
+
+
+\noindent  In class work  \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
+Turn in your work at the end of class  \emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+
+
+\begin{questions} 
+
+\question[1] Shown below is a graph of a function $Q$. Use the graph to estimate the numerical value of $Q^\prime(2)$.
+
+\begin{centering}
+\includegraphics[scale=0.25]{desmos-graph(30).png}
+\end{centering}
+\begin{solution}
+\end{solution}
+
+\newpage
+\question[1] In the year 1969 at age 11, child actress Eve Plumb purchased a Malibu beach house for \$55,000. Forty-seven years
+later she sold it for \$3.9 million. Her annual percent yield $r$ on this investment is given by the solution to
+\[
+   3, 900,000 = 55,000 \times (1 + r)^{47}.
+\]
+Find Eve Plumb's return on this investment.
+\begin{solution}[3.0in]
+\end{solution}
+
+\question[1] When a Nebraska judge resigns, the judge receives a lifetime pension of $P$ dollars per year that depends on their ending salary $S$ and their years of service $Y$. The formula for the pension is
+\begin{equation}
+  P = S \begin{cases}  \frac{35}{1000} Y &  Y \leq 20 \\  \frac{7}{10} &  Y >  20 \end{cases}.
+  \end{equation}
+  
+  \begin{parts}
+   \part[1] Using $S = 1$, draw a graph of this function.  That is, draw a graph of \\ $\displaystyle P = \begin{cases}  \frac{35}{1000} Y &  Y \leq 20 \\  \frac{7}{10} &  Y >  20 \end{cases}.$
+   \begin{solution}%[3.0in]
+\end{solution}
+\newpage
+   \part[1] Using the graph, draw a graph of \(\displaystyle \frac{\mathrm{d} P}{\mathrm{d} Y}\).  Is the function
+   differentiable at $Y = 20$?
+   \begin{solution}[3.0in]
+\end{solution}
+  \end{parts}
+  
+  \question Using our list of rules for computing derivatives, find each derivative.  \emph{Justify each step by stating which rule you used.}
+  
+  \begin{parts}
+  
+  \part [1] \( \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ \cos(2) x^2 + \sin(2) x  + 46 \right] \)
+  \begin{solution}[2.0in]
+\end{solution}
+   \part [1] \( \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ \sin(3) x^2 + \ln(107) x  \right] \)
+   \begin{solution}[2.0in]
+\end{solution}
+    \part [1] \( \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ \frac{(x^2 + 1}{x}  \right] \)
+   \begin{solution}%[2.0in]
+
+\end{solution}
+\newpage
+     \part [1] \( \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ x^\mathrm{e} = \mathrm{e}^x  \right] \)
+  \end{parts}
+\end{questions}
+
+\vfill
+
+\noindent For any real number $a$ and any real number $n$, we have 
+\begin{description}
+
+\item[Rule \#0 (constant)] $ \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[a \right]  = 0 $.
+ 
+\item[Rule \#1 (linearity)] $ \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[  a F(x) + b G(x)  \right] = a F^\prime(x) + b G^\prime(x) $.
+
+\item [Rule \#2 (power)]  $   \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ x^n \right]  = n x^{n-1}$
+
+\item [Rule \#3 (natural exponential)]  $\displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ \mathrm{e}^x \right]  = 
+\mathrm{e}^x $
+\end{description}
+\end{document}
+
+\question Find each of the following limits. Justify each of your 
+steps by referencing one of our rules numbered zero through seven.
+
+\begin{parts}
+  
+    \part[2] \(\displaystyle \lim_{x \to \uppi} \left(x^3 + x \right) \)
+    \begin{solution}[1.5in]
+        Since $x^3 + x$ is a polynomial, we can use Rule 6; thus
+        \begin{align*}
+            \lim_{x \to \uppi} \left(x^3 + x \right) &= \uppi^3+\uppi. \hfill &\mbox{(Rule 6)}
+        \end{align*}
+        Alternatively, we could first use Rule 1 (linearity) followed by
+        Rule 4; thus
+        \begin{align*}
+            \lim_{x \to \uppi} \left(x^3 + x \right) &=   \lim_{x \to \uppi} (x^3) +  \lim_{x \to \uppi} (x), \hfill &\mbox{(Rule 1)}\\
+                      &= \uppi^3+\uppi. \hfill  &\mbox{(Rule 4, twice)}
+        \end{align*}
+        To apply Rule 4 to \(\displaystyle \lim_{x \to \uppi} (x)\), match to the 
+        algebraically equivalent \(\displaystyle \lim_{x \to \uppi} (x^1)\).
+    \end{solution}
+      
+    \part[2] \(\displaystyle  \lim_{x \to \sqrt{2}} \sqrt{x+1} \)
+    \begin{solution}[1.5in]
+        We have
+        \begin{align*}
+            \lim_{x \to \sqrt{2}} \sqrt{x+1} &= \sqrt{\lim_{x \to \sqrt{2}} (x+1)}, &\mbox{(Rule 5)} \\
+                                             &= \sqrt{1 + \sqrt{2}}. &\mbox{(Rule 6)}
+        \end{align*}
+        Since $x+1$ is a polynomial, using Rule 6 in the second step is OK.
+    \end{solution}
+
+    \part[2] \(\displaystyle  \lim_{x \to \sqrt{2}} \frac{x+1}{x-1} \)
+    \begin{solution}[1.5in]
+        We have
+        \begin{align*}
+            \lim_{x \to \sqrt{2}} \frac{x+1}{x-1} &= \frac{\sqrt{2}+1}{\sqrt{2}-1},  &\mbox{(Rule 7)} \\
+                                                  &= 3 + 2 \sqrt{2}. &\mbox{(simplification)}
+        \end{align*}
+        The simplification step is done using a multiply by one trick:
+        \begin{align*}
+            \frac{\sqrt{2}+1}{\sqrt{2}-1} &= \frac{\sqrt{2}+1}{\sqrt{2}-1} \times \frac{\sqrt{2}+1}{\sqrt{2}+1}, 
+            \hfill &\mbox{(multiply by one)}\\
+                &= \frac{(\sqrt{2}+1)^2}{2 + \sqrt{2} - \sqrt{2} - 1}, \hfill &\mbox{(distribute denominator)}\\
+                &= \frac{(\sqrt{2}+1)^2}{1}, \hfill &\mbox{(collect like terms)}\\
+                &= 2 + 2\sqrt{2}+1, \hfill &\mbox{(divisor of one)}\\
+                &= 3 + 2 \sqrt{2}. \hfill &\mbox{(collect like terms)}
+        \end{align*}
+        To earn full credit with our online homework system, generally
+        removing radicals from denominator is required.
+
+    \end{solution}
+
+    \part[2] \(\displaystyle  \lim_{x \to 35} \sqrt{12 -2 \sqrt{x}} \)
+    \begin{solution}[1.5in]
+        We have
+        \begin{align*}
+            \lim_{x \to 35} \sqrt{12 -2 \sqrt{x}} &= \sqrt{\lim_{x \to 35} (12 -2 \sqrt{x}) } , &\mbox{(Rule 5)} \\
+               &= \sqrt{\lim_{x \to 35} (12)  -2 \lim_{x \to 35} \sqrt{x} } , &\mbox{(Rule 1)} \\
+               &= \sqrt{12  -2 \sqrt{35}} , &\mbox{(Rule 0, Rule 5)} \\
+               &= \sqrt{7}-\sqrt{5}. &\mbox{(simplification)}
+        \end{align*}
+        The simplification in the last step is an application of the square
+        root denesting identity
+        \[
+            \left(\forall a,b \in \reals_{\geq 0} \right) 
+              \left(\sqrt{a+b-2\sqrt{ab}} = \sqrt{\max(a,b)} - \sqrt{\min(a,b)} \right).
+        \]
+        And no, such simplifications are \emph{not} required (but it is cute).
+        
+        
+        \quad You'll be happy to know that denesting radicals is one of my hobbies. Some time ago, as a challenge
+        from a friend, I denested
+        \[
+            2028 \times (2 \times 3^{5/2} \, \mathrm{i} +35)^{1/3}-(2 \times 3^{5/2} \, \mathrm{i}+35)^{2/3} \times (8 \times 3^{7/2} \mathrm{i}-420)+10140.
+        \]
+        to the integer 24336. To do this, in part, I used an algorithm 
+        that was invented by the mathematician turned artist Helaman Ferguson \url{https://en.wikipedia.org/wiki/Helaman_Ferguson}
+    \end{solution}
+
+
+\end{parts}
+
+%\newpage
+
+\question A graph of a function $Q$ is shown. Using the graph,
+as best you can find the numerical value of each limit.
+
+\begin{parts}
+    \part [1] \(\displaystyle \lim_{x \to 2} Q(x) \)
+    \begin{solution}[1.5in]
+        Looking at the graph, it appears that when the input
+        is close to 2, the output is close to 2. Moving closer
+        to two from either the left or the right, the output grows
+        ever closer to two. Thus, visual evidence suggests that
+        \[
+            \lim_{x \to 2} Q(x) = 2.
+        \]
+        The visual evidence \textbf{isn't} a proof. Maybe if we zoomed in on
+        the graph magnifying by a factor of trillions, that maybe 
+        the graph will wiggle around in some crazy way near the 
+        limit point. 
+        
+    \end{solution}
+    \part [1] \(\displaystyle \lim_{x \to -1^{(+)}} Q(x) \)
+    \begin{solution}[1.5in]
+        Remember that the special notation $-1^{(+)}$ means that
+        the limit point is $-1$, but we only consider inputs that
+        are \emph{larger} (or to the right) of $-1$. Immediately
+        to the right of the limit point, the output of the
+        $Q$ appears to be a constant $2$. Thus, the visual evidence
+        is that \(\displaystyle \lim_{x \to -1^{(+)}} Q(x) = 2\).
+
+        Once again, visual evidence \textbf{isn't} a proof.
+
+        
+    \end{solution}
+
+\end{parts}
+
+\begin{center}
+\includegraphics[scale=0.25]{desmos-graph(28).png}
+\end{center}
+
+\end{questions}
+
+\newpage
+\noindent Suppose functions $F$ and $G$ have limits toward $c$ and suppose $a,b \in \reals$ and $n$ is a positive integer. Then
+
+
+\end{document}
