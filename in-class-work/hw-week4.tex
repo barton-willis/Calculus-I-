@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -72,22 +72,21 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
 \begin{questions} 
 
 \question[1] Shown below is a graph of a function $Q$. Use the graph to estimate the numerical value of $Q^\prime(2)$.
-
-\begin{centering}
-\includegraphics[scale=0.25]{desmos-graph(30).png}
-\end{centering}
 \begin{solution}
+Your TL might look different--here is mine
+
+\begin{center}
+\includegraphics[scale=0.25]{desmos-graph(32).png}
+\end{center}
+Again, your estimated dots on the TL might be different, but 
+using the two labeled dots on the TL, the slope of the TL is
+\[
+  \frac{2.9 + 1.3}{4-0} \approx 1.0.
+\]
+
 \end{solution}
 
 \newpage
-\question[1] In the year 1969 at age 11, child actress Eve Plumb purchased a Malibu beach house for \$55,000. Forty-seven years
-later she sold it for \$3.9 million. Her annual percent yield $r$ on this investment is given by the solution to
-\[
-   3, 900,000 = 55,000 \times (1 + r)^{47}.
-\]
-Find Eve Plumb's return on this investment.
-\begin{solution}[3.0in]
-\end{solution}
 
 \question[1] When a Nebraska judge resigns, the judge receives a lifetime pension of $P$ dollars per year that depends on their ending salary $S$ and their years of service $Y$. The formula for the pension is
 \begin{equation}
@@ -97,11 +96,23 @@ Find Eve Plumb's return on this investment.
   \begin{parts}
    \part[1] Using $S = 1$, draw a graph of this function.  That is, draw a graph of \\ $\displaystyle P = \begin{cases}  \frac{35}{1000} Y &  Y \leq 20 \\  \frac{7}{10} &  Y >  20 \end{cases}.$
    \begin{solution}%[3.0in]
+   
+   Here is my graph:
+   
+   \begin{center}
+\includegraphics[scale=0.25]{desmos-graph(33).png}
+\end{center}
 \end{solution}
 \newpage
    \part[1] Using the graph, draw a graph of \(\displaystyle \frac{\mathrm{d} P}{\mathrm{d} Y}\).  Is the function
    differentiable at $Y = 20$?
    \begin{solution}[3.0in]
+   
+   For $0<Y< 20$, the graph is a line with slope $0.035$. So for the interval \mbox{$0<Y< 20$}, we have  \(\displaystyle \frac{\mathrm{d} P}{\mathrm{d} Y} = 0.035\). For $20< Y$, the graph is a horizontal line with slope $0$. So for the interval $0<Y< 20$, we have  \(\displaystyle \frac{\mathrm{d} P}{\mathrm{d} Y} = 0\). At $Y = 20$, the graph doesn't have a TL, so the derivative at $20$ doesn't exist.  A graph of the derivative is
+   
+      \begin{center}
+\includegraphics[scale=0.25]{desmos-graph(34).png}
+\end{center}
 \end{solution}
   \end{parts}
   
@@ -111,18 +122,48 @@ Find Eve Plumb's return on this investment.
   
   \part [1] \( \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ \cos(2) x^2 + \sin(2) x  + 46 \right] \)
   \begin{solution}[2.0in]
+  \begin{align*}
+    \frac{\mathrm{d}}{\mathrm{d} x} \left[ \cos(2) x^2 + \sin(2) x  + 46 \right] &= 
+     \cos(2) \frac{\mathrm{d}}{\mathrm{d} x} \left[ x^2 \right ] + \sin(2)  \frac{\mathrm{d}}{\mathrm{d} x} \left[x\right]  +     \frac{\mathrm{d}}{\mathrm{d} x} \left [ 46 \right]  & \mbox{(Rule 1)} \\
+     &=    \cos(2) (2 x ) + \sin(2)    +     0   & \mbox{(Rule 2)}  \\
+     &= 2   \cos(2) x  + \sin(2)      & \mbox{(algebra)}  \\
+  \end{align*}
+Since $\cos(2)$ and $\sin(2)$ are both real numbers, we can use what I call the
+outative property on them. There is a \textbf{huge} difference between
+$\displaystyle  \frac{\mathrm{d}}{\mathrm{d} x} \left[ \cos(x) \right]$
+and $\displaystyle  \frac{\mathrm{d}}{\mathrm{d} x} \left[ \cos(2) \right]$. So
+be careful with that!
 \end{solution}
    \part [1] \( \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ \sin(3) x^2 + \ln(107) x  \right] \)
    \begin{solution}[2.0in]
+    \begin{align*}
+    \frac{\mathrm{d}}{\mathrm{d} x} \left[ \sin(3) x^2 + \ln(107) x  \right] &= 
+     \sin(3) \frac{\mathrm{d}}{\mathrm{d} x} \left[ x^2 \right ] + \ln(107)   \frac{\mathrm{d}}{\mathrm{d} x} \left[x\right]  & \mbox{(Rule 1)} \\
+     &=    \sin(3) (2 x ) + \ln(107)       & \mbox{(Rule 2)} \\
+     &=    2 \sin(3) x + \ln(107)       & \mbox{(algebra)} \\
+     \end{align*}
 \end{solution}
-    \part [1] \( \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ \frac{(x^2 + 1}{x}  \right] \)
+    \part [1] \( \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ \frac{x^2 + 1}{x}  \right] \)
    \begin{solution}%[2.0in]
-
+    Yikes! We need the derivative of a quotient, but none of our rules match a quotient.
+    What to do? We need to use some algebra to change the expression into something
+    that matches one of our rules:
+\begin{align*}
+ \frac{\mathrm{d}}{\mathrm{d} x} \left[ \frac{x^2 + 1}{x}  \right] &=
+  \frac{\mathrm{d}}{\mathrm{d} x} \left[ x +x^{-1} \right]  &\mbox{(algebra)} \\
+  &= 1 - x^{-2} & \mbox{(Rule 2)}   
+\end{align*}
 \end{solution}
-\newpage
-     \part [1] \( \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ x^\mathrm{e} = \mathrm{e}^x  \right] \)
+%\newpage
+     \part [1] \( \displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left[ x^\mathrm{e} - \mathrm{e}^x  \right] \)
   \end{parts}
 \end{questions}
+\begin{solution}
+\begin{align*}
+\frac{\mathrm{d}}{\mathrm{d} x} \left[ x^\mathrm{e} - \mathrm{e}^x  \right] &=
+ \mathrm{e} x^{\mathrm{e} -1} - \mathrm{e}^x.  &\mbox{(Rules 2 and 3)}
+\end{align*}
+\end{solution}
 
 \vfill
 
@@ -270,3 +311,12 @@ as best you can find the numerical value of each limit.
 
 
 \end{document}
+
+\question[1] In the year 1969 at age 11, child actress Eve Plumb purchased a Malibu beach house for \$55,000. Forty-seven years
+later she sold it for \$3.9 million. Her annual percent yield $r$ on this investment is given by the solution to
+\[
+   3, 900,000 = 55,000 \times (1 + r)^{47}.
+\]
+Find Eve Plumb's return on this investment.
+\begin{solution}[3.0in]
+\end{solution}
