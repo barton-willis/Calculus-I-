@@ -1,0 +1,150 @@
+\documentclass[12pt, fleqn]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{2}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Wednesday 31 August at 13:15 \PM}
+\newcommand{\class}{MATH 115}
+\begin{document}
+\large
+
+
+\vspace{0.1in}
+\noindent{\textbf{Week 4 Friday Work}}
+
+\begin{questions} 
+
+\question Find the value of each limit. Fully justify your work.
+
+\begin{parts}
+    \part \( \displaystyle \lim_{x \to \uppi} 4 \lfloor x \rfloor  \)
+    \begin{solution}[2.05in]
+        
+    \end{solution}
+
+\part \( \displaystyle \lim_{x \to 2/3} \frac{x^2+1}{x^2-10} \)
+\begin{solution}[2.05in]
+    
+\end{solution}
+\part \( \displaystyle \lim_{x \to 23} \cos(x) \)
+\begin{solution}[2.05in]
+    
+\end{solution}
+
+\part \( \displaystyle \lim_{x \to 0} \left(\cos(1/x)^2 + \sin(1/x)^2 \right) \)
+\begin{solution}[2.05in]
+    
+\end{solution}
+
+\part \( \displaystyle \lim_{x \to 2} \left(\cos(x^2 + x + 1 \right) \)
+\begin{solution}[2.05in]
+    
+\end{solution}
+
+\end{parts}
+
+\question Find each derivative
+
+\begin{parts}
+
+    \part \(\frac{\mathrm{d}}{\mathrm{d} x} \left[ 2 x^2 + 31 x + 107 \right] \)
+    \begin{solution}[2.5in]
+    
+    \end{solution}
+
+    \part \(\frac{\mathrm{d}}{\mathrm{d} x} \left[ \sqrt{2} x - \sqrt{2 x} \right] \)
+    \begin{solution}[2.5in]
+    
+    \end{solution}
+
+    \part \(\frac{\mathrm{d}}{\mathrm{d} x} \left[ (x-5)(x-7) \right] \)
+    \begin{solution}[2.5in]
+    
+    \end{solution}
+
+    \part \(\frac{\mathrm{d}}{\mathrm{d} x} \left[ \frac{x-1}{x} \right] \)
+    \begin{solution}[2.5in]
+    
+    \end{solution}
+
+\end{parts}
+
+\question Sketch a graph of $y = \begin{cases} x/20  & x < 20 \\
+                                            1 & x \geq 20 \end{cases}.$
+
+Find a formula for $\displaystyle \frac{\mathrm{d} y}{\mathrm{d}x} $.                                          
+\end{questions}
+
+\vfill 
+%
+\begin{description}
+
+    \item[Rule \#0 (polynomial)] Every polynomial is continuous everywhere.
+    
+    \item[Rule \#1 (rational)] Every rational function is continuous everywhere it's defined.
+    
+    \item[Rule \#2]  Each of the following functions are continuous everywhere they
+    are defined: power (both integer and noninteger powers), trigonometric, inverse trigonometric, exponential, and logarithmic.
+    
+    \item[Rule \#3] Let $F$ and $G$ be functions that are continuous at $c$ and let
+    $a,b$ be numbers and let $n$ be a positive integer; each of the following are 
+    continuous at $c$:
+    \begin{align*}
+        &a F + b G \\
+        &F G & \\
+        &F/G & (\mbox{ provided  $G(c) \neq 0$ }) \\
+        &F^n & \\
+        &F^{1/n} & (\mbox{ provided $F{1/n}$ is defined on a neighborhood of $c$})
+    \end{align*}
+    
+    \item[Rule \#4] Let $G$ be continuous at $c$ and let $F$ be continuous at $F(c)$.
+    Then $F \circ G$ is continuous at $c$.
+\end{description}
+\end{document}
