@@ -320,10 +320,10 @@ that you expect to earn a 3.5\% pay rise each year you work. What is your salary
 your \nth{40} year of work?  \textbf{Hint:} Your salary for your \nth{3} year of work
 is $\$64,000 \times 1.035^2$.
 \begin{solution}%[2.5in]
-In your \nth{40} year of work, you will have earned 39 pay rises each of 4.1\%. Rounded to 
+In your \nth{40} year of work, you will have earned 39 pay rises each of 3.5\%. Rounded to 
 the nearest penny, your salary for your \nth{40} year of work is
 \begin{equation*}
-   46,000 \times 1.041^{39} = 220,463.29.
+   64,000 \times 1.035^{39} \approx 244,823.79.
  \end{equation*}   
 \end{solution}
 
@@ -332,8 +332,13 @@ and the domain of $Q^{-1}$.
 \begin{solution} 
     We need to solve $y = x^3+1, -\infty < x < \infty $ for $x$. The
     solution is $x = (y-1)^{1/3}, -\infty < (y-1)^{1/3} < \infty $. 
-    Solving $\infty < (y-1)^{1/3} < \infty$ gives $ -\infty < x < \infty$.
+    Solving $-\infty < (y-1)^{1/3} < \infty$ gives $ -\infty < y < \infty$.
     So  $Q^{-1}(y) = (y-1)^{1/3}$ and $\dom(Q^{-1}) = \reals$.
+
+    \quad If you loath naming the independent  variable $y$, I
+    suggest that you get over it. Until then, the formulae 
+    $Q^{-1}(y) = (y-1)^{1/3}$ and $Q^{-1}(x) = (x-1)^{1/3}$
+    are semantically (but not syntactically) equivalent.
 \end{solution}
     \question   Find the \emph{natural domain} of the function $F$ whose
 formula is $F(x) = \frac{1}{5+ \frac{1}{x}}$
