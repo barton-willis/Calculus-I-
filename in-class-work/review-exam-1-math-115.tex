@@ -72,7 +72,7 @@ but Larry can't remember the justification for this calculation. Explain to
 Larry what function property justifies this calculation. Write your answer in
 sentence form.
 \begin{solution} Larry used \emph{direct substitution} to evaluate this limit. Direct
-    substitution is justified provided the function is continuous at the limit 
+    substitution is justified provided the function is \emph{continuous} at the limit 
     point.  Here the limit point is $\sqrt{7}$. The floor function is continuous 
     at $\sqrt{7}$, so direct substitution is justified.    
 \end{solution}
@@ -83,27 +83,30 @@ sentence form.
     \[
     \lim_{x \to \uppi} 
 \left(5 \lfloor x \rfloor -  \lfloor 5 x \rfloor  \right) 
- = \left(5 \lfloor \uppi \rfloor -  \lfloor 5 \uppi \rfloor \right)
+ = 5 \lfloor \uppi \rfloor -  \lfloor 5 \uppi \rfloor
  = 0.
     \]
 Although you might guess that $5 \lfloor x \rfloor -  \lfloor 5 x \rfloor = $
 for all real $x$, that's rubbish. For example, 
-$5 \lfloor 3/2 \rfloor -  \lfloor 5 \times 3/2 \rfloor = -2.$
+$5 \lfloor 3/2 \rfloor -  \lfloor 5 \times 3/2 \rfloor = -2$. Actually,
+the graph of $y = 5 \lfloor x \rfloor -  \lfloor 5 x \rfloor$ is a curious
+thing--you should look at it sometime.
 \end{solution}
 
 \question Define a function $A(x) = x^2 |x|$. Use the definition of
 the derivative as a limit of a Newton quotient to find the value of $A^\prime(0)$.
 \begin{solution}   
     \[
+        \lim_{x \to 0} \frac{A(x) - A(0)}{x-0} =
     \lim_{x \to 0} \frac{x^2 |x| - 0}{x-0} = \lim_{x \to 0} x |x| = 0.
     \]
 The last step is justified in part by the fact that the absolute value
-function is continuous everywhere.
+function is continuous everywhere. That makes direct substitution OK.
 \end{solution}
 \question Find the value of \(\displaystyle \lim_{x \to 2^{(-)}} 
  \lfloor x \rfloor \).
 \begin{solution}
-For $x$ near but to the left of two, \(\lfloor x \rfloor \) simplifies
+For $x$ near, but to the left of two, \(\lfloor x \rfloor \) simplifies
 to one. Thus
 \[
     \lim_{x \to 2^{(-)}}  \lfloor x \rfloor = \lim_{x \to 2^{(-)}} 1 = 1.
@@ -130,9 +133,16 @@ to one. Thus
 The point of tangency is $(x= 5, y=5)$.
 \begin{solution}
     We need a point on the line and its slope.  The point is given--it is \mbox{$(x= 5, y=5)$}.
-    To find the slope of the TL, we need to evaluate $\displaystyle
+    To find the slope of the TL, we need to evaluate 
+    \[
     \left. \frac{\mathrm{d}y}{\mathrm{d}x} \right \vert_{x=5} = 
-    \left. 2x - 4\right \vert_{x=5}  = 6.$ So an equation for the TL is $y-5 = 6(x-5)$.
+    \left. 2x - 4\right \vert_{x=5}  = 6. 
+    \]
+    So an equation for the TL is $y-5 = 6(x-5).$  Since the problem
+    asked for ``an equation of the tangent line,'' you are
+    free to present your answer in either point-slope form,
+    intercept form, or general form.  Isn't freedom of
+    expression \emph{wonderful?}
     
 \end{solution}
 \question Find an equation of the tangent line (TL) to the curve $y = \mathrm{e}^x$. 
@@ -150,7 +160,7 @@ The point of tangency is $(x= 0, y=1)$.
 \begin{solution}
     There is only one denominator that can vanish; thus
     \(
-     \{x | x \neq 0 \}.
+     \dom{W} = \{x | x \neq 0 \}.
     \)
     
 \end{solution}
@@ -158,12 +168,23 @@ The point of tangency is $(x= 0, y=1)$.
 \question Find the \emph{natural domain} of the function whose formula is 
 $Q(x) = \frac{5}{1 - \frac{1}{x}} $.
 \begin{solution}
-    There are two denominators-we need both of them to be nonzero. Thus
+    There are two denominators--we need both of them to be nonzero. Thus
     \[
-         \{x |   1 - \frac{1}{x} \neq 0 \mbox{ and } x \neq 0 \}
-       =  \{x |   x \neq 1 \mbox{ and } x \neq 0 \}.
+         \left \{x |  \,\,  1 - \frac{1}{x} \neq 0 \mbox{ and } x \neq 0 \right \}
+       =  \left \{x |   x \neq 1 \mbox{ and } x \neq 0 \right \}.
     \]
-    Careful: If you ``simplify'' $\frac{5}{1 - \frac{1}{x}}$ To
+
+    Remember that \(\left \{x |  \,\,  1 - \frac{1}{x} \neq 0 \mbox{ and } x \neq 0  \right \} \)
+    is in \emph{implicit form}, so it is \textbf{not} simplified and it
+    is \textbf{unworthy} of earning full credit.
+
+    \quad Also, the problem statement does not mandate the way to express 
+    the answer, so you have the \textbf{freedom} to present your
+    answer in either set builder notation, interval notation, or pictorially.
+    \textbf{It's all good!} In interval notation, the solution is \((-\infty,0) \cup (0,1) \cup (1,\infty) \).
+
+
+    \textbf{Careful:} If you ``simplify'' $\frac{5}{1 - \frac{1}{x}}$ To
     $\frac{5x}{x - 1}$, you will miss the fact that zero is 
     not in the natural domain.  
 \end{solution}
@@ -253,6 +274,26 @@ $Q(x) = \frac{5}{1 - \frac{1}{x}} $.
 
 Find a formula for $\displaystyle \frac{\mathrm{d} y}{\mathrm{d}x} $. 
 
+\begin{solution}
+    A graph is
+
+
+    \begin{center}
+\includegraphics[scale=0.25]{desmos-graph(35).png}
+    \end{center}
+
+To the left of twenty, the graph is a line with slope $1/20$; and
+to the right of twenty, the graph is a line with slope zero. At twenty,
+the graph has a ``corner,'' (no TL), so apparently, the function is not 
+differentiable at twenty. Accordingly, we have
+\[
+    \frac{\mathrm{d}y}{\mathrm{d}x} =
+    \begin{cases} 1/20  & x < 20 \\
+                 \mbox{dne} & x = 20 \\
+                 0 & x >  20 \end{cases}.
+\]
+    
+\end{solution}
 
 \question  In the year 1969 at age 11, child actress Eve Plumb purchased a Malibu beach house for \$55,000. Forty-seven years
 later she sold it for \$3.9 million. Her annual percent yield $r$ on this investment is given by the solution to
@@ -267,8 +308,12 @@ Find Eve Plumb's return on this investment. You will need to solve the given equ
            \left [\frac{780}{11} = (1 + r)^{47} \right] , &\mbox{(divide by 55000)}\\
             &= \left [\left(\frac{780}{11}\right)^{1/47} = (1 + r) \right] , &\mbox{(47th root)}\\
             &= \left [r = \left(\frac{780}{11} \right)^{1/47} - 1 \right], \\
-            &= \left [r \approx 9.49\% \right ]
+            &= \left [r \approx 9.49\% \right ].
         \end{align*}
+    Since 1969, the APY for the S\&P index is about 10.06\%. I'd
+    say it was a pretty good investment--of course, the home, unlike
+    an S\&P index fund requires upkeep and taxes on homes is different
+    than taxes on stock dividends and gains.
     \end{solution}
     \question   After graduation, suppose your starting salary is \$64,000. Further, suppose
 that you expect to earn a 3.5\% pay rise each year you work. What is your salary for 
