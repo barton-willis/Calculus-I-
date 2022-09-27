@@ -1,0 +1,162 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{6}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Wednesday 27 September 13:15 \PM}
+\newcommand{\class}{MATH 115}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work \quiz, \term \/ \the\year}}
+\textbf{Row and Seat}:\hrulefill\\
+\vspace{0.1in}
+
+
+\noindent  In class work  \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
+Turn in your work at the end of class  \emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+
+
+\begin{questions} 
+
+    \question As a function of time $t$ (seconds), the position $s$  (feet) 
+    of a 1952 Farmall 44 horsepower tractor moving along a flat piece of Floyd's Creek Road 
+    is given by $s = 2 t^{3/2}$. This relation holds
+    for $1 \leq t \leq 9$.
+
+    \begin{parts}
+
+    \part [1] Find the \emph{displacement} of the tractor on the time
+    interval $[1,9]$. That is, find $s \vert_{t=9} - s \vert_{t=1} $.
+
+    \begin{solution}[1.5in]   
+        
+    \end{solution}
+
+    \part [1] Find the \emph{average velocity} of the tractor on the time
+    interval $[1,9]$. That is, find $\frac{s \vert_{t=9} - s \vert_{t=1}}{9-1} $.
+    
+    \begin{solution}[1.5in]   
+        
+    \end{solution}
+
+    \part [1] Find the \emph{velocity} of the tractor at the time $t=1$.
+    That is, find 
+    $\displaystyle \left . \frac{\mathrm{d} s}{\mathrm{d} t} 
+    \right \vert_{t=1}$.
+    \begin{solution}[1.5in]   
+        
+    \end{solution}
+
+    \part [1] Find the \emph{velocity} of the tractor at the time $t=9$.
+    That is, find 
+    $\displaystyle \left . \frac{\mathrm{d} s}{\mathrm{d} t} 
+    \right \vert_{t=9}$.
+    \begin{solution}[2.5in]   
+        
+    \end{solution}
+
+    %\newpage 
+    \part [1] Find the \emph{acceleration} of the tractor at the time $t=2$.
+    That is, find 
+    $\displaystyle \left . \frac{\mathrm{d} s}{\mathrm{d} t} 
+    \right \vert_{t=9}$.
+    \begin{solution}[2.5in]   
+        
+    \end{solution}
+
+ 
+
+    \part [1] Show that $a v$, where $v$ is the velocity and $a$ is
+    the acceleration of the tractor is a constant for times $t$ 
+    in the interval $[1,9]$.
+    \begin{solution}[2.5in]   
+        
+    \end{solution}
+    
+    \end{parts}
+
+    \question The position $s$ of my pet American Fuzzy Lop rabbit Wilber moving along a line as a function of $t$ 
+    is $s = \frac{1}{2} t^2 - 2t + 4$, where we consider positive values of $s$ to be
+    to the right and negative to the left.
+
+    \begin{parts}
+
+         \part[1] When is Wilber moving to the right? That is, when is 
+         $\displaystyle \frac{\mathrm{d} s}{\mathrm{d} t} > 0$?
+
+         \begin{solution}[2.5in]   
+        
+         \end{solution}
+         
+         \part[1] When is Wilber moving to the left? That is, when is 
+         $\displaystyle \frac{\mathrm{d} s}{\mathrm{d} t} < 0$?
+
+         \begin{solution}[2.5in]   
+        
+         \end{solution}
+
+         \part[1] Find Wilber's \emph{speed} when $t = 2$.
+
+         \begin{solution}[2.5in]   
+        
+         \end{solution}
+    
+    \end{parts}
+
+\end{questions}
+
+
+\end{document}
+

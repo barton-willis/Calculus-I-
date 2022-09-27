@@ -86,7 +86,7 @@ sentence form.
  = 5 \lfloor \uppi \rfloor -  \lfloor 5 \uppi \rfloor
  = 0.
     \]
-Although you might guess that $5 \lfloor x \rfloor -  \lfloor 5 x \rfloor = $
+Although you might guess that $5 \lfloor x \rfloor -  \lfloor 5 x \rfloor = 0$
 for all real $x$, that's rubbish. For example, 
 $5 \lfloor 3/2 \rfloor -  \lfloor 5 \times 3/2 \rfloor = -2$. Actually,
 the graph of $y = 5 \lfloor x \rfloor -  \lfloor 5 x \rfloor$ is a curious
@@ -159,9 +159,9 @@ The point of tangency is $(x= 0, y=1)$.
 \question Find the \emph{natural domain} of the function whose formula is $W(x) = \frac{5}{x} - \frac{x}{5}$.
 \begin{solution}
     There is only one denominator that can vanish; thus
-    \(
-     \dom{W} = \{x | x \neq 0 \}.
-    \)
+    \mbox{\(
+     \dom(W) = \{x | x \neq 0 \}.
+    \)}
     
 \end{solution}
 
@@ -262,7 +262,7 @@ $Q(x) = \frac{5}{1 - \frac{1}{x}} $.
     \begin{solution}%[2.5in]
     \[
         \frac{\mathrm{d}}{\mathrm{d} x} \left[ \frac{x^2+1}{x^2-1} \right] 
-        = -\frac{4 x}{{{\left( x-1\right) }^{2}}\, {{\left( x+1\right) }^{2}}}.
+        = -\frac{4 x}{(x^2-1)^2}.
     \]
     \end{solution}
 
@@ -311,9 +311,9 @@ Find Eve Plumb's return on this investment. You will need to solve the given equ
             &= \left [r \approx 9.49\% \right ].
         \end{align*}
     Since 1969, the APY for the S\&P index is about 10.06\%. I'd
-    say it was a pretty good investment--of course, the home, unlike
-    an S\&P index fund requires upkeep and taxes on homes is different
-    than taxes on stock dividends and gains.
+    say it was a pretty good investment--of course a home, unlike
+    an S\&P index fund,  requires upkeep; and taxes on homes is different
+    from taxes on stock dividends and gains.
     \end{solution}
     \question   After graduation, suppose your starting salary is \$64,000. Further, suppose
 that you expect to earn a 3.5\% pay rise each year you work. What is your salary for 
@@ -331,7 +331,7 @@ the nearest penny, your salary for your \nth{40} year of work is
 and the domain of $Q^{-1}$. 
 \begin{solution} 
     We need to solve $y = x^3+1, -\infty < x < \infty $ for $x$. The
-    solution is $x = (y-1)^{1/3}, -\infty < (y-1)^{1/3} < \infty $. 
+    solution is \mbox{$x = (y-1)^{1/3}$} and $ -\infty < (y-1)^{1/3} < \infty $. 
     Solving $-\infty < (y-1)^{1/3} < \infty$ gives $ -\infty < y < \infty$.
     So  $Q^{-1}(y) = (y-1)^{1/3}$ and $\dom(Q^{-1}) = \reals$.
 
@@ -348,7 +348,7 @@ formula is $F(x) = \frac{1}{5+ \frac{1}{x}}$
     \[
         \dom(F) = \left \{ x | (x \neq 0) \land (5+ \frac{1}{x} \neq 0) \right \}
     \]
-    Solving each inequation for $x$ gives and explicit form; it Is
+    Solving each inequation for $x$ gives an explicit form; it is
     \[
         \dom(F) = \left \{ x | (x \neq 0) \land (x  \neq -\frac{1}{5}) \right \}.
     \]
@@ -379,8 +379,8 @@ formula is $F(x) = \frac{1}{5+ \frac{1}{x}}$
     Thus
     \begin{align*}
         \lim_{x \to 1^{(-)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases} &=
-        \lim_{x \to 1^{(-)}} 3   & \hfill \mbox{(simplification)} \\
-        &= 3  &\hfill \mbox{(limit of constant)} \\
+        \lim_{x \to 1^{(-)}} 3,   & \hfill \mbox{(simplification)} \\
+        &= 3.  &\hfill \mbox{(limit of constant)} \\
     \end{align*}
 \end{solution}
 \part \(\displaystyle \lim_{x \to 1^{(+)}} \begin{cases} 3 & x < 1 \\ x & 1 \leq x \end{cases}\)

@@ -1,0 +1,86 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{4}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Wednesday 14 September 13:15 \PM}
+\newcommand{\class}{MATH 115}
+\begin{document}
+\large
+
+
+
+
+\noindent Let $n \in \reals$ and let $a \in \reals$. Let $x$ be the independent variable and let $u$ and $v$ be dependent variables. Where every both $u$ and $v$are differentiable, we have
+\begin{description}
+
+\item[Rule \#0 (constant rule)]  \( \frac{\mathrm{d}}{\mathrm{d} x} \left [a \right] = 0 \)
+\item[Rule \#1 (power rule)]  \( \frac{\mathrm{d}}{\mathrm{d} x} \left [x^n \right] = n x^{n-1}\).  When $n=1$, the rule
+is \( \frac{\mathrm{d}}{\mathrm{d} x} \left [x \right] = 1 \).
+\item[Rule \#2 (outative rule)]  \( \frac{\mathrm{d}}{\mathrm{d} x} \left [a u \right] = a \frac{\mathrm{d} u}{\mathrm{d} x}\).
+\item[Rule \#3 (additive rule)]  \( \frac{\mathrm{d}}{\mathrm{d} x} \left [ u + v \right] =  \frac{\mathrm{d} u}{\mathrm{d} x}
++   \frac{\mathrm{d} v}{\mathrm{d} x}\).
+\item[Rule \#4 (product  rule)]  \( \frac{\mathrm{d}}{\mathrm{d} x} \left [ u v \right] = \frac{\mathrm{d} u}{\mathrm{d} x} v
++ u \frac{\mathrm{d} v}{\mathrm{d} x}\)
+\item[Rule \#5 (quotient  rule)]  \( \frac{\mathrm{d}}{\mathrm{d} x} \left [\frac{u}{v} \right] = 
+\frac{v \frac{\mathrm{d} u}{\mathrm{d} x} - u \frac{\mathrm{d} v}{\mathrm{d} x}}{v^2}\)
+
+\item[Rule \#6 (exponential  rule)] \( \frac{\mathrm{d}}{\mathrm{d} x} \left [\mathrm{e}^x \right] = \mathrm{e}^x \)
+
+ \item[Rule \#7 (absolute value rule)] \( \frac{\mathrm{d}}{\mathrm{d} x} \left[|x| \right] = 
+ \begin{cases} -1 & x < 0 \\   1 & x > 0 \end{cases}\). The absolute value function is \emph{not} differentiable at zero.
+
+
+\end{description}
+
+\noindent Notice: The product and quotient rules require  that both factors are differentiable. When either fails to be differentiable, anything can happen.
+
+\end{document}

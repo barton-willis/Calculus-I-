@@ -1,0 +1,99 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{5}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Wednesday 31 August at 13:15 \PM}
+\newcommand{\class}{MATH 115}
+\begin{document}
+\large
+
+
+\vspace{0.1in}
+
+
+\begin{questions} 
+
+\question Find the numerical value of each limit:
+
+\begin{parts}
+
+\part \(\displaystyle \lim_{x \to 9^{(-)}} \begin{cases} x+1 & x < 9 \\ \uppi &x \geq 9 \end{cases}\)
+\part \(\displaystyle \lim_{x \to 9^{(+)}} \begin{cases} x+1 & x < 9 \\ \uppi &x \geq 9 \end{cases}\)
+\part \(\displaystyle  \lim_{x \to 9}  \begin{cases} x+1 & x < 9 \\ \uppi &x \geq 9 \end{cases}\)
+\part \(\displaystyle  \lim_{x \to 10}  \begin{cases} x+1 & x < 9 \\ \uppi &x \geq 9 \end{cases}\)
+\part \(\displaystyle  \lim_{x \to -1}  \begin{cases} x+1 & x < 9 \\ \uppi &x \geq 9 \end{cases}\)
+\part \(\displaystyle  \lim_{x \to 9} \frac{\sqrt{x+2} - \sqrt{11}}{x-9}\).
+\part \(\displaystyle  \lim_{x \to 9} \frac{x^2 - 81}{x-9}\).
+
+\end{parts}
+\question Find each derivative
+
+\begin{parts}
+
+\part \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x } \left[ (x+9)(x^2 + 11) \right]\)
+\part \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x } \left[ x (x+1)(x+2) \right]\)
+\part \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x } \left[ \frac{x+9}{x^2 + 11}  \right]\)
+\part \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x } \left[ \cos(5) x + \sin(32) \right]\)
+\part \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x } \left[ \sqrt{100 x}  \right]\)
+
+\end{parts}
+
+\question Use a limit of a Newton quotient to show that the function $Q(x) = x^3 |x| + 8$ is differentiable at zero.
+
+\question Find a TL to $y = x(x-8)$. The point of tangency is $(x=8, y = 0)$
+
+\question Find the inverse to the function $K(x) = 5 x + 1$ and $\dom(K) = [-1,1]$.
+
+\question Find the natural domain of  $K(x) = \frac{x+9}{8 - \frac{2}{x}} $.
+
+
+\end{questions}
+\end{document}
