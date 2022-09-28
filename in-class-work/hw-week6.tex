@@ -74,7 +74,12 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     of a 44 horsepower 1952 \mbox{Farmall \textregistered} \,  tractor moving along a flat piece of 
     Floyd Creek Road 
     is given by \mbox{$s = 2 t^{3/2}$}. This relation holds
-    for $1 \leq t \leq 9$.
+    for $1 \leq t \leq 9$. Since our friends in the Physics department
+    might be watching, we should append the correct units to all answers:
+    for example, \(\frac{\mathrm{d} s}{\mathrm{d} t} = 46 \mbox{ ft}/\mbox{sec} \)
+    and \(\frac{\mathrm{d}^2 s}{\mathrm{d} t^2} = 107 \mbox{ ft}/\mbox{sec}^2 \),
+    and \textbf{not} \(\frac{\mathrm{d} s}{\mathrm{d} t} = 46 \)
+    and \(\frac{\mathrm{d}^2 s}{\mathrm{d} t^2} = 107 \).
 
     \begin{parts}
 
@@ -110,7 +115,7 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     \part [1] Find the \emph{acceleration} of the tractor at the time $t=2$.
     That is, find 
     $\displaystyle \left . \frac{\mathrm{d}^2 s}{\mathrm{d} t^2} 
-    \right \vert_{t=9}$.
+    \right \vert_{t=2}$.
     \begin{solution}[2.5in]   
         
     \end{solution}
@@ -120,11 +125,13 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     \part [1] Show that $a v$, where $v$ is the velocity and $a$ is
     the acceleration of the tractor is a constant\footnote{For acceleration with a 
     constant power, $a v$ is constant. For the most part, internal 
-    combustion engines deliver constant power, making acceleration of
+    combustion engines deliver constant power at any speed, making acceleration of
     an automobile different from acceleration with a constant force.
     But starting from a stop, initially a car accelerates with a 
-    constant force.}
-    for times $t$ 
+    constant force before it transitions to acceleration with a
+    constant power. Physics texts are full of problems involving
+    acceleration with a constant force, but problems involving
+    acceleration with a power are obscure.}    for times $t$ 
     in the interval $[1,9]$.
     \begin{solution}[2.5in]   
         
@@ -169,6 +176,46 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     \end{parts}
 
 \end{questions}
+
+\vfill 
+\noindent \textbf{Addendum} In Leibniz notation, it might seem peculiar that the derivative
+order is a superscript of $\mathrm{d}$ in the numerator but a
+superscript of the variable in the denominator. For example,
+we write 
+\(\displaystyle \frac{\mathrm{d}^3 y}{\mathrm{d}x^3}\) and
+\textbf{ not } 
+\(\displaystyle \frac{\mathrm{d}^3 y}{\mathrm{d}^3 x}\). 
+
+This
+notation might seem less peculiar if we were to define second and
+higher order derivatives by a generalized Newton quotient. That 
+would be a fun thing to do--let's save that for another day.
+
+Another way to make the positioning of the derivative orders
+seem less peculiar is to think about the physical units of 
+the derivative. If we denote (special notation I just made up)
+the physical unit of a quantity $q$ by $\langle q \rangle$, we 
+have the rule
+\[
+    \left \langle \frac{\mathrm{d}^n y}{\mathrm{d} x^n} \right \rangle
+    = \frac{ \langle y \rangle}{ \langle x \rangle^n }.
+\]
+The fact that the numerator of the units is \(\langle y \rangle\),
+not \(\langle y \rangle^n\) and the denominator of the units is 
+\(\langle x \rangle^n\), not \(\langle x \rangle\) makes the 
+positioning of the superscripts seem more natural, I think.
+Here is an example of this rule: if $\langle y \rangle = \mbox{ft}$ 
+and \(\langle t \rangle = \mbox{sec}\), we have
+\(\left \langle \frac{\mathrm{d}^2 y}{\mathrm{d} t^2} \right \rangle
+    = \frac{ \mbox{ft}}{\mbox{sec}^2 }\).
+
+Finally, for those of you taking CHEM 160: if you learn
+how to simply multiply and divide physical quantities to
+make the units come out correct, you'll be able to solve 
+some multiple choice questions without understanding 
+anything about chemistry. Using physical units is a
+powerful way to check your work, but let's not substitute
+it for a proper understanding.
 
 
 \end{document}
