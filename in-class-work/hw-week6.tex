@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -50,7 +50,7 @@
      
 \newcommand{\quiz}{6}
 \newcommand{\term}{Fall}
-\newcommand{\due}{Wednesday 27 September 13:15 \PM}
+\newcommand{\due}{Wednesday 27 September at 13:15 \PM}
 \newcommand{\class}{MATH 115}
 \begin{document}
 \large
@@ -86,13 +86,19 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     \part [1] Find the \emph{displacement} of the tractor on the time
     interval $[1,9]$. 
     \begin{solution}[1.5in]   
-        
+        \[
+            s \vert_{t \leftarrow 9} - s \vert_{t \leftarrow 1}
+              = (54 - 2) \mbox{ feet} = 52 \mbox{ feet}
+        \]
     \end{solution}
 
     \part [1] Find the \emph{average velocity} of the tractor on the time
     interval $[1,9]$. 
     \begin{solution}[1.5in]   
-        
+        \[
+            \frac{s \vert_{t \leftarrow 9} - s \vert_{t \leftarrow 1}}
+                {9-1} = \frac{52}{8} = \frac{13}{3} \frac{\mbox{ft}{sec}}
+       \]
     \end{solution}
 
     \part [1] Find the \emph{velocity} of the tractor at the time $t=1$.
@@ -100,7 +106,13 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     $\displaystyle \left . \frac{\mathrm{d} s}{\mathrm{d} t} 
     \right \vert_{t=1}$.
     \begin{solution}[1.5in]   
-        
+        First we find the velocity. After that, we paste in $t \leftarrow 1$. We 
+        have $\displaystyle \left . \frac{\mathrm{d} s}{\mathrm{d} t} 
+        = 3 t^{1/2}$. So 
+        $\displaystyle \left . \frac{\mathrm{d} s}{\mathrm{d} t} \right \vert_{t \leftarrow 1}
+        = 3 \frac{\mbox{feet}{sec}}$
+
+
     \end{solution}
 
     \part [1] Find the \emph{velocity} of the tractor at the time $t=9$.
@@ -108,6 +120,8 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     $\displaystyle \left . \frac{\mathrm{d} s}{\mathrm{d} t} 
     \right \vert_{t=9}$.
     \begin{solution}%[2.5in]   
+        We have $\displaystyle \left . \frac{\mathrm{d} s}{\mathrm{d} t} \right \vert_{t \leftarrow 9}
+        = 9 \frac{\mbox{feet}{sec}}$
         
     \end{solution}
 
@@ -116,7 +130,12 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     That is, find 
     $\displaystyle \left . \frac{\mathrm{d}^2 s}{\mathrm{d} t^2} 
     \right \vert_{t=2}$.
-    \begin{solution}[2.5in]   
+    \begin{solution}[2.5in]  We have
+        \[            
+          \frac{\mathrm{d}^2 s}{\mathrm{d} t^2} 
+          = \frac{\mathrm{d}} {\mathrm{d} t} \left[3 t^{1/2} \right]
+          = \frac{3}{2} t^{-1/2}.
+        \] 
         
     \end{solution}
 
@@ -138,6 +157,12 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     I rounded that to two.}    for times $t$ 
     in the interval $[1,9]$.
     \begin{solution}[2.5in]   
+        We have
+        \[
+            a v = \frac{3}{2} t^{-1/2} \times 3 t^{1/2}
+                = \frac{9}{4}
+        \]
+        And that's a constant (that is doesn't depend on $t$)
         
     \end{solution}
     
@@ -154,24 +179,34 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
          \part[1] When is Wilber moving to the right? That is, when is 
          $\displaystyle \frac{\mathrm{d} s}{\mathrm{d} t} > 0$?
 
-         \begin{solution}[2.5in]   
+         \begin{solution}[2.5in]   First, we have $\displaystyle
+            \frac{\mathrm{d} s}{\mathrm{d} t} = t - 2$. So solving
+            $\displaystyle \frac{\mathrm{d} s}{\mathrm{d} t} > 0$
+            gives $t > 2$.
         
          \end{solution}
          
          \part[1] When is Wilber moving to the left? That is, when is 
          $\displaystyle \frac{\mathrm{d} s}{\mathrm{d} t} < 0$?
 
-         \begin{solution}[2.5in]   
+         \begin{solution}[2.5in]   This time we solve $\displaystyle \frac{\mathrm{d} s}{\mathrm{d} t} > 0$.
+            The solution is $t < 2$.
         
          \end{solution}
 
          \part[1] Find Wilber's \emph{speed} when $t = 2$.
 
-         \begin{solution}[2.5in]   
+         \begin{solution}[2.5in]  We have
+            \[
+                \left. |\frac{\mathrm{d} s}{\mathrm{d} t}| \right |_{t \leftarrow  2}
+                = | 2 - 2| = 0 \frac{\mbox{ft}{sec}}
+            \]
+
         
          \end{solution}
 
-         \part[1] When is Wilber's \emph{speed} zero?
+         \part[1] When is Wilber's \emph{speed} zero? We need To
+         solve $|t-2| =0$. The solution is $t=2$.
 
          \begin{solution}[2.5in]   
         
