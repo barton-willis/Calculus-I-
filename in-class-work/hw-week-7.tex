@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -74,47 +74,79 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     and $\displaystyle \frac{\mathrm{d}^2 y}{\mathrm{d} x^2}$ evaluated
     at $(x= 1/\sqrt{2},y=1/\sqrt{2})$ given $x^2+ y^2 = 1$.
     \begin{solution}[3.5in]
-        \begin{equation}
+        \begin{equation*}
             \frac{\mathrm{d}}{\mathrm{d} x} \left [x^2 + y^2 = 1 \right] 
-                &= \left[2x + 2 y \frac{\mathrm{d} y}{\mathrm{d} x} = 0 \right].
-        \end{equation}
-    Paste in the data $x \leftarrow 1/\sqrt{2}, y \leftarrow 1/\sqrt{2}$ gives
-    \begin{equation}
-        \left [ \frac{2}{\sqrt{2}} + \frac{2}{\sqrt{2}} \frac{\mathrm{d} y}{\mathrm{d} x} = 0 \right ]
-    \end{equation} 
-    Solving this for \frac{\mathrm{d} y}{\mathrm{d} x}
+                = \left[2x + 2 y \frac{\mathrm{d} y}{\mathrm{d} x} = 0 \right].
+        \end{equation*}
+Solving this for $\frac{\mathrm{d} y}{\mathrm{d} x}$ gives
+\begin{equation*}
+    \frac{\mathrm{d} y}{\mathrm{d} x} = - \frac{x}{y}.
+\end{equation*}
+    Pasting in the data $x \leftarrow 1/\sqrt{2}, y \leftarrow 1/\sqrt{2}$ gives  
+    $ \left. \frac{\mathrm{d} y}{\mathrm{d} x}  \right \vert_{ x =1/\sqrt{2} y = 1/\sqrt{2}} = - 1$.
+ 
+ To find the second derivative, we differentiate \( \frac{\mathrm{d} y}{\mathrm{d} x} = - \frac{x}{y} \).  This gives
+ \[
+    \frac{\mathrm{d}^2 y}{\mathrm{d} x^2} =    \frac{\mathrm{d}}{\mathrm{d} x} \left [ - \frac{x}{y} \right]
+     = -\frac{y - x y^\prime}{y^2}.
+ \]
+       Pasting  in the data $x \leftarrow 1/\sqrt{2}, y \leftarrow 1/\sqrt{2}$ gives  
+ \[
+    \left . \frac{\mathrm{d}^2 y}{\mathrm{d} x^2} \right \vert_{ x =1/\sqrt{2} y = 1/\sqrt{2}} =   -\frac{1/\sqrt{2}  + 1/\sqrt{2} }{1/2} = -2 \sqrt{2}.
+ \]       
     \end{solution}
 
     \question [1] The equation $x y = y - 1 + \mathrm{e}^{-y} $ defines\footnote{This problem is motivated by an unpublished mathematical model of hemoglobin glycation.}
     $y$ as a function of $x$.  Find a formula for $\displaystyle \frac{\mathrm{d} y}{\mathrm{d} x}$.
     
     \begin{solution}[2.5in]
+    We have
+    \begin{align*}
+      \frac{\mathrm{d}}{\mathrm{d} x} \left [ x y = y - 1 + \mathrm{e}^{-y} \right] &= \left[ y + x y^\prime = y^\prime - y^\prime \mathrm{e}^{-y} \right], \\
+      &= \left[ y  =  (1-x  - \mathrm{e}^{-y}) y^\prime  \right], \\
+      &= \left[ y^\prime = \frac{y}{1-x - \mathrm{e}^{-y}} \right].
+    \end{align*}
     \end{solution}
 
-    \newpage 
+    %\newpage 
 
     \question Find a formula for each derivative
     \begin{parts}
  
     \part [1] \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left [ \ln(x (x-1)) \right ] \)
     \begin{solution}[1.5in]
+      \[
+        \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{2 x-1}{\left( x-1\right)  x} = \frac{1}{x}+\frac{1}{x-1}
+      \]
     \end{solution}
 
     \part[1] \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left [ \tan^{-1}(x^2)) \right ] \)
     \begin{solution}[1.5in]
+    \[
+        \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{2 x}{{{x}^{4}}+1}.
+    \]
     \end{solution}
 
     \part[1] \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left [ \csc^{-1}(1/x^2)) \right ] \)
     \begin{solution}[1.5in]
+    \[
+         \frac{\mathrm{d} y}{\mathrm{d} x} =     \frac{2 x}{\sqrt{1-{{x}^{4}}}}
+    \] 
     \end{solution}
 
 
     \part[1] \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left [ x \tan^{-1}(x) \right ] \)
     \begin{solution}[1.5in]
+    \[
+         \frac{\mathrm{d} y}{\mathrm{d} x} =    \tan^{-1} (x)+\frac{x}{{{x}^{2}}+1}
+    \] 
     \end{solution}
 
     \part [1] \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left [ \cot^{-1}(x) + \tan^{-1}(x) \right ] \)
     \begin{solution}%[1.5in]
+      \[
+        \frac{\mathrm{d} y}{\mathrm{d} x} = -\frac{1}{1+x^2} + \frac{1}{1+x^2} = 0.
+        \]
     \end{solution}
     \end{parts}
 
