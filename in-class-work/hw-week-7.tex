@@ -14,8 +14,8 @@
 
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
 \usepackage[american]{babel}
-%\usepackage[T1]{fontenc}
-\usepackage{utopia}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
 \usepackage{isomath}
 \usepackage{upgreek,amsmath}
 \usepackage{amssymb}
@@ -74,14 +74,13 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     and $\displaystyle \frac{\mathrm{d}^2 y}{\mathrm{d} x^2}$ evaluated
     at $(x= 1/\sqrt{2},y=1/\sqrt{2})$ given $x^2+ y^2 = 1$.
     \begin{solution}[3.5in]
-        \begin{equation*}
+        \begin{align*}
             \frac{\mathrm{d}}{\mathrm{d} x} \left [x^2 + y^2 = 1 \right] 
-                = \left[2x + 2 y \frac{\mathrm{d} y}{\mathrm{d} x} = 0 \right].
-        \end{equation*}
-Solving this for $\frac{\mathrm{d} y}{\mathrm{d} x}$ gives
-\begin{equation*}
-    \frac{\mathrm{d} y}{\mathrm{d} x} = - \frac{x}{y}.
-\end{equation*}
+                &= \left[2x + 2 y \frac{\mathrm{d} y}{\mathrm{d} x} = 0 \right],
+                & \mbox{(additive and chain rules)} \\
+                &= \left[ \frac{\mathrm{d} y}{\mathrm{d} x} = - \frac{x}{y} \right ].  & \mbox{(algebra)}
+        \end{align*}
+
     Pasting in the data $x \leftarrow 1/\sqrt{2}, y \leftarrow 1/\sqrt{2}$ gives  
     $ \left. \frac{\mathrm{d} y}{\mathrm{d} x}  \right \vert_{ x =1/\sqrt{2} y = 1/\sqrt{2}} = - 1$.
  
