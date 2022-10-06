@@ -105,6 +105,20 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
       &= \left[ y  =  (1-x  - \mathrm{e}^{-y}) y^\prime  \right], \\
       &= \left[ y^\prime = \frac{y}{1-x - \mathrm{e}^{-y}} \right].
     \end{align*}
+
+    \textbf{FYI} It's easy to solve the equation $x y = y - 1 + \mathrm{e}^{-y} $
+    for $x$. The solution is $x = \frac{y-1 +  \mathrm{e}^{-y}}{y}$. 
+    And asking our favorite graphing tool to graph this shows that
+    when $x$ is the dependent variable and $y$ the independent variable,
+    the graph is one-to-one.  The one-to-one property tells us that
+    if we solved $x y = y - 1 + \mathrm{e}^{-y} $ for $y$, there would be
+    only one solution for each $x$. Which means that indeed the
+    equation $x y = y - 1 + \mathrm{e}^{-y} $ defines $y$ as
+    a function of $x$.
+
+    But solving $x y = y - 1 + \mathrm{e}^{-y} $ for $y$ involves
+    an obscure trick, so we won't go there.
+    
     \end{solution}
 
     %\newpage 
@@ -115,21 +129,24 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     \part [1] \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left [ \ln(x (x-1)) \right ] \)
     \begin{solution}[1.5in]
       \[
-        \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{2 x-1}{\left( x-1\right)  x} = \frac{1}{x}+\frac{1}{x-1}
+        \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{(x(x-1)^\prime)}{x(x-1)} = \frac{2 x-1}{\left( x-1\right)  x} = \frac{1}{x}+\frac{1}{x-1}
       \]
     \end{solution}
 
     \part[1] \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left [ \tan^{-1}(x^2)) \right ] \)
     \begin{solution}[1.5in]
     \[
-        \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{2 x}{{{x}^{4}}+1}.
+        \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{2 x}{1+(x^2)^2} =
+        \frac{2 x}{{{x}^{4}}+1}.
     \]
     \end{solution}
 
     \part[1] \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left [ \csc^{-1}(1/x^2)) \right ] \)
     \begin{solution}[1.5in]
     \[
-         \frac{\mathrm{d} y}{\mathrm{d} x} =     \frac{2 x}{\sqrt{1-{{x}^{4}}}}
+         \frac{\mathrm{d} y}{\mathrm{d} x} =
+         -\frac{(1/x^2)^\prime}{\sqrt{{(1/x^2)^{2}}-1}\, \left| 1/x^2 \right| }
+         = \frac{2 x}{\sqrt{1-{{x}^{4}}}}
     \] 
     \end{solution}
 
