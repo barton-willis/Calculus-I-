@@ -1,0 +1,111 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{5}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Wednesday 31 August at 13:15 \PM}
+\newcommand{\class}{MATH 115}
+\begin{document}
+\large
+
+
+\vspace{0.1in}
+
+
+\begin{questions} 
+
+
+
+
+\question Find a formula for each derivative:
+
+\begin{parts}
+ \part $U(x) = \ln(x + \sqrt{x^2-1})$
+ \part $N(x) = \exp(-x) \cos(5 \uppi x)$
+ \part $K(x) = \sec^{-1}(1/x)$
+ \part $U(x) =  \left( \tan^{-1} (x) \right)^2$
+ \part $N(x) =  \left( \tan^{-1} (x) \right)^{-1}$
+ \part $K(x) =  \left( \cos^{-1} (x) \right)^{-1}$
+
+ \part $U(x) =  \left( \cot^{-1} (1/x) \right)^2$
+ \part $N(x) =  \left( \cot^{-1} (1/x) \right)^{-1}$
+ \part $K(x) =  \left( \sec^{-1} (1/x) \right)^{-1}$
+
+\part $U(x) = \cos(x) \sin(x)$
+\part $N(x) = \tan(x) \cot(x)$
+\part $K(x) = \tan^{-1}(x) \tan(x)$
+
+\part $U(x) = 2 \cos(x) \sin(x) - \sin(2 x)$
+\part $N(x) = \cos(|x^2 - 1|)^2 + \sin(|x^2 - 1|)^2$
+\part $K(x) = \tan^{-1}(x) \tan(x)$
+
+
+
+
+ \end{parts}
+
+ \question Find all \emph{horizontal tangents} to the Devil's curve 
+$y^4 - x^4 + 8 x^2 - 4 y^2 = 0$. 
+
+\question Find a formula for $\displaystyle \frac{\mathrm{d} y}{\mathrm{d} x}$
+given that $y^4 - x^4 + 8 x^2 - 4 y^2 = 0$.
+
+
+\question 
+Define a function $Q(x) = (2 x - 1 ) \lfloor x \rfloor - \lfloor x \rfloor^2$.
+It's a fun fact to know and to tell that $Q$ is differentiable everywhere and that
+$Q^\prime(x) = 2 \lfloor x \rfloor$.  Find a formula for
+the derivative of 
+\begin{equation*}
+    W(x) =  (2 x^2 - 1 ) \lfloor x^2 \rfloor - \lfloor x^2 \rfloor^2.
+\end{equation*}
+
+\end{questions}
+\end{document}
