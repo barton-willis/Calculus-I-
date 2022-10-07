@@ -84,11 +84,13 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     Pasting in the data $x \leftarrow 1/\sqrt{2}, y \leftarrow 1/\sqrt{2}$ gives  
     $ \left. \frac{\mathrm{d} y}{\mathrm{d} x}  \right \vert_{ x =1/\sqrt{2} y = 1/\sqrt{2}} = - 1$.
  
- To find the second derivative, we differentiate \( \frac{\mathrm{d} y}{\mathrm{d} x} = - \frac{x}{y} \).  This gives
+ To find the second derivative, we differentiate 
+ \( \frac{\mathrm{d} y}{\mathrm{d} x} = - \frac{x}{y} \).  The quotient rule gives
  \[
     \frac{\mathrm{d}^2 y}{\mathrm{d} x^2} =    \frac{\mathrm{d}}{\mathrm{d} x} \left [ - \frac{x}{y} \right]
      = -\frac{y - x y^\prime}{y^2}.
  \]
+ To save some space, I used $y^\prime$ instead of $\displaystyle \frac{\mathrm{d}y}{\mathrm{d}x}$. 
        Pasting  in the data $x \leftarrow 1/\sqrt{2}, y \leftarrow 1/\sqrt{2}$ gives  
  \[
     \left . \frac{\mathrm{d}^2 y}{\mathrm{d} x^2} \right \vert_{ x =1/\sqrt{2} y = 1/\sqrt{2}} =   -\frac{1/\sqrt{2}  + 1/\sqrt{2} }{1/2} = -2 \sqrt{2}.
@@ -99,7 +101,7 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     $y$ as a function of $x$.  Find a formula for $\displaystyle \frac{\mathrm{d} y}{\mathrm{d} x}$.
     
     \begin{solution}[2.5in]
-    We have
+    Again, let's use $y^\prime$ instead of $\displaystyle \frac{\mathrm{d}y}{\mathrm{d}x}$. We have
     \begin{align*}
       \frac{\mathrm{d}}{\mathrm{d} x} \left [ x y = y - 1 + \mathrm{e}^{-y} \right] &= \left[ y + x y^\prime = y^\prime - y^\prime \mathrm{e}^{-y} \right], \\
       &= \left[ y  =  (1-x  - \mathrm{e}^{-y}) y^\prime  \right], \\
@@ -129,8 +131,10 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     \part [1] \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left [ \ln(x (x-1)) \right ] \)
     \begin{solution}[1.5in]
       \[
-        \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{(x(x-1)^\prime)}{x(x-1)} = \frac{2 x-1}{\left( x-1\right)  x} = \frac{1}{x}+\frac{1}{x-1}
+        \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{(x(x-1)^\prime)}{x(x-1)} = \frac{2 x-1}{\left( x-1\right)  x} = \frac{1}{x}+\frac{1}{x-1}.
       \]
+      The optional final answer of $\frac{1}{x}+\frac{1}{x-1}$ is a partial fraction decomposision (pfd).
+      And the pdf is one of my happy places.
     \end{solution}
 
     \part[1] \(\displaystyle \frac{\mathrm{d}}{\mathrm{d} x} \left [ \tan^{-1}(x^2)) \right ] \)
@@ -146,7 +150,7 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     \[
          \frac{\mathrm{d} y}{\mathrm{d} x} =
          -\frac{(1/x^2)^\prime}{\sqrt{{(1/x^2)^{2}}-1}\, \left| 1/x^2 \right| }
-         = \frac{2 x}{\sqrt{1-{{x}^{4}}}}
+         = - \frac{-2 /x^3}{1/x^2 \sqrt{1/x^4-1}} = \frac{2 x}{\sqrt{1-{{x}^{4}}}}
     \] 
     \end{solution}
 
