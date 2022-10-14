@@ -1,0 +1,124 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\usepackage{utopia}
+
+\newcommand{\quiz}{8}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Wednesday 31 August at 13:15 \PM}
+\newcommand{\class}{MATH 115}
+\begin{document}
+
+
+
+\vspace{0.1in}
+
+\noindent \textbf{Week 8 FLO} (Friday Learning Opportunity) 
+
+\begin{questions}  
+    
+  \question Find a TL to $y = \sqrt[3]{x}$ with a point of tangency of
+  $(x=1000, y = 10)$. 
+  
+  \begin{solution}%[3.5in]
+  We have $\displaystyle \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{1}{3} x^{-2/3}$. So
+  $ \left. \displaystyle \frac{\mathrm{d} y}{\mathrm{d} x}  \right \vert_{x=1000} = \frac{1}{300}$. So 
+\[
+   L(x) = 10 + \frac{1}{300} (x-1000).
+\]
+
+    
+  \end{solution}
+
+  \question Use the TL from Question 1 to estimate $\sqrt[3]{1007}$. Compare this to is 
+  true value.
+
+  \begin{solution}%[3.5in]
+\[
+    \sqrt[3]{1007} \approx L(1007) = 10 + \frac{1}{300} (1007-1000) = \frac{3007}{300} \approx 10.023.
+\]
+The true value is approximately $10.0232790996342627192912842164323354433109773879416081626$. So 10.023
+is a pretty good estimate.
+    
+  \end{solution}
+
+ 
+  %\newpage
+
+  \question Assume an elliptical pancake.  As a cornmeal pancake expands on the skillet,
+  its semi-major axis remains three times its semi-minor axis.  At the moment the surface 
+  area of the pancake is 12 square inches, the rate of change of its area is $1/2$ 
+  square inches per second.  At this moment, find the rate of change of its semi-minor
+  axis.
+
+  \begin{solution}[3.5in] Let the semi-major axis be $a$ and the semi-minor axis be $b$. We are
+  given that $a = 3 b$.  The area $A$ is $A = \uppi a b = 3 \uppi b^2$. So
+  \begin{equation}
+    \frac{\mathrm{d} A}{\mathrm{d} t} = 6 \uppi b  \frac{\mathrm{d} b}{\mathrm{d} t}.
+  \end{equation}
+  Pasting in the data gives
+   \begin{equation}
+   12 = 3 \uppi b^2   \quad  \frac{1}{2}  = 6 \uppi b  \frac{\mathrm{d} b}{\mathrm{d} t}.
+  \end{equation}
+  Solving for $b$ and $\frac{\mathrm{d} b}{\mathrm{d} t}$ gives $ \frac{\mathrm{d} b}{\mathrm{d} t} =
+  \frac{1}{24 \sqrt{\ensuremath{\pi} }}$.
+
+
+    
+  \end{solution}
+
+
+  \question A monarch butterfly is flying directly south and a goldfinch is flying directly 
+  east.  As some moment, the monarch is 3 miles south of the UNK belltower and the goldfinch
+  is five miles east. Also at this moment, the speed of the monarch is 8 mph and the 
+  speed of the goldfinch is 47 mph.  At this moment, what is the rate of change of
+  the distance between the monarch and the goldfinch?
+\end{questions}
+\end{document}
