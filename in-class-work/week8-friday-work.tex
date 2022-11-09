@@ -109,16 +109,36 @@ is a pretty good estimate.
   \end{equation}
   Solving for $b$ and $\frac{\mathrm{d} b}{\mathrm{d} t}$ gives $ \frac{\mathrm{d} b}{\mathrm{d} t} =
   \frac{1}{24 \sqrt{\ensuremath{\pi} }}$.
-
-
-    
   \end{solution}
 
 
   \question A monarch butterfly is flying directly south and a goldfinch is flying directly 
-  east.  As some moment, the monarch is 3 miles south of the UNK belltower and the goldfinch
+  east.  As some moment, the monarch is 3 miles south of the UNK bell tower and the goldfinch
   is five miles east. Also at this moment, the speed of the monarch is 8 mph and the 
   speed of the goldfinch is 47 mph.  At this moment, what is the rate of change of
   the distance between the monarch and the goldfinch?
+
+\begin{solution}
+  Let the position of the monarch be $y$, the position of 
+  the goldfinch be $x$, and distance in between them be $R$.
+  %A relation between these variables is $R^2 = x^2 + y^$.
+  Differentiating with respect to $t$ gives
+  \begin{equation}
+    2 R \frac{\mathrm{d} R}{\mathrm{d} t} =
+    2 x \frac{\mathrm{d} x}{\mathrm{d} t}
+    + 2 y \frac{\mathrm{d} y}{\mathrm{d} t}.
+      \end{equation}
+Pasting in the data gives the equations
+\begin{align*}
+     R^2 &= 34, \\
+     2 R \frac{\mathrm{d} R}{\mathrm{d} t} &=
+     2 \times 5 \times 47
+     + 2 \times 3  \times 8.
+\end{align*}
+So
+\[
+  \frac{\mathrm{d} R}{\mathrm{d} t} =  \frac{259}{\sqrt{34}} \,\, \mbox{mph}
+\]
+\end{solution}
 \end{questions}
 \end{document}

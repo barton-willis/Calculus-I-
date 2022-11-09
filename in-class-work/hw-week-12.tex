@@ -1,0 +1,111 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage{upgreek}
+\usepackage[super]{nth}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[]{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\newcommand\AM{\textsc{am}}
+\newcommand\PM{\textsc{pm}}
+     
+\newcommand{\quiz}{8}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Wednesday 9 November 13:15 \PM}
+\newcommand{\class}{MATH 115}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work \quiz, \term \/ \the\year}}
+\textbf{Row and Seat}:\hrulefill\\
+\vspace{0.1in}
+
+
+\noindent  In class work  \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
+Turn in your work at the end of class  \emph{on paper}. This assignment is due \emph{\due}.
+
+\vspace{0.1in}
+
+
+\begin{questions} 
+
+    \question [5] Show that among all rectangles with a given perimeter,
+    a square has the greatest area. 
+    
+    \quad To do this, let the lengths of the two perpendicular sides of the 
+     rectangle be $x$ and $y$ and let $L$ be the perimeter of the
+     rectangle. That makes $L = 2 x + 2 y$ a constraint. The other 
+     constraints are $0 \leq x$ and $0 \leq y$.  We have $A = xy$.  Your task is to 
+     maximize $A$ subject to the constraints $L = 2 x + 2 y, 0 \leq x$,
+     and $0 \leq y$ with $L$  given.
+
+    \newpage
+
+    \question Show that among all isosceles triangles with a given
+    perimeter, the equilateral triangle has the greatest area.
+
+    \quad To do this, let the lengths of the sides of the triangle be $x,x,$
+    and $y$ and let $L$ be the perimeter. That makes $L = 2 x + y$ a
+    constraint. The other constraints are $0 \leq x$ and $0 \leq y$.
+    The area $A$ of the triangle is (this is a specialization of 
+    the wonderful formula for the area of a triangle that is due to Hero of Alexandria 
+    10 AD – c. 70 AD)
+    \begin{equation*}
+        A = (x+y) \sqrt{2 y (x + 2 y)}
+    \end{equation*}
+    Solve the constraint $L = 2 x + y$ for $y$ and paste that
+    result in  the formula for $A$. Now do some calculus.
+    \quad If the algebra seems daunting to you, set $L = 3$ and work
+    that specialization. 
+
+
+   
+\end{questions}
+
+
+\end{document}
+
