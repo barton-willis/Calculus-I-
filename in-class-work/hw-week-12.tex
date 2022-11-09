@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -51,7 +51,7 @@
 \newcommand\AM{\textsc{am}}
 \newcommand\PM{\textsc{pm}}
      
-\newcommand{\quiz}{8}
+\newcommand{\quiz}{12}
 \newcommand{\term}{Fall}
 \newcommand{\due}{Wednesday 9 November 13:15 \PM}
 \newcommand{\class}{MATH 115}
@@ -82,10 +82,19 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
      constraints are $0 \leq x$ and $0 \leq y$.  We have $A = xy$.  Your task is to 
      maximize $A$ subject to the constraints $L = 2 x + 2 y, 0 \leq x$,
      and $0 \leq y$ with $L$  given.
+     
+     \begin{solution} Let's solve the constraint $L = 2 x + 2 y$  for $y$; the solution is $y =\frac{L - 2 x}{2}$. Pasting this into $A = xy$ gives 
+     $A = x (\frac{L - 2 x}{2})$.  The graph of $A$ as a function of $x$ is a downward facing parabola that intersects the x-axis at $0$ and at $L/2$.
+     The x-coordinate of the vertex of the parabola is halfway between the x-intercepts; thus the x-coordinate of the vertex is $x = L/4$.  Using
+     $y =\frac{L - 2 x}{2}$, the y-coordinate of the vertex is $y = L/4$. 
+     
+     So to maximize the area of the rectangle, we need $x = L/4$ and $y = L/4$. And that's a square.
+     
+     \end{solution}
 
     \newpage
 
-    \question Show that among all isosceles triangles with a given
+    \question [5] Show that among all isosceles triangles with a given
     perimeter, the equilateral triangle has the greatest area.
 
     \quad To do this, let the lengths of the sides of the triangle be $x,x,$
@@ -95,15 +104,43 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     the wonderful formula for the area of a triangle that is due to Hero of Alexandria 
     10 AD – c. 70 AD)
     \begin{equation*}
-        A = (x+y) \sqrt{2 y (x + 2 y)}
+        16 {{A}^{2}}=4 {{x}^{2}}\, {{y}^{2}}-{{y}^{4}}.
     \end{equation*}
     Solve the constraint $L = 2 x + y$ for $y$ and paste that
-    result in  the formula for $A$. Now do some calculus.
+    result in  the formula for $16 A^2$. Now do some calculus.
+    \textbf{Hint:} Maximizing $16 A^2$ also maximizes $A$.  Thus
+    alternatively, maximize the value of $Q$ where
+    \begin{equation*}
+        Q =4 {{x}^{2}}\, {{y}^{2}}-{{y}^{4}}.
+    \end{equation*}
+    You
+    don't have to use this hint, but it's the easy way, I think.
     \quad If the algebra seems daunting to you, set $L = 3$ and work
     that specialization. 
 
 
-   
+   \begin{solution}
+   Let's begin by solving the constraint  $L = 2 x + y$ for $y$; thus  $y = L - 2 x$.  Paste this into $Q$. We have
+   \begin{align*}
+      Q  &=4 {{x}^{2}}\, {{y}^{2}}-{{y}^{4}},\\
+          &= 4 {{\left( L-2 x\right) }^{2}}\, {{x}^{2}}-{{\left( L-2 x\right) }^{4}}, \\
+          &= L\, {{\left( 2 x-L\right) }^{2}}\, \left( 4 x-L\right).       
+   \end{align*}
+   Now find the derivative of $Q$. We have
+    \begin{align*}
+      \frac{\mathrm{d} Q}{\mathrm{d} x}   &= 4 L\, {{\left( 2 x-L\right) }^{2}}+4 L\, \left( 2 x-L\right) \, \left( 4 x-L\right) ,\\
+                                                              &= 8 L\, \left( 2 x-L\right) \, \left( 3 x-L\right).
+   \end{align*}   
+   Now solve $\dispalystyle \frac{\mathrm{d} Q}{\mathrm{d} x} = 0$. We have
+   \begin{equation}
+   \left[ 8 L\, \left( 2 x-L\right) \, \left( 3 x-L\right) = 0 \right] = \left[ x = \frac{L}{2}, x = \frac{L}{3} \right].
+   \end{equation}
+   So there are two CNs.  But if $x=  \frac{L}{2}$, then $y = L - L = 0$. Now that minimizes, not maximizes the area.  Actually, we have
+   $0 \leq x$ and $0 \leq y$. But $y = L - 2 x$, so  $0 \leq L - 2 x$. So $0 \leq x \leq L/2$. 
+   \end{solution}
+
+   (this page is not quite blank)
+
 \end{questions}
 
 
