@@ -83,12 +83,26 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
      maximize $A$ subject to the constraints $L = 2 x + 2 y, 0 \leq x$,
      and $0 \leq y$ with $L$  given.
      
-     \begin{solution} Let's solve the constraint $L = 2 x + 2 y$  for $y$; the solution is $y =\frac{L - 2 x}{2}$. Pasting this into $A = xy$ gives 
+     \begin{solution} To start, we need to solve the constraint
+        $L = 2 x + 2 y$ for either $x$ or $y$. Since interchanging
+        $x$ and $y$ doesn't change the constraint, it hardly matters
+        if we solve for $x$ or $y$. So let's solve for $y$. 
+        The solution is $y =\frac{L - 2 x}{2}$.  Pasting this 
+        solution into $0 \leq x$ and $0 \leq y$ yields
+        \begin{equation*}
+           \left [ 0 \leq x \mbox{ and } 0 \leq\frac{L - 2 x}{2}
+           \right ] = \left [ 0 \leq x \mbox{ and } x \leq \frac{L}{2}
+           \right ].
+        \end{equation*}
+        The constraint $x \leq L/2$ isn't mysterious--if $x = L/2$, then
+        $y=0$. And making $x$ bigger than $L/2$ makes $y$ negative.
+
+        \quad Pasting $y =\frac{L - 2 x}{2}$ into $A = xy$ gives 
      $A = x (\frac{L - 2 x}{2})$.  The graph of $A$ as a function of $x$ is a downward facing parabola that intersects the x-axis at $0$ and at $L/2$.
      The x-coordinate of the vertex of the parabola is halfway between the x-intercepts; thus the x-coordinate of the vertex is $x = L/4$.  Using
      $y =\frac{L - 2 x}{2}$, the y-coordinate of the vertex is $y = L/4$. 
      
-     So to maximize the area of the rectangle, we need $x = L/4$ and $y = L/4$. And that's a square.
+     \quad So to maximize the area of the rectangle, we need $x = L/4$ and $y = L/4$. And that's a square.
      
      \end{solution}
 
@@ -123,10 +137,20 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
    Let's begin by solving the constraint  $L = 2 x + y$ for $y$; thus  $y = L - 2 x$.  
    But we also have $0 \leq x$ and $0 \leq y$.  But $y = L - 2 x$, so 
    $0 \leq L - 2x$. Put together, these inequalities tell us that
-   $0 \leq x \leq L/2$. So we're looking at an optimization on a
-   closed interval. 
+   $0 \leq x \leq L/2$. 
+
+   \quad But there is another inequality constraint that's subtle. 
+   Given any two sides of a triangle, the sum of these lengths must
+   be greater than the length of the other side. Thus   
+   in addition to $0 \leq x  \mbox { and  } 0 \leq y$, we need
+   \begin{align*}
+     \left [y \leq 2 x \mbox { and  } x  \leq x + y \right ]
+     &= \left [  L - 2 x \leq 2 x \mbox { and  }  0 \leq L -  2x  \right ], \\
+     &= \left [  L / 4 \leq x  \mbox { and  } x \leq L / 2 \right ]. 
+   \end{align*} 
+So we're looking at an optimization on the closed interval $[L/4, L/2]$.
    
-   Paste $y = L - 2 x$ into $Q$. We have
+   \quad Now paste $y = L - 2 x$ into $Q$. We have
    \begin{align*}
       Q  &=4 {{x}^{2}}\, {{y}^{2}}-{{y}^{4}},\\
           &= 4 {{\left( L-2 x\right) }^{2}}\, {{x}^{2}}-{{\left( L-2 x\right) }^{4}}, \\
@@ -136,15 +160,10 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
           &= L\, {{\left( 2 x-L\right) }^{2}}\, \left( 4 x-L\right).       
    \end{align*}
    This shows that $Q$ vanishes (and thus $A$ vanishes as well) when
-   either $x = L/2$ or when $x = L/4$. Why does the area vanish when
-   $x = L/2$. Oh, when $x = L/2$, we have $y = 0$. That gives a side
-   length of zero, so the area is zero. A bit more 
-   mysterious is why the area is zero when $x = L/4$.
-   That makes $y = L/2$. Try drawing a triangle with
-   side lengths of $L/4, L/4$, and $L/2$. What's
-   the height?  It's zero.
+   either $x = L/2$ or when $x = L/4$. Thus, at each endpoint, the
+   area is zero.
 
-   Now find the derivative of $Q$. We have
+  \quad Now find the derivative of $Q$. We have
     \begin{align*}
       \frac{\mathrm{d} Q}{\mathrm{d} x}   &= 4 L\, {{\left( 2 x-L\right) }^{2}}+4 L\, \left( 2 x-L\right) \, \left( 4 x-L\right) ,\\
       \intertext{Again, we have a choice between LIB, factor, or expand. 
@@ -155,23 +174,69 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
    \begin{equation}
    \left[ 8 L\, \left( 2 x-L\right) \, \left( 3 x-L\right) = 0 \right] = \left[ x = \frac{L}{2}, x = \frac{L}{3} \right].
    \end{equation}
-   So there are two CNs.  But if $x=  \frac{L}{2}$, then $y = L - L = 0$. Now that minimizes, not maximizes the area.  Actually, we have
-   $0 \leq x$ and $0 \leq y$. But $y = L - 2 x$, so  $0 \leq L - 2 x$. So $0 \leq x \leq L/2$. 
-  
-  To find the maximum of $Q$, we need the chart:
+   So there are two CNs. Wait! We need to check: are the CNs in 
+   the interval $[L/4, L/2]$? Yes, they are--the CN  $x = \frac{L}{2}$
+   is also an endpoint.
+   
+   
+  \quad To find the maximum of $Q$, we need the chart:
    \begin{center}
 \begin{tabular}{|c|c|} \hline 
     CN & Q \\ \hline \hline
-    0  & 0 \\
+    $L/4$  & 0 \\
     $L/3$ & $L^{4}/27$ \\
     $L/2$ & 0 \\ \hline
 \end{tabular}
 \end{center}
 So the maximum area happens when $x = L/3$. And that makes $y = L/3$.
 So the three side lengths are the same.
-\end{solution}
 
-   (this page is not quite blank)
+
+\quad There is a wonderful algorithm for solving systems of 
+linear inequalities--it is called Fourier elimination. 
+The Maxima Computer Algebra system has implementation of this method:
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8em}\color{red}\bf
+(\% i1) 
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+load(fourier\_elim)\$
+
+
+\end{minipage}
+
+\noindent%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8em}\color{red}\bf
+(\% i2)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+fourier\_elim([0 \ensuremath{<} x, 0 \ensuremath{<} y, y \ensuremath{<} 2*x, x \ensuremath{<} x + y, 2*x+y = L],[y,x]);
+
+
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o2} 
+[y=L-2 x,\frac{L}{4}\mbox{<  }x,x\mbox{<  }\frac{L}{2},4 L\mbox{>  }0]\mbox{}
+\]
+%%%%%%%%%%%%%%%
+The time complexity of Fourier elimination is high. Although the
+Simplex Method is far faster, it doesn't fully solve linear 
+inequations.  
+
+\quad For information about the Maxima CAS, see
+\url{https://maxima.sourceforge.io/}. I'm one of
+about two dozen developers for Maxima--for a map of
+the developers, see \url{https://maxima.sourceforge.io/project.html}
+
+\end{solution}
 
 \end{questions}
 
