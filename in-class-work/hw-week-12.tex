@@ -92,7 +92,7 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
      
      \end{solution}
 
-    \newpage
+    %\newpage
 
     \question [5] Show that among all isosceles triangles with a given
     perimeter, the equilateral triangle has the greatest area.
@@ -120,24 +120,56 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
 
 
    \begin{solution}
-   Let's begin by solving the constraint  $L = 2 x + y$ for $y$; thus  $y = L - 2 x$.  Paste this into $Q$. We have
+   Let's begin by solving the constraint  $L = 2 x + y$ for $y$; thus  $y = L - 2 x$.  
+   But we also have $0 \leq x$ and $0 \leq y$.  But $y = L - 2 x$, so 
+   $0 \leq L - 2x$. Put together, these inequalities tell us that
+   $0 \leq x \leq L/2$. So we're looking at an optimization on a
+   closed interval. 
+   
+   Paste $y = L - 2 x$ into $Q$. We have
    \begin{align*}
       Q  &=4 {{x}^{2}}\, {{y}^{2}}-{{y}^{4}},\\
           &= 4 {{\left( L-2 x\right) }^{2}}\, {{x}^{2}}-{{\left( L-2 x\right) }^{4}}, \\
+          \intertext{We could either expand, factor, or LIB. We need to find the
+          derivative of $Q$, so I think that LIB is a bad option.
+          Expanding is tempting, but I see some opportunity to factor--let's factor.}
           &= L\, {{\left( 2 x-L\right) }^{2}}\, \left( 4 x-L\right).       
    \end{align*}
+   This shows that $Q$ vanishes (and thus $A$ vanishes as well) when
+   either $x = L/2$ or when $x = L/4$. Why does the area vanish when
+   $x = L/2$. Oh, when $x = L/2$, we have $y = 0$. That gives a side
+   length of zero, so the area is zero. A bit more 
+   mysterious is why the area is zero when $x = L/4$.
+   That makes $y = L/2$. Try drawing a triangle with
+   side lengths of $L/4, L/4$, and $L/2$. What's
+   the height?  It's zero.
+
    Now find the derivative of $Q$. We have
     \begin{align*}
       \frac{\mathrm{d} Q}{\mathrm{d} x}   &= 4 L\, {{\left( 2 x-L\right) }^{2}}+4 L\, \left( 2 x-L\right) \, \left( 4 x-L\right) ,\\
+      \intertext{Again, we have a choice between LIB, factor, or expand. 
+      Let's try the road less traveled and factor.}
                                                               &= 8 L\, \left( 2 x-L\right) \, \left( 3 x-L\right).
    \end{align*}   
-   Now solve $\dispalystyle \frac{\mathrm{d} Q}{\mathrm{d} x} = 0$. We have
+   Now solve $\displaystyle \frac{\mathrm{d} Q}{\mathrm{d} x} = 0$. We have
    \begin{equation}
    \left[ 8 L\, \left( 2 x-L\right) \, \left( 3 x-L\right) = 0 \right] = \left[ x = \frac{L}{2}, x = \frac{L}{3} \right].
    \end{equation}
    So there are two CNs.  But if $x=  \frac{L}{2}$, then $y = L - L = 0$. Now that minimizes, not maximizes the area.  Actually, we have
    $0 \leq x$ and $0 \leq y$. But $y = L - 2 x$, so  $0 \leq L - 2 x$. So $0 \leq x \leq L/2$. 
-   \end{solution}
+  
+  To find the maximum of $Q$, we need the chart:
+   \begin{center}
+\begin{tabular}{|c|c|} \hline 
+    CN & Q \\ \hline \hline
+    0  & 0 \\
+    $L/3$ & $L^{4}/27$ \\
+    $L/2$ & 0 \\ \hline
+\end{tabular}
+\end{center}
+So the maximum area happens when $x = L/3$. And that makes $y = L/3$.
+So the three side lengths are the same.
+\end{solution}
 
    (this page is not quite blank)
 
