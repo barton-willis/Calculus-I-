@@ -135,7 +135,7 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
 
    \begin{solution}
    Let's begin by solving the constraint  $L = 2 x + y$ for $y$; thus  $y = L - 2 x$.  
-   But we also have $0 \leq x$ and $0 \leq y$.  But $y = L - 2 x$, so 
+   But we also have $0 \leq x$ and $0 \leq y$.  Using $y = L - 2 x$, gives
    $0 \leq L - 2x$. Put together, these inequalities tell us that
    $0 \leq x \leq L/2$. 
 
@@ -157,7 +157,9 @@ So we're looking at an optimization on the closed interval $[L/4, L/2]$.
           \intertext{We could either expand, factor, or LIB. We need to find the
           derivative of $Q$, so I think that LIB is a bad option.
           Expanding is tempting, but I see some opportunity to factor--let's factor.}
-          &= L\, {{\left( 2 x-L\right) }^{2}}\, \left( 4 x-L\right).       
+          &= L\, {{\left( 2 x-L\right) }^{2}}\, \left( 4 x-L\right) \\
+          \intertext{Had we expanded, we would get (after lots of work)}
+          &= 16 L\, {{x}^{3}}-20 {{L}^{2}}\, {{x}^{2}}+8 {{L}^{3}} x-{{L}^{4}}.
    \end{align*}
    This shows that $Q$ vanishes (and thus $A$ vanishes as well) when
    either $x = L/2$ or when $x = L/4$. Thus, at each endpoint, the
@@ -190,6 +192,15 @@ So we're looking at an optimization on the closed interval $[L/4, L/2]$.
 \end{center}
 So the maximum area happens when $x = L/3$. And that makes $y = L/3$.
 So the three side lengths are the same.
+
+\quad Is the problem easier if we are given a specific value for $L$?
+Yes and no.  If we're given a numeric value for $L$, we'll do less
+algebra, but we'd have to re-do the problem from the start if we 
+needed to a different value for $L$. But there is another advantage 
+to not using a numeric value for $L$.  Since $x$ and $L$ are both
+lengths, it follows that the answer must look like $x = \mbox{number} \times L$.
+If we goof and get $x = 2 + L$, we know immediately that we have flubed.
+
 
 
 \quad There is a wonderful algorithm for solving systems of 
