@@ -1,7 +1,8 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
-\usepackage{amsmath,amssymb}
+\usepackage{amssymb}
+\usepackage[intlimits]{amsmath}
 \usepackage{epsfig}
 \usepackage{upgreek}
 \usepackage[super]{nth}
@@ -79,15 +80,29 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
 
     \part [1] $\int (6 x + 3)(x+1) \, \mathrm{d} x = $
     \begin{solution}[1.5in]
-     \begin{equation}
-    \int (6 x + 3)(x+1) \, \mathrm{d} x = 2 {{x}^{3}}+\frac{9 {{x}^{2}}}{2}+3 x+C.
-      \end{equation}
+      The integrand is a product. To use the additive property,
+      our first step will be to expand the integrand. We have
+     \begin{align*}
+    \int (6 x + 3)(x+1) \, \mathrm{d} x &= \int 6 x^2 + 9 x + 3 \, \mathrm{d} x, &\mbox{(expand)}\\
+                                        &= \int 6 x^2  \, \mathrm{d} x +
+                                        \int 9 x \, \mathrm{d} x + 
+                                        \int 3 \, \mathrm{d} x, &\mbox{(additive property)}\\
+                                        &= 6 \int x^2  \, \mathrm{d} x +
+                                        9 \int x \, \mathrm{d} x + 
+                                        3 \int 1 \, \mathrm{d} x, &\mbox{(outative property)}\\
+                                        &= 6 \times \frac{1}{3} x^3 +
+                                           9 \times \frac{1}{2} x^2 +
+                                           3 x + C, &\mbox{(power rule)} \\
+                                        &= 2 {{x}^{3}}+\frac{9 {{x}^{2}}}{2}+3 x+C. &\mbox{(simplification)}
+      \end{align*}
     \end{solution}
     
     \part [1] $\int (x-1)(x+2) \, \mathrm{d} x = $
     \begin{solution}[1.5in]
+      Our process is much the same as for the first problem. 
+      Here is the answer without the steps:
     \[
-    \int (x-1)(x+2) \, \mathrm{d} x = \frac{{{x}^{3}}}{3}+\frac{{{x}^{2}}}{2}-2 x+C
+    \int (x-1)(x+2) \, \mathrm{d} x = \frac{{{x}^{3}}}{3}+\frac{{{x}^{2}}}{2}-2 x+C.
     \]
     \end{solution}
 
@@ -105,33 +120,71 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
       \begin{equation*}
     \int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x = 7 \ln(|x|) + \frac{x^2}{14} + C.
      \end{equation*}
-     
+     We do need to be careful with the result expressed this way.
+     Since the natural logarithm function is not continuous at 
+     zero, this antiderivative is not valid on any interval
+     that contains zero.
     \end{solution}
 
     \part [1] $\int \frac{x+1}{\sqrt{x}}  \, \mathrm{d} x = $
     \begin{solution}%[1.5in]
+      \begin{align*}
+        \int \frac{x+1}{\sqrt{x}}  \, \mathrm{d} x, 
+        &= \int \frac{x}{\sqrt{x}} + \frac{1}{\sqrt{x}} \, \mathrm{d} x, \\
+        &= \frac{2 {{x}^{\frac{3}{2}}}}{3}+2 \sqrt{x} + C.
+      \end{align*}
     \end{solution}
 
-\newpage
+%\newpage
     \part [1] $\int \cos(23 \uppi x)  \, \mathrm{d} x = $
     \begin{solution}[1.5in]
+      For $a \in \reals_{\neq 0}$, we have the rule
+      \begin{equation*}
+         \int \cos(a x) \, \mathrm{d} x = \frac{1}{a} \sin(a x) + C.
+      \end{equation*}
+      Matching to this rule, we have
+      \begin{equation*}
+        \int \cos(23 \uppi x) \, \mathrm{d} x = 
+        \frac{1}{23 \uppi} \sin(23 \uppi x) + C.
+     \end{equation*}
     \end{solution}
 
 
     \part [1] $\int \cos(\uppi x)^2 +  \sin(\uppi x)^2 \, \mathrm{d} x = $
     \begin{solution}[1.5in]
+      Ha! This one is a trick! The integrand simplifies to one. Thus
+      \begin{equation*}
+        \int \cos(\uppi x)^2 +  \sin(\uppi x)^2 \, \mathrm{d} x
+        = \int 1 \, \mathrm{d} x = x + C.
+      \end{equation*}
     \end{solution}
     
     \part [1] $ \int 5 \mathrm{d} x = $
     \begin{solution}[1.5in]
+      \begin{equation*}
+        \int 5 \mathrm{d} x  = \frac{5}{2} x^2 + C.
+      \end{equation*}
+      Yes, it really is that easy--it was intended to test your
+      confidence. Problem sets are generally arranged from 
+      easy to challenging--presented the other way, we can 
+      be thrown off. But life isn't always arranged from
+      easy to hard--we need to build our confidence.
     \end{solution}
     
     \part [1] $ \int \mathrm{e}^{5 x} \mathrm{d} x = $
     \begin{solution}[1.5in]
+      For $a \in \reals_{\neq 0}$, we have the rule
+    \begin{equation*}
+      \int \mathrm{e}^{a x} \mathrm{d} x = \frac{1}{a} \mathrm{e}^{a x} + C.
+    \end{equation*}
+    Matching to this rule, we have
+    \begin{equation*}
+      \int \mathrm{e}^{5 x} \mathrm{d} x = \frac{1}{5} \mathrm{e}^{5 x} + C.
+    \end{equation*}
     \end{solution}
 \end{parts}
 
-\newpage
+%\newpage
 
 \question [1] Find numbers $a$ and $b$ such that
 $
@@ -142,6 +195,37 @@ $
 \frac{\mathrm{d}}{\mathrm{d} x} \left((a + b x) \mathrm{e}^x \right)
    = x  \mathrm{e}^x
 $ be an identity.
+\begin{solution}
+We need to find numbers $a$ and $b$ such that 
+\begin{equation*}
+  \frac{\mathrm{d}}{\mathrm{d} x}
+  \left((a + b x) \mathrm{e}^x \right) = x  \mathrm{e}^x
+\end{equation*}
+is an identity. Evaluating the derivative on the left yields
+\begin{equation*}
+  b x\, {{\mathrm e}^{x}}+b\, {{\mathrm e}^{x}}+a\, {{\mathrm e}^{x}}=x\, {{\mathrm e}^{x}}.
+\end{equation*}
+Subtracting left form right and rearranging gives
+\begin{equation*}
+  \left( b-1\right)  x\, {{\mathrm e}^{x}}+\left( b+a\right) \, {{\mathrm e}^{x}}=0.
+\end{equation*}
+Dividing this by ${\mathrm e}^{x}$ (which is nonzero) gives
+\begin{equation*}
+  \left( b-1\right)  x +\left( b+a\right) =0
+\end{equation*}
+This is supposed to be an \emph{identity}. It is \textbf{not}
+an equation that we are supposed to solve for $x$. Since 
+it is supposed to be an identity, it means that for
+\emph{every} real number $x$, we have $\left( b-1\right)  x +\left( b+a\right) =0$
+How can this be? We \emph{must} choose the numbers $a$ and
+$b$ such that $b-1= 0$ and $a+b=0$. Thus $b=1$ and $a=-1$.
+Thus we are claiming that
+$$
+ \int x  \mathrm{e}^x \, \mathrm{d} x = (x - 1) \mathrm{e}^x + C.
+$$
+Checking this by differentiation shows that it is correct.
+
+\end{solution}
 
 \end{questions}
 
