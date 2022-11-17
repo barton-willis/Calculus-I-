@@ -49,7 +49,7 @@
 \usepackage{graphicx}
 \usepackage{color}
 \shadedsolutions
-\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\definecolor{SolutionColor}{rgb}{1,0.72,0.46} %{0.8,0.9,1}
 \newcommand\AM{\textsc{am}}
 \newcommand\PM{\textsc{pm}}
      
@@ -81,7 +81,7 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
 
     \part [1] $\int (6 x + 3)(x+1) \, \mathrm{d} x = $
     \begin{solution}[1.5in]
-      The integrand is a product. To use the additive property,
+      The integrand is a product, not a sum. To use the additive property,
       our first step will be to expand the integrand. We have
      \begin{align*}
     \int (6 x + 3)(x+1) \, \mathrm{d} x &= \int 6 x^2 + 9 x + 3 \, \mathrm{d} x, &\mbox{(expand)}\\
@@ -98,7 +98,7 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
       \end{align*}
     Mathematical etiquette (ME)  \emph{requires} that we check every antiderivative 
     using a derivative. Maybe this polynomial result is sufficiently
-    simple that it can be checked without a pencil. Here is the check:
+    simple that it can be checked without a pencil, but here is the check:
     \begin{equation*}
       \frac{\mathrm{d}}{\mathrm{d} x} \left(2 {{x}^{3}}+\frac{9 {{x}^{2}}}{2}+3 x \right)
         = 6 x^2 + 9 x + 3 = (6 x + 3)(x+1). \,\,  \checkmark 
@@ -116,6 +116,25 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     \]
     ME dictates that we should check our work. I'll leave that for
     you to do.
+
+    \quad Suppose your friend Pat says the answer is
+    \begin{equation*}
+      \frac{1}{6} \left( x-3\right) \, \left( 2 {{x}^{2}}+9 x+15\right) +C.
+    \end{equation*}
+    Who is correct? Let's expand Pat's answer and compare to ours. Expanding 
+    yields
+    \begin{equation*}
+      \frac{{{x}^{3}}}{3}+\frac{{{x}^{2}}}{2}-2 x-\frac{15}{2} + C.
+    \end{equation*}
+    And that is different from our answer
+    \begin{equation*}
+      \frac{{{x}^{3}}}{3}+\frac{{{x}^{2}}}{2}-2 x+C.
+    \end{equation*}
+    Did we flub? Did Pat flub? Following proper ME, a simple check of 
+    both answers show they are both correct. How can this be? Oh, it's 
+    not such a great mystery: when they exist, antiderivatives are
+    undetermined up to an additive constant.  Subtracting the two 
+    answers yields a constant, so both are correct.
     \end{solution}
 
     \part [1] $\int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x = $
@@ -123,7 +142,7 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     For the interval $(-\infty,0)$, we have
     \begin{align*}
     \int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x 
-      &= \int \frac{7}{x} \, \mathrm{d} x  + \int \frac{x}{7} \, \mathrm{d} x, &\mbox{(additity)} \\
+      &= \int \frac{7}{x} \, \mathrm{d} x  + \int \frac{x}{7} \, \mathrm{d} x, &\mbox{(additivity)} \\
       &= 7 \int \frac{1}{x} \, \mathrm{d} x  + \frac{1}{7} \int x \, \mathrm{d} x, &\mbox{(outative)} \\
       &= 7 \ln(-x) + \frac{x^2}{14} + C.
      \end{align*}
@@ -232,9 +251,9 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     problem, but it cannot be used. If we match 
     \begin{equation*}
       \int x^n \, \mathrm{d} x \quad \mathrm{    to } \quad
-      \int \cos(\uppi x)^2 \, \mathrm{d} x. 
+      \int \cos(\uppi x)^2 \, \mathrm{d} x,
     \end{equation*}
-    To do this, we first match $x^n$ to   
+    we first need to match $x^n$ to   
     $\cos(\uppi x)^2$. That's no problem; we simply 
     match $n \to 2$ and $x \to \cos(\uppi x)$. So far, so good.
     Are we done yet? No, we also need to match $\mathrm{d} x$ to 
@@ -312,6 +331,8 @@ $$
 $$
 Checking this by differentiation shows that it is correct.
 
+\quad The Risch integration method (\url{https://en.wikipedia.org/wiki/Risch_algorithm}) 
+is something like this. Using a great deal of 
 \end{solution}
 
 \end{questions}
