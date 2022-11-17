@@ -1,6 +1,7 @@
 \documentclass[12pt,fleqn,answers]{exam}
-\usepackage{pifont}
-\usepackage{dingbat}
+%\usepackage{pifont}
+%\usepackage{dingbat,bbding}
+
 \usepackage{amssymb}
 \usepackage[intlimits]{amsmath}
 \usepackage{epsfig}
@@ -95,6 +96,15 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
                                            3 x + C, &\mbox{(power rule)} \\
                                         &= 2 {{x}^{3}}+\frac{9 {{x}^{2}}}{2}+3 x+C. &\mbox{(simplification)}
       \end{align*}
+    Mathematical etiquette (ME)  \emph{requires} that we check every antiderivative 
+    using a derivative. Maybe this polynomial result is sufficiently
+    simple that it can be checked without a pencil. Here is the check:
+    \begin{equation*}
+      \frac{\mathrm{d}}{\mathrm{d} x} \left(2 {{x}^{3}}+\frac{9 {{x}^{2}}}{2}+3 x \right)
+        = 6 x^2 + 9 x + 3 = (6 x + 3)(x+1). \,\,  \checkmark 
+    \end{equation*}
+    Since the derivative of a constant is zero, we never need
+    to include the constant term in the check.
     \end{solution}
     
     \part [1] $\int (x-1)(x+2) \, \mathrm{d} x = $
@@ -104,33 +114,82 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
     \[
     \int (x-1)(x+2) \, \mathrm{d} x = \frac{{{x}^{3}}}{3}+\frac{{{x}^{2}}}{2}-2 x+C.
     \]
+    ME dictates that we should check our work. I'll leave that for
+    you to do.
     \end{solution}
 
     \part [1] $\int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x = $
     \begin{solution}[1.5in]
     For the interval $(-\infty,0)$, we have
-    \begin{equation*}
-    \int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x = 7 \ln(-x) + \frac{x^2}{14} + C.
+    \begin{align*}
+    \int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x 
+      &= \int \frac{7}{x} \, \mathrm{d} x  + \int \frac{x}{7} \, \mathrm{d} x, &\mbox{(additity)} \\
+      &= 7 \int \frac{1}{x} \, \mathrm{d} x  + \frac{1}{7} \int x \, \mathrm{d} x, &\mbox{(outative)} \\
+      &= 7 \ln(-x) + \frac{x^2}{14} + C.
+     \end{align*}
+     Checking this we have
+     \begin{equation*}
+      \frac{\mathrm{d}}{\mathrm{d} x} \left( 7 \ln(-x) + \frac{x^2}{14} \right)
+       = 7 \frac{-1}{-x} + \frac{x}{7}
+       = \frac{7}{x} + \frac{x}{7} . \checkmark
      \end{equation*}
       For the interval $(0,\infty)$, we have
     \begin{equation*}
     \int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x = 7 \ln(x) + \frac{x^2}{14} + C.
      \end{equation*}
+
+     Checking this we have
+     \begin{equation*}
+      \frac{\mathrm{d}}{\mathrm{d} x} \left( 7 \ln(x) + \frac{x^2}{14} \right)
+       = 7 \frac{1}{x} + \frac{x}{7}
+       = \frac{7}{x} + \frac{x}{7} . \checkmark
+     \end{equation*}
      And for either the interval $(-\infty,0)$ or $(0,\infty)$, we have
       \begin{equation*}
     \int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x = 7 \ln(|x|) + \frac{x^2}{14} + C.
      \end{equation*}
+
+     Checking this is tricky. to do the check we need
+     the derivative of $\ln(|x|)$. Here it is:
+     \begin{equation*}
+      \frac{\mathrm{d}}{\mathrm{d} x} \left(\ln(|x|) \right)
+     =  \frac{\mathrm{d}}{\mathrm{d} x}  \begin{cases}
+        \ln(-x) & x < 0 \\
+        \ln(x)  & x > 0 
+     \end{cases}
+     = 
+     \begin{cases}
+      \frac{-1}{-x} & x < 0 \\
+      \frac{1}{x}  & x > 0 
+    \end{cases}
+    =
+    \begin{cases}
+      \frac{1}{x} & x < 0 \\
+      \frac{1}{x}  & x > 0 
+    \end{cases}
+    = 
+    \begin{cases}
+      \frac{1}{x} & x \neq 0 
+    \end{cases}
+     \end{equation*}
+
+
      We do need to be careful with the result expressed this way.
      Since the natural logarithm function is not continuous at 
      zero, this antiderivative is not valid on any interval
-     that contains zero.
+     that contains zero. For example, the formula is valid
+     on the interval $(-\infty,0)$ and it is valid on
+     the interval $(0,\infty)$, but it is \textbf{invalid} 
+     on the interval $(-\infty, \infty)$.
     \end{solution}
 
     \part [1] $\int \frac{x+1}{\sqrt{x}}  \, \mathrm{d} x = $
     \begin{solution}%[1.5in]
       \begin{align*}
-        \int \frac{x+1}{\sqrt{x}}  \, \mathrm{d} x, 
-        &= \int \frac{x}{\sqrt{x}} + \frac{1}{\sqrt{x}} \, \mathrm{d} x, \\
+        \int \frac{x+1}{\sqrt{x}}  \, \mathrm{d} x 
+        &= \int \frac{x}{\sqrt{x}} + \frac{1}{\sqrt{x}} \, \mathrm{d} x, &\mbox{(expand)} \\
+        &= \int x^{1/2} + x^{-1/2} \, \mathrm{d} x, &\mbox{(simplification)} \\
+        &= \int x^{1/2} \, \mathrm{d} x + \int x^{-1/2} \, \mathrm{d} x, &\mbox{(additity)} \\
         &= \frac{2 {{x}^{\frac{3}{2}}}}{3}+2 \sqrt{x} + C.
       \end{align*}
     \end{solution}
@@ -152,11 +211,39 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
 
     \part [1] $\int \cos(\uppi x)^2 +  \sin(\uppi x)^2 \, \mathrm{d} x = $
     \begin{solution}[1.5in]
-      Ha! This one is a trick! The integrand simplifies to one. Thus
+      This one is a trick! The integrand simplifies to one. Thus
       \begin{equation*}
         \int \cos(\uppi x)^2 +  \sin(\uppi x)^2 \, \mathrm{d} x
         = \int 1 \, \mathrm{d} x = x + C.
       \end{equation*}
+      If your first instinct was to use additivity, that is to use
+      \begin{equation*}
+        \int \cos(\uppi x)^2 +  \sin(\uppi x)^2 \, \mathrm{d} x
+        = \int \cos(\uppi x)^2 \, \mathrm{d} x +  
+        \int \sin(\uppi x)^2 \, \mathrm{d} x
+            \end{equation*}\
+    you were not alone. But taking this path, we're faced with
+    evaluating 
+    \begin{equation*}
+      \int \cos(\uppi x)^2 \, \mathrm{d} x.
+    \end{equation*}
+    And we don't have the tools to do this. You might think
+    the power rule for antiderivatives can be used on this 
+    problem, but it cannot be used. If we match 
+    \begin{equation*}
+      \int x^n \, \mathrm{d} x \quad \mathrm{    to } \quad
+      \int \cos(\uppi x)^2 \, \mathrm{d} x. 
+    \end{equation*}
+    To do this, we first match $x^n$ to   
+    $\cos(\uppi x)^2$. That's no problem; we simply 
+    match $n \to 2$ and $x \to \cos(\uppi x)$. So far, so good.
+    Are we done yet? No, we also need to match $\mathrm{d} x$ to 
+    $\mathrm{d} x$. That match is easy: we simply match $x \to x$.
+    But wait! We're already done the match $x \to \cos(\uppi x)$,
+    so we can't also match $x \to  x$. Our attempt to use the 
+    power rule failed--the attempted match was incomplete.
+
+   
     \end{solution}
     
     \part [1] $ \int 5 \mathrm{d} x = $
