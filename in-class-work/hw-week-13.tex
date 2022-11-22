@@ -53,9 +53,9 @@
 \newcommand\AM{\textsc{am}}
 \newcommand\PM{\textsc{pm}}
      
-\newcommand{\quiz}{13}
+\newcommand{\quiz}{14}
 \newcommand{\term}{Fall}
-\newcommand{\due}{Wednesday 16 November 13:15 \PM}
+\newcommand{\due}{Tuesday 22 November 13:15 \PM}
 \newcommand{\class}{MATH 115}
 \begin{document}
 \large
@@ -75,266 +75,21 @@ Turn in your work at the end of class  \emph{on paper}. This assignment is due \
 
 \begin{questions} 
 
-\question Find a formula for each antiderivative.
-
-\begin{parts}
-
-    \part [1] $\int (6 x + 3)(x+1) \, \mathrm{d} x = $
-    \begin{solution}[1.5in]
-      The integrand is a product, not a sum. To use the additive property,
-      our first step will be to expand the integrand. We have
-     \begin{align*}
-    \int (6 x + 3)(x+1) \, \mathrm{d} x &= \int 6 x^2 + 9 x + 3 \, \mathrm{d} x, &\mbox{(expand)}\\
-                                        &= \int 6 x^2  \, \mathrm{d} x +
-                                        \int 9 x \, \mathrm{d} x + 
-                                        \int 3 \, \mathrm{d} x, &\mbox{(additive property)}\\
-                                        &= 6 \int x^2  \, \mathrm{d} x +
-                                        9 \int x \, \mathrm{d} x + 
-                                        3 \int 1 \, \mathrm{d} x, &\mbox{(outative property)}\\
-                                        &= 6 \times \frac{1}{3} x^3 +
-                                           9 \times \frac{1}{2} x^2 +
-                                           3 x + C, &\mbox{(power rule)} \\
-                                        &= 2 {{x}^{3}}+\frac{9 {{x}^{2}}}{2}+3 x+C. &\mbox{(simplification)}
-      \end{align*}
-    Mathematical etiquette (ME)  \emph{requires} that we check every antiderivative 
-    using a derivative. Maybe this polynomial result is sufficiently
-    simple that it can be checked without a pencil, but here is the check:
-    \begin{equation*}
-      \frac{\mathrm{d}}{\mathrm{d} x} \left(2 {{x}^{3}}+\frac{9 {{x}^{2}}}{2}+3 x \right)
-        = 6 x^2 + 9 x + 3 = (6 x + 3)(x+1). \,\,  \checkmark 
-    \end{equation*}
-    Since the derivative of a constant is zero, we never need
-    to include the constant term in the check.
-    \end{solution}
-    
-    \part [1] $\int (x-1)(x+2) \, \mathrm{d} x = $
-    \begin{solution}[1.5in]
-      Our process is much the same as for the first problem. 
-      Here is the answer without the steps:
-    \[
-    \int (x-1)(x+2) \, \mathrm{d} x = \frac{{{x}^{3}}}{3}+\frac{{{x}^{2}}}{2}-2 x+C.
-    \]
-    ME dictates that we should check our work. I'll leave that for
-    you to do.
-
-    \quad Suppose your friend Pat says the answer is
-    \begin{equation*}
-      \frac{1}{6} \left( x-3\right) \, \left( 2 {{x}^{2}}+9 x+15\right) +C.
-    \end{equation*}
-    Who is correct? Let's expand Pat's answer and compare to ours. Expanding 
-    yields
-    \begin{equation*}
-      \frac{{{x}^{3}}}{3}+\frac{{{x}^{2}}}{2}-2 x-\frac{15}{2} + C.
-    \end{equation*}
-    And that is different from our answer
-    \begin{equation*}
-      \frac{{{x}^{3}}}{3}+\frac{{{x}^{2}}}{2}-2 x+C.
-    \end{equation*}
-    Did we flub? Did Pat flub? Following proper ME, a simple check of 
-    both answers show they are both correct. How can this be? Oh, it's 
-    not such a great mystery: when they exist, antiderivatives are
-    undetermined up to an additive constant.  Subtracting the two 
-    answers yields a constant, so both are correct.
-    \end{solution}
-
-    \part [1] $\int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x = $
-    \begin{solution}[1.5in]
-    For the interval $(-\infty,0)$, we have
-    \begin{align*}
-    \int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x 
-      &= \int \frac{7}{x} \, \mathrm{d} x  + \int \frac{x}{7} \, \mathrm{d} x, &\mbox{(additivity)} \\
-      &= 7 \int \frac{1}{x} \, \mathrm{d} x  + \frac{1}{7} \int x \, \mathrm{d} x, &\mbox{(outative)} \\
-      &= 7 \ln(-x) + \frac{x^2}{14} + C.
-     \end{align*}
-     Checking this we have
-     \begin{equation*}
-      \frac{\mathrm{d}}{\mathrm{d} x} \left( 7 \ln(-x) + \frac{x^2}{14} \right)
-       = 7 \frac{-1}{-x} + \frac{x}{7}
-       = \frac{7}{x} + \frac{x}{7} . \checkmark
-     \end{equation*}
-      For the interval $(0,\infty)$, we have
-    \begin{equation*}
-    \int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x = 7 \ln(x) + \frac{x^2}{14} + C.
-     \end{equation*}
-
-     Checking this we have
-     \begin{equation*}
-      \frac{\mathrm{d}}{\mathrm{d} x} \left( 7 \ln(x) + \frac{x^2}{14} \right)
-       = 7 \frac{1}{x} + \frac{x}{7}
-       = \frac{7}{x} + \frac{x}{7} . \checkmark
-     \end{equation*}
-     And for either the interval $(-\infty,0)$ or $(0,\infty)$, we have
-      \begin{equation*}
-    \int \frac{7}{x} + \frac{x}{7} \, \mathrm{d} x = 7 \ln(|x|) + \frac{x^2}{14} + C.
-     \end{equation*}
-
-     Checking this is tricky. to do the check we need
-     the derivative of $\ln(|x|)$. Here it is:
-     \begin{equation*}
-      \frac{\mathrm{d}}{\mathrm{d} x} \left(\ln(|x|) \right)
-     =  \frac{\mathrm{d}}{\mathrm{d} x}  \begin{cases}
-        \ln(-x) & x < 0 \\
-        \ln(x)  & x > 0 
-     \end{cases}
-     = 
-     \begin{cases}
-      \frac{-1}{-x} & x < 0 \\
-      \frac{1}{x}  & x > 0 
-    \end{cases}
-    =
-    \begin{cases}
-      \frac{1}{x} & x < 0 \\
-      \frac{1}{x}  & x > 0 
-    \end{cases}
-    = 
-    \begin{cases}
-      \frac{1}{x} & x \neq 0 
-    \end{cases}
-     \end{equation*}
-
-
-     We do need to be careful with the result expressed this way.
-     Since the natural logarithm function is not continuous at 
-     zero, this antiderivative is not valid on any interval
-     that contains zero. For example, the formula is valid
-     on the interval $(-\infty,0)$ and it is valid on
-     the interval $(0,\infty)$, but it is \textbf{invalid} 
-     on the interval $(-\infty, \infty)$.
-    \end{solution}
-
-    \part [1] $\int \frac{x+1}{\sqrt{x}}  \, \mathrm{d} x = $
-    \begin{solution}%[1.5in]
-      \begin{align*}
-        \int \frac{x+1}{\sqrt{x}}  \, \mathrm{d} x 
-        &= \int \frac{x}{\sqrt{x}} + \frac{1}{\sqrt{x}} \, \mathrm{d} x, &\mbox{(expand)} \\
-        &= \int x^{1/2} + x^{-1/2} \, \mathrm{d} x, &\mbox{(simplification)} \\
-        &= \int x^{1/2} \, \mathrm{d} x + \int x^{-1/2} \, \mathrm{d} x, &\mbox{(additity)} \\
-        &= \frac{2 {{x}^{\frac{3}{2}}}}{3}+2 \sqrt{x} + C.
-      \end{align*}
-    \end{solution}
-
-%\newpage
-    \part [1] $\int \cos(23 \uppi x)  \, \mathrm{d} x = $
-    \begin{solution}[1.5in]
-      For $a \in \reals_{\neq 0}$, we have the rule
-      \begin{equation*}
-         \int \cos(a x) \, \mathrm{d} x = \frac{1}{a} \sin(a x) + C.
-      \end{equation*}
-      Matching to this rule, we have
-      \begin{equation*}
-        \int \cos(23 \uppi x) \, \mathrm{d} x = 
-        \frac{1}{23 \uppi} \sin(23 \uppi x) + C.
-     \end{equation*}
-    \end{solution}
-
-
-    \part [1] $\int \cos(\uppi x)^2 +  \sin(\uppi x)^2 \, \mathrm{d} x = $
-    \begin{solution}[1.5in]
-      This one is a trick! The integrand simplifies to one. Thus
-      \begin{equation*}
-        \int \cos(\uppi x)^2 +  \sin(\uppi x)^2 \, \mathrm{d} x
-        = \int 1 \, \mathrm{d} x = x + C.
-      \end{equation*}
-      If your first instinct was to use additivity, that is to use
-      \begin{equation*}
-        \int \cos(\uppi x)^2 +  \sin(\uppi x)^2 \, \mathrm{d} x
-        = \int \cos(\uppi x)^2 \, \mathrm{d} x +  
-        \int \sin(\uppi x)^2 \, \mathrm{d} x
-            \end{equation*}\
-    you were not alone. But taking this path, we're faced with
-    evaluating 
-    \begin{equation*}
-      \int \cos(\uppi x)^2 \, \mathrm{d} x.
-    \end{equation*}
-    And we don't have the tools to do this. You might think
-    the power rule for antiderivatives can be used on this 
-    problem, but it cannot be used. If we match 
-    \begin{equation*}
-      \int x^n \, \mathrm{d} x \quad \mathrm{    to } \quad
-      \int \cos(\uppi x)^2 \, \mathrm{d} x,
-    \end{equation*}
-    we first need to match $x^n$ to   
-    $\cos(\uppi x)^2$. That's no problem; we simply 
-    match $n \to 2$ and $x \to \cos(\uppi x)$. So far, so good.
-    Are we done yet? No, we also need to match $\mathrm{d} x$ to 
-    $\mathrm{d} x$. That match is easy: we simply match $x \to x$.
-    But wait! We're already done the match $x \to \cos(\uppi x)$,
-    so we can't also match $x \to  x$. Our attempt to use the 
-    power rule failed--the attempted match was incomplete.
-
-   
-    \end{solution}
-    
-    \part [1] $ \int 5 \mathrm{d} x = $
-    \begin{solution}[1.5in]
-      \begin{equation*}
-        \int 5 \mathrm{d} x  = \frac{5}{2} x^2 + C.
-      \end{equation*}
-      Yes, it really is that easy--it was intended to test your
-      confidence. Problem sets are generally arranged from 
-      easy to challenging--presented the other way, we can 
-      be thrown off. But life isn't always arranged from
-      easy to hard--we need to build our confidence.
-    \end{solution}
-    
-    \part [1] $ \int \mathrm{e}^{5 x} \mathrm{d} x = $
-    \begin{solution}[1.5in]
-      For $a \in \reals_{\neq 0}$, we have the rule
-    \begin{equation*}
-      \int \mathrm{e}^{a x} \mathrm{d} x = \frac{1}{a} \mathrm{e}^{a x} + C.
-    \end{equation*}
-    Matching to this rule, we have
-    \begin{equation*}
-      \int \mathrm{e}^{5 x} \mathrm{d} x = \frac{1}{5} \mathrm{e}^{5 x} + C.
-    \end{equation*}
-    \end{solution}
-\end{parts}
-
-%\newpage
-
-\question [1] Find numbers $a$ and $b$ such that
-$
- \int x  \mathrm{e}^x \, \mathrm{d} x = (a + b x) \mathrm{e}^x + C
-$
-is correct. Do this by requiring that
-$
-\frac{\mathrm{d}}{\mathrm{d} x} \left((a + b x) \mathrm{e}^x \right)
-   = x  \mathrm{e}^x
-$ be an identity.
-\begin{solution}
-We need to find numbers $a$ and $b$ such that 
+\question [5] Let $n$ be a positive integer. Find a simple formula for the value of the sum
 \begin{equation*}
-  \frac{\mathrm{d}}{\mathrm{d} x}
-  \left((a + b x) \mathrm{e}^x \right) = x  \mathrm{e}^x
+   \sum_{k=0}^{n-1}  \left(7 + \frac{3}{n} k \right).
 \end{equation*}
-is an identity. Evaluating the derivative on the left yields
-\begin{equation*}
-  b x\, {{\mathrm e}^{x}}+b\, {{\mathrm e}^{x}}+a\, {{\mathrm e}^{x}}=x\, {{\mathrm e}^{x}}.
-\end{equation*}
-Subtracting left form right and rearranging gives
-\begin{equation*}
-  \left( b-1\right)  x\, {{\mathrm e}^{x}}+\left( b+a\right) \, {{\mathrm e}^{x}}=0.
-\end{equation*}
-Dividing this by ${\mathrm e}^{x}$ (which is nonzero) gives
-\begin{equation*}
-  \left( b-1\right)  x +\left( b+a\right) =0
-\end{equation*}
-This is supposed to be an \emph{identity}. It is \textbf{not}
-an equation that we are supposed to solve for $x$. Since 
-it is supposed to be an identity, it means that for
-\emph{every} real number $x$, we have $\left( b-1\right)  x +\left( b+a\right) =0$
-How can this be? We \emph{must} choose the numbers $a$ and
-$b$ such that $b-1= 0$ and $a+b=0$. Thus $b=1$ and $a=-1$.
-Thus we are claiming that
-$$
- \int x  \mathrm{e}^x \, \mathrm{d} x = (x - 1) \mathrm{e}^x + C.
-$$
-Checking this by differentiation shows that it is correct.
+Among other facts, use identities
+\begin{align*}
+  \sum_{k=0}^{n-1}{\left. 1\right.} &=n,\\
+  \sum_{k=0}^{n-1}{\left. k\right.}&=\frac{\left( n-1\right)  n}{2}.
+ \end{align*}
 
-\quad The Risch integration method (\url{https://en.wikipedia.org/wiki/Risch_algorithm}) 
-is something like this. Using a great deal of 
-\end{solution}
-
+\newpage 
+\question [5] Use the result of the first question to find the numerical value of 
+\begin{equation*}
+  \lim_{n \to \infty}   \frac{1}{n}  \,\,  \sum_{k=0}^{n-1}  \left(7 + \frac{3}{n} k \right).
+\end{equation*}
 \end{questions}
 
 \end{document}
